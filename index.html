@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>NAME//LAB — Business Name Intelligence</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,10 +18,10 @@
     --bg: #050505;
     --card: #0d0d0d;
     --card2: #121212;
-    --line: #272727;
+    --line: #292929;
     --white: #ffffff;
     --gray: #999999;
-    --darkgray: #555555;
+    --muted: #666666;
 }
 
 html {
@@ -36,38 +36,66 @@ body {
     overflow-x: hidden;
 }
 
-/* HEADER */
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header {
-    height: 72px;
-    padding: 0 20px;
+    height: 68px;
+    padding: 0 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     border-bottom: 1px solid var(--line);
+
     position: sticky;
     top: 0;
-    z-index: 10;
-    background: rgba(5,5,5,.92);
+    z-index: 50;
+
+    background: rgba(5,5,5,.94);
     backdrop-filter: blur(15px);
 }
 
 .logo {
-    font-size: 19px;
-    font-weight: 800;
+    font-size: 18px;
+    font-weight: 900;
     letter-spacing: 3px;
 }
 
-.login-btn {
-    background: white;
-    color: black;
-    border: none;
-    border-radius: 50px;
-    padding: 11px 18px;
-    font-weight: 800;
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* HERO */
+.plan-badge {
+    border: 1px solid #444;
+    color: #aaa;
+    border-radius: 30px;
+    padding: 7px 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.login-btn {
+    border: none;
+    border-radius: 30px;
+    padding: 10px 15px;
+    background: white;
+    color: black;
+    font-weight: 900;
+}
+
+/* =========================
+   MAIN
+========================= */
 
 main {
     width: 100%;
@@ -77,7 +105,7 @@ main {
 }
 
 .tag {
-    color: #888;
+    color: #777;
     font-size: 11px;
     letter-spacing: 3px;
     text-align: center;
@@ -99,16 +127,25 @@ h1 span {
     color: #aaa;
     text-align: center;
     line-height: 1.6;
-    max-width: 600px;
+    max-width: 620px;
     margin: 25px auto 35px;
 }
 
-/* INPUT CARD */
+/* =========================
+   CARDS
+========================= */
 
-.input-card {
+.input-card,
+.result-card,
+.generator-card,
+.pro-card,
+.favorites-card {
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: 24px;
+}
+
+.input-card {
     padding: 20px;
     max-width: 650px;
     margin: auto;
@@ -116,45 +153,70 @@ h1 span {
 
 .input-label {
     color: #999;
-    font-size: 14px;
-    margin-bottom: 10px;
+    font-size: 13px;
+    margin-bottom: 9px;
     display: block;
+    letter-spacing: .5px;
 }
 
-input {
+input,
+select {
     width: 100%;
-    height: 55px;
+    height: 54px;
+
     background: #151515;
     border: 1px solid #303030;
+
     color: white;
     border-radius: 14px;
-    padding: 0 16px;
+
+    padding: 0 15px;
     font-size: 16px;
+
     outline: none;
 }
 
-input:focus {
+input:focus,
+select:focus {
     border-color: white;
+}
+
+select {
+    appearance: auto;
 }
 
 .analyze-btn {
     width: 100%;
-    height: 55px;
+    min-height: 54px;
+
     margin-top: 12px;
+
     border: none;
     border-radius: 14px;
+
     background: white;
     color: black;
-    font-size: 15px;
+
+    font-size: 14px;
     font-weight: 900;
     letter-spacing: .5px;
 }
 
-.analyze-btn:active {
+.analyze-btn:active,
+.small-btn:active,
+.login-btn:active {
     transform: scale(.98);
 }
 
-/* RESULTS */
+.secondary-btn {
+    background: #171717;
+    color: white;
+    border: 1px solid #333;
+}
+
+/* =========================
+   RESULTS
+========================= */
 
 #results {
     display: none;
@@ -162,13 +224,8 @@ input:focus {
 }
 
 .result-card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 25px;
     padding: 25px 18px;
 }
-
-/* MAIN CIRCLE */
 
 .score-section {
     text-align: center;
@@ -181,14 +238,22 @@ input:focus {
     margin-bottom: 20px;
 }
 
+/* =========================
+   MAIN CIRCLE
+========================= */
+
 .circle {
     width: 190px;
     height: 190px;
+
     margin: auto;
+
     border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     position: relative;
 
     background:
@@ -200,10 +265,14 @@ input:focus {
 
 .circle::before {
     content: "";
+
     position: absolute;
+
     width: 166px;
     height: 166px;
+
     background: #0b0b0b;
+
     border-radius: 50%;
 }
 
@@ -229,13 +298,14 @@ input:focus {
     color: #aaa;
 }
 
-/* NAME */
-
 .name-display {
     text-align: center;
     margin: 22px 0 5px;
+
     font-size: 27px;
     font-weight: 800;
+
+    word-break: break-word;
 }
 
 .summary {
@@ -243,17 +313,23 @@ input:focus {
     color: #999;
     line-height: 1.5;
     font-size: 14px;
-    max-width: 500px;
+
+    max-width: 550px;
     margin: auto;
 }
 
-/* METERS */
+/* =========================
+   METERS
+========================= */
 
 .meters {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+
     gap: 10px;
+
     margin-top: 30px;
+
     border-top: 1px solid var(--line);
     padding-top: 25px;
 }
@@ -265,8 +341,11 @@ input:focus {
 .meter-circle {
     width: 70px;
     height: 70px;
+
     margin: auto;
+
     border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -282,16 +361,21 @@ input:focus {
 
 .meter-circle::before {
     content: "";
+
     position: absolute;
+
     width: 58px;
     height: 58px;
+
     background: #0d0d0d;
+
     border-radius: 50%;
 }
 
 .meter-number {
     position: relative;
     z-index: 2;
+
     font-size: 15px;
     font-weight: bold;
 }
@@ -302,11 +386,14 @@ input:focus {
     color: #aaa;
 }
 
-/* GOOD / BAD */
+/* =========================
+   FEEDBACK
+========================= */
 
 .feedback {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     gap: 12px;
     margin-top: 25px;
 }
@@ -314,6 +401,7 @@ input:focus {
 .feedback-box {
     border: 1px solid var(--line);
     background: var(--card2);
+
     border-radius: 18px;
     padding: 18px;
 }
@@ -329,24 +417,31 @@ input:focus {
     line-height: 1.7;
 }
 
-/* IDEAS */
+/* =========================
+   IDEAS
+========================= */
 
 .ideas {
     margin-top: 15px;
+
     border: 1px solid var(--line);
     background: var(--card2);
+
     border-radius: 18px;
     padding: 18px;
 }
 
 .ideas h3 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .idea {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
     border-top: 1px solid #222;
     padding: 14px 0;
 }
@@ -355,35 +450,185 @@ input:focus {
     border-top: none;
 }
 
+.idea-left {
+    min-width: 0;
+}
+
 .idea-name {
     font-weight: bold;
+    word-break: break-word;
+}
+
+.idea-meta {
+    color: #666;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.idea-right {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
 }
 
 .idea-score {
-    color: #888;
+    color: #aaa;
     font-size: 12px;
+    font-weight: bold;
 }
 
-/* LOGIN MODAL */
+.small-btn {
+    border: 1px solid #333;
+    background: #171717;
+    color: white;
+
+    border-radius: 9px;
+
+    padding: 7px 9px;
+
+    font-size: 11px;
+}
+
+/* =========================
+   GENERATOR
+========================= */
+
+.generator-card {
+    margin-top: 25px;
+    padding: 20px;
+}
+
+.generator-title {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 7px;
+}
+
+.generator-description {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.generator-results {
+    margin-top: 18px;
+}
+
+/* =========================
+   FAVORITES
+========================= */
+
+.favorites-card {
+    margin-top: 25px;
+    padding: 20px;
+}
+
+.favorite-empty {
+    color: #666;
+    font-size: 13px;
+    padding-top: 10px;
+}
+
+.favorite-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    border-top: 1px solid #222;
+    padding: 13px 0;
+}
+
+.favorite-name {
+    font-weight: bold;
+    word-break: break-word;
+}
+
+/* =========================
+   PRO
+========================= */
+
+.pro-card {
+    margin-top: 25px;
+    padding: 24px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #090909
+        );
+}
+
+.pro-card h2 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.pro-card p {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.pro-list {
+    list-style: none;
+    text-align: left;
+
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.pro-list li {
+    padding: 8px 0;
+    color: #bbb;
+    font-size: 13px;
+}
+
+.pro-list li::before {
+    content: "✓ ";
+    color: white;
+    font-weight: bold;
+}
+
+/* =========================
+   LOGIN MODAL
+========================= */
 
 #loginModal {
     display: none;
+
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.85);
+
+    background: rgba(0,0,0,.88);
+
     z-index: 100;
+
     align-items: center;
     justify-content: center;
+
     padding: 20px;
 }
 
 .login-box {
     width: 100%;
     max-width: 400px;
+
     background: #101010;
+
     border: 1px solid #333;
+
     border-radius: 22px;
+
     padding: 25px;
+
+    position: relative;
 }
 
 .login-box h2 {
@@ -397,46 +642,63 @@ input:focus {
 }
 
 .close {
-    float: right;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+
     background: none;
-    color: white;
     border: none;
-    font-size: 22px;
+
+    color: white;
+
+    font-size: 25px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     border-top: 1px solid #222;
+
     text-align: center;
+
     padding: 30px 20px;
+
     color: #555;
+
     font-size: 12px;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px) {
 
     header {
-        height: 65px;
+        height: 64px;
     }
 
     .logo {
-        font-size: 16px;
+        font-size: 15px;
+    }
+
+    .plan-badge {
+        display: none;
     }
 
     .login-btn {
-        padding: 9px 15px;
+        padding: 9px 14px;
         font-size: 12px;
     }
 
     main {
-        padding-top: 40px;
+        padding-top: 38px;
     }
 
     h1 {
-        font-size: 58px;
+        font-size: 57px;
     }
 
     .description {
@@ -461,20 +723,48 @@ footer {
         width: 153px;
         height: 153px;
     }
+
+    .idea-right {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <header>
-    <div class="logo">NAME//LAB</div>
-    <button class="login-btn" onclick="openLogin()">LOGIN</button>
+
+    <div class="logo">
+        NAME//LAB
+    </div>
+
+    <div class="header-actions">
+
+        <div class="plan-badge" id="planBadge">
+            FREE
+        </div>
+
+        <button
+            class="login-btn"
+            onclick="openLogin()">
+            LOGIN
+        </button>
+
+    </div>
+
 </header>
+
 
 <main>
 
-    <div class="tag">BUSINESS NAME INTELLIGENCE</div>
+    <div class="tag">
+        BUSINESS NAME INTELLIGENCE
+    </div>
 
     <h1>
         Name it.<br>
@@ -483,8 +773,12 @@ footer {
 
     <p class="description">
         Discover how powerful your business name is,
-        understand what's missing, and find better ideas.
+        understand what's missing, and generate
+        stronger brand ideas.
     </p>
+
+
+    <!-- ANALYZER -->
 
     <div class="input-card">
 
@@ -499,11 +793,16 @@ footer {
             autocomplete="off"
         >
 
-        <button class="analyze-btn" onclick="analyze()">
+        <button
+            class="analyze-btn"
+            onclick="analyze()">
             ANALYZE NAME →
         </button>
 
     </div>
+
+
+    <!-- RESULTS -->
 
     <section id="results">
 
@@ -515,93 +814,203 @@ footer {
                     YOUR NAME SCORE
                 </div>
 
-                <div class="circle" id="mainCircle"
-                     style="--score:0%;">
+                <div
+                    class="circle"
+                    id="mainCircle"
+                    style="--score:0%;">
+
                     <div class="circle-content">
-                        <div class="big-score" id="mainScore">
+
+                        <div
+                            class="big-score"
+                            id="mainScore">
                             0
                         </div>
-                        <div class="out-of">/100</div>
-                        <div class="score-status" id="status">
-                            Analyzing...
+
+                        <div class="out-of">
+                            /100
                         </div>
+
+                        <div
+                            class="score-status"
+                            id="status">
+                            Ready
+                        </div>
+
                     </div>
+
                 </div>
 
-                <div class="name-display" id="nameDisplay"></div>
 
-                <p class="summary" id="summary"></p>
+                <div
+                    class="name-display"
+                    id="nameDisplay">
+                </div>
+
+                <p
+                    class="summary"
+                    id="summary">
+                </p>
 
             </div>
+
+
+            <!-- METERS -->
 
             <div class="meters">
 
                 <div class="meter">
-                    <div class="meter-circle"
-                         id="memCircle"
-                         style="--meter:0%;">
-                        <span class="meter-number" id="memScore">0</span>
+
+                    <div
+                        class="meter-circle"
+                        id="memCircle"
+                        style="--meter:0%;">
+
+                        <span
+                            class="meter-number"
+                            id="memScore">
+                            0
+                        </span>
+
                     </div>
-                    <div class="meter-title">MEMORY</div>
+
+                    <div class="meter-title">
+                        MEMORY
+                    </div>
+
                 </div>
 
-                <div class="meter">
-                    <div class="meter-circle"
-                         id="brandCircle"
-                         style="--meter:0%;">
-                        <span class="meter-number" id="brandScore">0</span>
-                    </div>
-                    <div class="meter-title">BRAND</div>
-                </div>
 
                 <div class="meter">
-                    <div class="meter-circle"
-                         id="clearCircle"
-                         style="--meter:0%;">
-                        <span class="meter-number" id="clearScore">0</span>
+
+                    <div
+                        class="meter-circle"
+                        id="brandCircle"
+                        style="--meter:0%;">
+
+                        <span
+                            class="meter-number"
+                            id="brandScore">
+                            0
+                        </span>
+
                     </div>
-                    <div class="meter-title">CLARITY</div>
+
+                    <div class="meter-title">
+                        BRAND
+                    </div>
+
                 </div>
 
-                <div class="meter">
-                    <div class="meter-circle"
-                         id="uniqueCircle"
-                         style="--meter:0%;">
-                        <span class="meter-number" id="uniqueScore">0</span>
-                    </div>
-                    <div class="meter-title">UNIQUE</div>
-                </div>
 
                 <div class="meter">
-                    <div class="meter-circle"
-                         id="pronCircle"
-                         style="--meter:0%;">
-                        <span class="meter-number" id="pronScore">0</span>
+
+                    <div
+                        class="meter-circle"
+                        id="clearCircle"
+                        style="--meter:0%;">
+
+                        <span
+                            class="meter-number"
+                            id="clearScore">
+                            0
+                        </span>
+
                     </div>
-                    <div class="meter-title">PRONOUNCE</div>
+
+                    <div class="meter-title">
+                        CLARITY
+                    </div>
+
+                </div>
+
+
+                <div class="meter">
+
+                    <div
+                        class="meter-circle"
+                        id="uniqueCircle"
+                        style="--meter:0%;">
+
+                        <span
+                            class="meter-number"
+                            id="uniqueScore">
+                            0
+                        </span>
+
+                    </div>
+
+                    <div class="meter-title">
+                        UNIQUE
+                    </div>
+
+                </div>
+
+
+                <div class="meter">
+
+                    <div
+                        class="meter-circle"
+                        id="pronCircle"
+                        style="--meter:0%;">
+
+                        <span
+                            class="meter-number"
+                            id="pronScore">
+                            0
+                        </span>
+
+                    </div>
+
+                    <div class="meter-title">
+                        PRONOUNCE
+                    </div>
+
                 </div>
 
             </div>
+
+
+            <!-- FEEDBACK -->
 
             <div class="feedback">
 
                 <div class="feedback-box">
-                    <h3>✓ What's good</h3>
-                    <p id="good"></p>
+
+                    <h3>
+                        ✓ What's good
+                    </h3>
+
+                    <p id="good">
+                    </p>
+
                 </div>
 
+
                 <div class="feedback-box">
-                    <h3>⚠ What's lacking</h3>
-                    <p id="bad"></p>
+
+                    <h3>
+                        ⚠ What's lacking
+                    </h3>
+
+                    <p id="bad">
+                    </p>
+
                 </div>
 
             </div>
 
+
+            <!-- IDEAS -->
+
             <div class="ideas">
 
-                <h3>✦ Name ideas</h3>
+                <h3>
+                    ✦ Name ideas
+                </h3>
 
-                <div id="ideasList"></div>
+                <div id="ideasList">
+                </div>
 
             </div>
 
@@ -609,39 +1018,207 @@ footer {
 
     </section>
 
+
+    <!-- GENERATOR -->
+
+    <div class="generator-card">
+
+        <div class="section-label">
+            STEP 7 — SMART GENERATOR
+        </div>
+
+        <div class="generator-title">
+            Generate better names.
+        </div>
+
+        <p class="generator-description">
+            Tell NAME//LAB what you're building and
+            choose a style. The generator creates names
+            and scores them using the same rating system.
+        </p>
+
+
+        <label class="input-label">
+            WHAT IS YOUR BUSINESS?
+        </label>
+
+        <input
+            id="businessType"
+            type="text"
+            placeholder="Example: Coffee shop"
+            autocomplete="off"
+        >
+
+
+        <label
+            class="input-label"
+            style="margin-top:15px;">
+            WHAT VIBE DO YOU WANT?
+        </label>
+
+        <select id="businessStyle">
+
+            <option value="modern">
+                Modern
+            </option>
+
+            <option value="luxury">
+                Luxury
+            </option>
+
+            <option value="cute">
+                Cute
+            </option>
+
+            <option value="minimal">
+                Minimal
+            </option>
+
+            <option value="bold">
+                Bold
+            </option>
+
+        </select>
+
+
+        <button
+            class="analyze-btn"
+            onclick="generateBusinessNames()">
+            GENERATE 10 NAMES ✦
+        </button>
+
+
+        <div
+            class="generator-results"
+            id="generatedNames">
+        </div>
+
+    </div>
+
+
+    <!-- FAVORITES -->
+
+    <div class="favorites-card">
+
+        <div class="section-label">
+            STEP 10 — SAVED NAMES
+        </div>
+
+        <h2>
+            Your favorites
+        </h2>
+
+        <div
+            id="favoritesList"
+            style="margin-top:12px;">
+        </div>
+
+    </div>
+
+
+    <!-- PRO -->
+
+    <div class="pro-card">
+
+        <div class="section-label">
+            STEP 11 — PRO
+        </div>
+
+        <h2>
+            Build a stronger brand.
+        </h2>
+
+        <p>
+            PRO will eventually unlock advanced
+            business-name intelligence.
+        </p>
+
+        <ul class="pro-list">
+
+            <li>
+                Unlimited name analysis
+            </li>
+
+            <li>
+                Advanced naming insights
+            </li>
+
+            <li>
+                More generated names
+            </li>
+
+            <li>
+                Industry-specific suggestions
+            </li>
+
+            <li>
+                Unlimited favorites
+            </li>
+
+            <li>
+                Future domain checking
+            </li>
+
+        </ul>
+
+        <button
+            class="analyze-btn"
+            onclick="showProMessage()">
+            EXPLORE PRO
+        </button>
+
+    </div>
+
 </main>
 
+
 <footer>
+
     NAME//LAB — Build a name worth remembering.
+
 </footer>
 
 
-<!-- LOGIN -->
+<!-- LOGIN MODAL -->
 
 <div id="loginModal">
 
     <div class="login-box">
 
-        <button class="close" onclick="closeLogin()">×</button>
+        <button
+            class="close"
+            onclick="closeLogin()">
+            ×
+        </button>
 
-        <h2>Welcome back.</h2>
+        <h2>
+            Welcome back.
+        </h2>
 
         <p>
-            Login UI — account system can be connected later.
+            Demo login for now.
+            A real account system can be connected later.
         </p>
 
+
         <input
+            id="loginEmail"
             type="email"
             placeholder="Email"
         >
 
+
         <input
+            id="loginPassword"
             style="margin-top:10px;"
             type="password"
             placeholder="Password"
         >
 
-        <button class="analyze-btn">
+
+        <button
+            class="analyze-btn"
+            onclick="demoLogin()">
             LOGIN
         </button>
 
@@ -652,290 +1229,459 @@ footer {
 
 <script>
 
-/* LOGIN */
+/* =========================
+   LOGIN
+========================= */
 
 function openLogin() {
-    document.getElementById("loginModal").style.display = "flex";
+
+    document.getElementById("loginModal")
+        .style.display = "flex";
+
 }
+
 
 function closeLogin() {
-    document.getElementById("loginModal").style.display = "none";
+
+    document.getElementById("loginModal")
+        .style.display = "none";
+
 }
 
 
-/* NAME ANALYZER */
-function analyze() {
-    const input = document.getElementById("nameInput");
-    const name = input.value.trim();
+function demoLogin() {
 
-    if (!name) {
-        alert("Enter a business name first.");
+    const email =
+        document.getElementById("loginEmail").value.trim();
+
+    const password =
+        document.getElementById("loginPassword").value.trim();
+
+    if (!email || !password) {
+
+        alert("Enter your email and password.");
+
         return;
     }
 
-    const clean = name.replace(/[^a-zA-Z0-9 ]/g, "");
-    const words = clean.split(/\s+/).filter(Boolean);
-    const letters = clean.replace(/[^a-zA-Z]/g, "");
-    const lower = name.toLowerCase();
-
-    let memory = 70;
-    let brand = 70;
-    let clarity = 70;
-    let unique = 70;
-    let pronounce = 70;
-
-    // LENGTH
-    if (letters.length >= 4 && letters.length <= 10) {
-        memory += 15;
-    } else if (letters.length <= 14) {
-        memory += 8;
-    } else if (letters.length > 20) {
-        memory -= 20;
-    } else {
-        memory -= 5;
-    }
-
-    // WORD COUNT
-    if (words.length === 1) {
-        memory += 8;
-        brand += 8;
-    } else if (words.length === 2) {
-        clarity += 10;
-        brand += 5;
-    } else if (words.length >= 4) {
-        memory -= 15;
-        clarity -= 15;
-    }
-
-    // NUMBERS
-    if (/\d/.test(name)) {
-        brand -= 10;
-        memory -= 5;
-    }
-
-    // SPECIAL CHARACTERS
-    if (/[^a-zA-Z0-9 ]/.test(name)) {
-        pronounce -= 10;
-        clarity -= 5;
-    }
-
-    // VOWEL BALANCE
-    const vowels = (letters.match(/[aeiou]/gi) || []).length;
-    const vowelRatio = letters.length ? vowels / letters.length : 0;
-
-    if (vowelRatio >= 0.25 && vowelRatio <= 0.55) {
-        pronounce += 12;
-    } else if (vowelRatio < 0.15 || vowelRatio > 0.65) {
-        pronounce -= 15;
-    }
-
-    // REPEATED LETTERS
-    if (/(.)\1\1/i.test(name)) {
-        pronounce -= 15;
-        clarity -= 8;
-    }
-
-    // COMMON BUSINESS WORDS
-    const commonWords = [
-        "shop", "store", "company", "business",
-        "services", "solutions", "official",
-        "online", "world", "group"
-    ];
-
-    if (commonWords.some(word => lower.includes(word))) {
-        unique -= 15;
-        brand -= 8;
-    }
-
-    // UNIQUE LETTERS
-    const uniqueLetters = new Set(letters.toLowerCase()).size;
-
-    if (uniqueLetters >= 5 && uniqueLetters <= 10) {
-        unique += 12;
-    } else if (uniqueLetters <= 3) {
-        unique -= 15;
-    }
-
-    // SHORT, CLEAN NAMES
-    if (letters.length >= 5 && letters.length <= 12 && words.length <= 2) {
-        brand += 8;
-        memory += 8;
-    }
-
-    // VERY LONG NAMES
-    if (letters.length > 18) {
-        brand -= 12;
-        memory -= 15;
-    }
-
-    // CLAMP SCORES
-    memory = Math.max(0, Math.min(100, memory));
-    brand = Math.max(0, Math.min(100, brand));
-    clarity = Math.max(0, Math.min(100, clarity));
-    unique = Math.max(0, Math.min(100, unique));
-    pronounce = Math.max(0, Math.min(100, pronounce));
-
-    const overall = Math.round(
-        (memory + brand + clarity + unique + pronounce) / 5
+    localStorage.setItem(
+        "nameLabUser",
+        email
     );
 
-    // UPDATE MAIN SCORE
-    document.getElementById("score").textContent = overall;
+    document.getElementById("planBadge")
+        .innerText = "FREE";
 
-    // UPDATE CIRCLES
-    updateMeter("memoryMeter", memory);
-    updateMeter("brandMeter", brand);
-    updateMeter("clarityMeter", clarity);
-    updateMeter("uniqueMeter", unique);
-    updateMeter("pronounceMeter", pronounce);
+    closeLogin();
 
-    // FEEDBACK
-    let good = [];
-    let bad = [];
-
-    if (memory >= 85) good.push("Easy to remember");
-    if (brand >= 85) good.push("Strong branding potential");
-    if (clarity >= 85) good.push("Clear and understandable");
-    if (unique >= 85) good.push("Feels distinctive");
-    if (pronounce >= 85) good.push("Easy to pronounce");
-
-    if (memory < 70) bad.push("May be difficult to remember");
-    if (brand < 70) bad.push("Brand identity could be stronger");
-    if (clarity < 70) bad.push("The meaning may not be immediately clear");
-    if (unique < 70) bad.push("Could feel generic");
-    if (pronounce < 70) bad.push("May be difficult to pronounce");
-
-    document.getElementById("good").innerHTML =
-        good.length ? good.map(x => "✓ " + x).join("<br>") : "No major strengths detected yet.";
-
-    document.getElementById("bad").innerHTML =
-        bad.length ? bad.map(x => "• " + x).join("<br>") : "No major weaknesses detected.";
-
-    // SCORE LABEL
-    const label = document.getElementById("scoreLabel");
-
-    if (overall >= 90) {
-        label.textContent = "EXCELLENT";
-    } else if (overall >= 80) {
-        label.textContent = "STRONG";
-    } else if (overall >= 70) {
-        label.textContent = "DECENT";
-    } else if (overall >= 60) {
-        label.textContent = "NEEDS WORK";
-    } else {
-        label.textContent = "WEAK";
-    }
+    alert(
+        "Demo login successful! Real authentication will be added later."
+    );
 }
 
 
-    const input = document.getElementById("businessName
+/* =========================
+   SCORE LIMIT
+========================= */
 
-    const clean = name.toLowerCase();
+function limit(number) {
 
-    const words = clean.split(/\s+/);
+    return Math.max(
+        0,
+        Math.min(
+            100,
+            Math.round(number)
+        )
+    );
 
-    let memory = 60;
-    let brand = 60;
-    let clarity = 60;
-    let unique = 60;
-    let pronounce = 60;
+}
 
 
-    /* LENGTH */
+/* =========================
+   METER
+========================= */
 
-    if (name.length >= 4 && name.length <= 14) {
-        memory += 18;
-        brand += 12;
+function setMeter(
+    id,
+    value,
+    variable
+) {
+
+    const element =
+        document.getElementById(id);
+
+    if (!element) return;
+
+    element.style.setProperty(
+        variable,
+        value + "%"
+    );
+
+}
+
+
+/* =========================
+   ANALYZER
+========================= */
+
+function calculateScores(name) {
+
+    const clean =
+        name.replace(
+            /[^a-zA-Z0-9 ]/g,
+            ""
+        );
+
+    const lower =
+        clean.toLowerCase();
+
+    const words =
+        clean.split(/\s+/).filter(Boolean);
+
+    const letters =
+        clean.replace(
+            /[^a-zA-Z]/g,
+            ""
+        );
+
+    if (!letters.length) {
+
+        return null;
+
     }
 
-    if (name.length > 20) {
+
+    let memory = 50;
+    let brand = 50;
+    let clarity = 50;
+    let unique = 50;
+    let pronounce = 50;
+
+
+    /* MEMORY */
+
+    const length =
+        letters.length;
+
+
+    if (length >= 5 && length <= 10) {
+
+        memory += 25;
+
+    }
+    else if (length <= 14) {
+
+        memory += 15;
+
+    }
+    else if (length <= 18) {
+
+        memory += 5;
+
+    }
+    else {
+
         memory -= 15;
-        brand -= 10;
+
     }
 
-
-    /* WORD COUNT */
 
     if (words.length === 1) {
+
+        memory += 10;
+
+    }
+    else if (words.length === 2) {
+
+        memory += 5;
+
+    }
+    else if (words.length === 3) {
+
+        memory -= 5;
+
+    }
+    else {
+
+        memory -= 15;
+
+    }
+
+
+    /* BRAND */
+
+    if (length >= 5 && length <= 12) {
+
+        brand += 20;
+
+    }
+    else if (length <= 16) {
+
+        brand += 8;
+
+    }
+    else {
+
+        brand -= 15;
+
+    }
+
+
+    if (words.length === 1) {
+
         brand += 10;
-        memory += 8;
+
+    }
+    else if (words.length === 2) {
+
+        brand += 5;
+
     }
 
-    if (words.length >= 4) {
-        memory -= 10;
-        clarity -= 10;
-    }
-
-
-    /* NUMBERS */
 
     if (/\d/.test(name)) {
-        brand -= 8;
-        clarity -= 5;
+
+        brand -= 15;
+
     }
 
 
-    /* SPECIAL CHARACTERS */
-
-    if (/[^a-zA-Z0-9 ]/.test(name)) {
-        pronounce -= 5;
-    }
-
-
-    /* VOWEL BALANCE */
-
-    const vowels = (clean.match(/[aeiou]/g) || []).length;
-    const letters = (clean.match(/[a-z]/g) || []).length;
-
-    if (letters > 0) {
-
-        const ratio = vowels / letters;
-
-        if (ratio >= .25 && ratio <= .55) {
-            pronounce += 15;
-        } else {
-            pronounce -= 5;
-        }
-    }
-
-
-    /* REPETITION */
-
-    if (/(.)\1\1/.test(clean)) {
-        memory -= 8;
-        pronounce -= 8;
-    }
-
-
-    /* COMMON BUSINESS WORDS */
+    /* CLARITY */
 
     const businessWords = [
+
+        "coffee",
+        "cafe",
+        "food",
+        "fashion",
+        "wear",
+        "tech",
+        "digital",
+        "fitness",
+        "beauty",
+        "studio",
+        "design",
+        "media",
+        "market",
+        "bakery",
+        "restaurant",
         "shop",
         "store",
-        "services",
-        "solutions",
-        "company",
-        "business",
-        "official"
+        "agency",
+        "travel",
+        "home",
+        "gaming",
+        "game",
+        "pet",
+        "auto",
+        "car",
+        "music"
+
     ];
 
-    for (const word of businessWords) {
 
-        if (clean.includes(word)) {
-            clarity += 12;
-            unique -= 8;
+    let hasBusinessWord = false;
+
+
+    businessWords.forEach(
+        function(word) {
+
+            if (
+                lower.includes(word)
+            ) {
+
+                hasBusinessWord = true;
+
+            }
+
         }
+    );
+
+
+    if (hasBusinessWord) {
+
+        clarity += 25;
+
+    }
+    else {
+
+        clarity += 5;
+
     }
 
 
-    /* UNIQUE LETTER PATTERN */
+    if (words.length >= 4) {
 
-    const uniqueLetters = new Set(
-        clean.replace(/[^a-z]/g, "")
-    ).size;
+        clarity -= 15;
 
-    if (uniqueLetters >= 5) {
+    }
+
+
+    if (/\d/.test(name)) {
+
+        clarity -= 5;
+
+    }
+
+
+    /* UNIQUE */
+
+    const genericWords = [
+
+        "shop",
+        "store",
+        "company",
+        "business",
+        "services",
+        "solutions",
+        "official",
+        "online",
+        "world",
+        "group",
+        "best",
+        "pro"
+
+    ];
+
+
+    let genericCount = 0;
+
+
+    genericWords.forEach(
+        function(word) {
+
+            if (
+                lower.includes(word)
+            ) {
+
+                genericCount++;
+
+            }
+
+        }
+    );
+
+
+    unique += 18;
+
+    unique -=
+        genericCount * 12;
+
+
+    const uniqueLetters =
+        new Set(
+            letters.toLowerCase()
+        ).size;
+
+
+    if (uniqueLetters >= 6) {
+
         unique += 10;
+
+    }
+
+
+    if (uniqueLetters <= 3) {
+
+        unique -= 15;
+
+    }
+
+
+    if (/(.)\1\1/i.test(name)) {
+
+        unique -= 15;
+
+    }
+
+
+    /* PRONUNCIATION */
+
+    const vowels =
+        (
+            letters.match(
+                /[aeiou]/gi
+            ) || []
+        ).length;
+
+
+    const vowelRatio =
+        vowels / letters.length;
+
+
+    if (
+        vowelRatio >= .25 &&
+        vowelRatio <= .55
+    ) {
+
+        pronounce += 22;
+
+    }
+    else if (
+        vowelRatio >= .20 &&
+        vowelRatio <= .60
+    ) {
+
+        pronounce += 10;
+
+    }
+    else {
+
+        pronounce -= 12;
+
+    }
+
+
+    if (
+        /[bcdfghjklmnpqrstvwxyz]{4,}/i
+            .test(letters)
+    ) {
+
+        pronounce -= 18;
+
+    }
+
+
+    if (/\d/.test(name)) {
+
+        pronounce -= 8;
+
+    }
+
+
+    if (
+        /[^a-zA-Z0-9 ]/.test(name)
+    ) {
+
+        pronounce -= 8;
+
+    }
+
+
+    /* CLEAN NAME BONUS */
+
+    if (
+        length >= 5 &&
+        length <= 12 &&
+        words.length <= 2 &&
+        !/\d/.test(name)
+    ) {
+
+        memory += 5;
+        brand += 5;
+        pronounce += 5;
+
+    }
+
+
+    /* PENALIZE EXTREME LENGTH */
+
+    if (length > 20) {
+
+        memory -= 15;
+        brand -= 10;
+        clarity -= 8;
+
     }
 
 
@@ -946,190 +1692,1053 @@ function analyze() {
     pronounce = limit(pronounce);
 
 
-    const overall = Math.round(
-        (memory + brand + clarity + unique + pronounce) / 5
-    );
+    const overall =
+        Math.round(
+            (
+                memory +
+                brand +
+                clarity +
+                unique +
+                pronounce
+            ) / 5
+        );
 
 
-    document.getElementById("results").style.display = "block";
+    return {
 
-    document.getElementById("nameDisplay").innerText = name;
+        overall: overall,
+        memory: memory,
+        brand: brand,
+        clarity: clarity,
+        unique: unique,
+        pronounce: pronounce
 
-    document.getElementById("mainScore").innerText = overall;
+    };
 
-    document.getElementById("status").innerText =
-        getStatus(overall);
+}
 
-    document.getElementById("summary").innerText =
-        getSummary(overall);
+
+/* =========================
+   ANALYZE BUTTON
+========================= */
+
+function analyze() {
+
+    const input =
+        document.getElementById(
+            "businessName"
+        );
+
+    const name =
+        input.value.trim();
+
+
+    if (!name) {
+
+        alert(
+            "Enter a business name first."
+        );
+
+        return;
+
+    }
+
+
+    const scores =
+        calculateScores(name);
+
+
+    if (!scores) {
+
+        alert(
+            "Please enter a valid business name."
+        );
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "results"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "nameDisplay"
+    ).innerText = name;
+
+
+    document.getElementById(
+        "mainScore"
+    ).innerText =
+        scores.overall;
+
+
+    document.getElementById(
+        "status"
+    ).innerText =
+        getStatus(scores.overall);
+
+
+    document.getElementById(
+        "summary"
+    ).innerText =
+        getSummary(scores.overall);
 
 
     setMeter(
         "mainCircle",
-        overall,
+        scores.overall,
         "--score"
     );
 
-    setMeter("memCircle", memory, "--meter");
-    setMeter("brandCircle", brand, "--meter");
-    setMeter("clearCircle", clarity, "--meter");
-    setMeter("uniqueCircle", unique, "--meter");
-    setMeter("pronCircle", pronounce, "--meter");
+
+    setMeter(
+        "memCircle",
+        scores.memory,
+        "--meter"
+    );
 
 
-    document.getElementById("memScore").innerText = memory;
-    document.getElementById("brandScore").innerText = brand;
-    document.getElementById("clearScore").innerText = clarity;
-    document.getElementById("uniqueScore").innerText = unique;
-    document.getElementById("pronScore").innerText = pronounce;
+    setMeter(
+        "brandCircle",
+        scores.brand,
+        "--meter"
+    );
 
 
-    /* FEEDBACK */
-
-    let good = [];
-    let bad = [];
-
-    if (memory >= 75)
-        good.push("Easy to remember.");
-
-    if (brand >= 75)
-        good.push("Strong brand potential.");
-
-    if (pronounce >= 75)
-        good.push("Easy to pronounce.");
-
-    if (clarity >= 75)
-        good.push("Clear business identity.");
-
-    if (unique >= 75)
-        good.push("Distinctive structure.");
+    setMeter(
+        "clearCircle",
+        scores.clarity,
+        "--meter"
+    );
 
 
-    if (memory < 70)
-        bad.push("Could be easier to remember.");
-
-    if (brand < 70)
-        bad.push("Could have stronger branding.");
-
-    if (clarity < 70)
-        bad.push("Business purpose isn't very obvious.");
-
-    if (unique < 70)
-        bad.push("Could be more distinctive.");
-
-    if (pronounce < 70)
-        bad.push("Pronunciation could be simpler.");
+    setMeter(
+        "uniqueCircle",
+        scores.unique,
+        "--meter"
+    );
 
 
-    document.getElementById("good").innerText =
-        good.length ? good.join(" ") : "Solid overall structure.";
+    setMeter(
+        "pronCircle",
+        scores.pronounce,
+        "--meter"
+    );
 
-    document.getElementById("bad").innerText =
-        bad.length ? bad.join(" ") : "Very few obvious weaknesses.";
+
+    document.getElementById(
+        "memScore"
+    ).innerText =
+        scores.memory;
 
 
-    /* NAME IDEAS */
+    document.getElementById(
+        "brandScore"
+    ).innerText =
+        scores.brand;
+
+
+    document.getElementById(
+        "clearScore"
+    ).innerText =
+        scores.clarity;
+
+
+    document.getElementById(
+        "uniqueScore"
+    ).innerText =
+        scores.unique;
+
+
+    document.getElementById(
+        "pronScore"
+    ).innerText =
+        scores.pronounce;
+
+
+    generateFeedback(scores);
+
 
     generateIdeas(name);
 
-    document.getElementById("results")
-        .scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+
+    document.getElementById(
+        "results"
+    ).scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
 }
 
 
-function limit(number) {
-    return Math.max(0, Math.min(100, number));
+/* =========================
+   FEEDBACK
+========================= */
+
+function generateFeedback(scores) {
+
+    const good = [];
+    const bad = [];
+
+
+    if (scores.memory >= 82)
+        good.push("Easy to remember.");
+
+    if (scores.brand >= 82)
+        good.push("Strong branding potential.");
+
+    if (scores.clarity >= 82)
+        good.push("The business idea is easy to understand.");
+
+    if (scores.unique >= 82)
+        good.push("The name feels distinctive.");
+
+    if (scores.pronounce >= 82)
+        good.push("Easy to say and pronounce.");
+
+
+    if (scores.memory < 70)
+        bad.push("Could be easier to remember.");
+
+    if (scores.brand < 70)
+        bad.push("Brand identity could be stronger.");
+
+    if (scores.clarity < 70)
+        bad.push("The business purpose may not be obvious.");
+
+    if (scores.unique < 70)
+        bad.push("The name may feel generic.");
+
+    if (scores.pronounce < 70)
+        bad.push("Pronunciation could be simpler.");
+
+
+    document.getElementById(
+        "good"
+    ).innerText =
+        good.length
+            ? good.join(" ")
+            : "Solid overall structure.";
+
+
+    document.getElementById(
+        "bad"
+    ).innerText =
+        bad.length
+            ? bad.join(" ")
+            : "Very few obvious weaknesses.";
+
 }
 
 
-function setMeter(id, value, variable) {
-
-    const element = document.getElementById(id);
-
-    element.style.setProperty(
-        variable,
-        value + "%"
-    );
-}
-
+/* =========================
+   STATUS
+========================= */
 
 function getStatus(score) {
 
-    if (score >= 90)
+    if (score >= 92)
         return "Exceptional";
 
-    if (score >= 80)
+    if (score >= 85)
         return "Excellent";
 
-    if (score >= 70)
+    if (score >= 76)
         return "Strong";
 
-    if (score >= 60)
+    if (score >= 66)
         return "Good potential";
 
+    if (score >= 50)
+        return "Needs improvement";
+
     return "Needs work";
+
 }
 
 
 function getSummary(score) {
 
-    if (score >= 90)
-        return "A highly memorable name with excellent overall branding potential.";
+    if (score >= 92)
+        return "An unusually strong name with excellent branding potential.";
 
-    if (score >= 80)
-        return "A strong name with very good potential for building a memorable brand.";
+    if (score >= 85)
+        return "A powerful name with strong potential for a memorable brand.";
 
-    if (score >= 70)
-        return "A solid business name, although a few areas could be improved.";
+    if (score >= 76)
+        return "A strong business name with a few areas that could be improved.";
 
-    if (score >= 60)
-        return "The foundation is decent, but the name could be made more distinctive.";
+    if (score >= 66)
+        return "A decent foundation, but the name could become more distinctive.";
 
-    return "This name needs some work before it becomes a strong brand.";
+    if (score >= 50)
+        return "The name has potential, but several areas need improvement.";
+
+    return "This name needs significant improvement before becoming a strong brand.";
+
 }
 
 
-/* IDEA GENERATOR */
+/* =========================
+   ANALYZED NAME IDEAS
+========================= */
 
 function generateIdeas(name) {
 
-    const base = name
-        .replace(/[^a-zA-Z]/g, "")
-        .toLowerCase();
+    const clean =
+        name
+            .replace(/[^a-zA-Z ]/g, "")
+            .trim();
+
+
+    if (!clean) return;
+
+
+    const words =
+        clean.split(/\s+/);
+
 
     const first =
-        base.charAt(0).toUpperCase() +
-        base.slice(1);
+        words[0];
+
+
+    const cap =
+        first.charAt(0).toUpperCase() +
+        first.slice(1).toLowerCase();
+
 
     const ideas = [
-        first + " Labs",
-        "Nova" + first,
-        first + "X",
-        "Nex" + first,
-        first + " Studio"
+
+        cap + " Studio",
+
+        cap + " Labs",
+
+        "Nova " + cap,
+
+        cap + " Co",
+
+        cap + " Works"
+
     ];
 
-    const list = document.getElementById("ideasList");
+
+    const list =
+        document.getElementById(
+            "ideasList"
+        );
+
 
     list.innerHTML = "";
 
-    ideas.forEach((idea, index) => {
 
-        const score = 82 - index * 4;
+    ideas.forEach(
+        function(idea) {
 
-        list.innerHTML += `
-            <div class="idea">
-                <span class="idea-name">${idea}</span>
-                <span class="idea-score">${score}/100</span>
+            const score =
+                calculateScores(idea);
+
+
+            if (!score) return;
+
+
+            list.innerHTML += `
+
+                <div class="idea">
+
+                    <div class="idea-left">
+
+                        <div class="idea-name">
+                            ${escapeHTML(idea)}
+                        </div>
+
+                        <div class="idea-meta">
+                            Generated variation
+                        </div>
+
+                    </div>
+
+
+                    <div class="idea-right">
+
+                        <span class="idea-score">
+                            ${score.overall}/100
+                        </span>
+
+                        <button
+                            class="small-btn"
+                            onclick="copyName('${escapeJS(idea)}')">
+                            COPY
+                        </button>
+
+                        <button
+                            class="small-btn"
+                            onclick="saveFavorite('${escapeJS(idea)}')">
+                            ♡
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/* =========================
+   STEP 7 GENERATOR
+========================= */
+
+function generateBusinessNames() {
+
+    const type =
+        document.getElementById(
+            "businessType"
+        ).value.trim();
+
+
+    const style =
+        document.getElementById(
+            "businessStyle"
+        ).value;
+
+
+    if (!type) {
+
+        alert(
+            "Tell me what your business is first."
+        );
+
+        return;
+
+    }
+
+
+    const category =
+        getCategory(type);
+
+
+    const names =
+        createNames(
+            category,
+            style
+        );
+
+
+    const container =
+        document.getElementById(
+            "generatedNames"
+        );
+
+
+    container.innerHTML = "";
+
+
+    names.forEach(
+        function(name, index) {
+
+            const score =
+                calculateScores(name);
+
+
+            if (!score) return;
+
+
+            container.innerHTML += `
+
+                <div class="idea">
+
+                    <div class="idea-left">
+
+                        <div class="idea-name">
+                            ${escapeHTML(name)}
+                        </div>
+
+                        <div class="idea-meta">
+                            ${getStatus(score.overall)}
+                        </div>
+
+                    </div>
+
+
+                    <div class="idea-right">
+
+                        <span class="idea-score">
+                            ${score.overall}/100
+                        </span>
+
+                        <button
+                            class="small-btn"
+                            onclick="copyName('${escapeJS(name)}')">
+                            COPY
+                        </button>
+
+                        <button
+                            class="small-btn"
+                            onclick="saveFavorite('${escapeJS(name)}')">
+                            ♡
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/* =========================
+   CATEGORY DETECTOR
+========================= */
+
+function getCategory(type) {
+
+    const text =
+        type.toLowerCase();
+
+
+    if (
+        text.includes("coffee") ||
+        text.includes("cafe")
+    )
+        return "coffee";
+
+
+    if (
+        text.includes("clothing") ||
+        text.includes("fashion") ||
+        text.includes("wear")
+    )
+        return "fashion";
+
+
+    if (
+        text.includes("tech") ||
+        text.includes("software") ||
+        text.includes("app") ||
+        text.includes("gaming")
+    )
+        return "tech";
+
+
+    if (
+        text.includes("beauty") ||
+        text.includes("skin") ||
+        text.includes("salon")
+    )
+        return "beauty";
+
+
+    if (
+        text.includes("food") ||
+        text.includes("restaurant") ||
+        text.includes("bakery")
+    )
+        return "food";
+
+
+    if (
+        text.includes("fitness") ||
+        text.includes("gym")
+    )
+        return "fitness";
+
+
+    return "general";
+
+}
+
+
+/* =========================
+   NAME CREATOR
+========================= */
+
+function createNames(
+    category,
+    style
+) {
+
+    const words = {
+
+        coffee: [
+            "Bean",
+            "Brew",
+            "Roast",
+            "Cup",
+            "Grind",
+            "Mocha",
+            "Drip",
+            "Crema"
+        ],
+
+        fashion: [
+            "Wear",
+            "Mode",
+            "Thread",
+            "Style",
+            "Form",
+            "Muse",
+            "Edit",
+            "Label"
+        ],
+
+        tech: [
+            "Labs",
+            "Byte",
+            "Pixel",
+            "Code",
+            "Core",
+            "Cloud",
+            "Logic",
+            "Nova"
+        ],
+
+        beauty: [
+            "Glow",
+            "Bloom",
+            "Aura",
+            "Luxe",
+            "Muse",
+            "Pure",
+            "Blush",
+            "Velvet"
+        ],
+
+        food: [
+            "Bite",
+            "Taste",
+            "Fork",
+            "Plate",
+            "Table",
+            "Feast",
+            "Crave",
+            "Dish"
+        ],
+
+        fitness: [
+            "Fit",
+            "Core",
+            "Peak",
+            "Motion",
+            "Force",
+            "Pulse",
+            "Lift",
+            "Active"
+        ],
+
+        general: [
+            "Works",
+            "Studio",
+            "Labs",
+            "Co",
+            "House",
+            "Collective",
+            "Craft",
+            "Hub"
+        ]
+
+    };
+
+
+    const prefixes = {
+
+        modern: [
+            "Nova",
+            "Nexa",
+            "Vero",
+            "Vela"
+        ],
+
+        luxury: [
+            "Aure",
+            "Velour",
+            "Elan",
+            "Vera"
+        ],
+
+        cute: [
+            "Lumi",
+            "Mimi",
+            "Nomi",
+            "Bibi"
+        ],
+
+        minimal: [
+            "Nua",
+            "Vae",
+            "Ova",
+            "Eli"
+        ],
+
+        bold: [
+            "Volt",
+            "Apex",
+            "Titan",
+            "Rush"
+        ]
+
+    };
+
+
+    const selectedWords =
+        words[category];
+
+
+    const selectedPrefixes =
+        prefixes[style];
+
+
+    const result = [
+
+        selectedPrefixes[0] +
+        selectedWords[0],
+
+        selectedPrefixes[1] +
+        " " +
+        selectedWords[1],
+
+        selectedWords[2] +
+        " " +
+        selectedPrefixes[2],
+
+        selectedPrefixes[3] +
+        " " +
+        selectedWords[3],
+
+        selectedWords[4] +
+        " " +
+        selectedPrefixes[0],
+
+        selectedPrefixes[0] +
+        " " +
+        selectedWords[5],
+
+        selectedWords[6] +
+        " " +
+        selectedPrefixes[1],
+
+        selectedPrefixes[2] +
+        selectedWords[7],
+
+        selectedWords[1] +
+        " " +
+        selectedPrefixes[3],
+
+        selectedPrefixes[1] +
+        selectedWords[4]
+
+    ];
+
+
+    return [
+        ...new Set(result)
+    ];
+
+}
+
+
+/* =========================
+   COPY
+========================= */
+
+function copyName(name) {
+
+    if (
+        navigator.clipboard &&
+        navigator.clipboard.writeText
+    ) {
+
+        navigator.clipboard.writeText(name)
+            .then(
+                function() {
+                    alert(
+                        '"' +
+                        name +
+                        '" copied!'
+                    );
+                }
+            )
+            .catch(
+                function() {
+                    fallbackCopy(name);
+                }
+            );
+
+    }
+    else {
+
+        fallbackCopy(name);
+
+    }
+
+}
+
+
+function fallbackCopy(text) {
+
+    const area =
+        document.createElement("textarea");
+
+    area.value = text;
+
+    document.body.appendChild(area);
+
+    area.select();
+
+    document.execCommand("copy");
+
+    area.remove();
+
+    alert(
+        '"' +
+        text +
+        '" copied!'
+    );
+
+}
+
+
+/* =========================
+   FAVORITES
+========================= */
+
+function getFavorites() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem(
+                "nameLabFavorites"
+            )
+        ) || [];
+
+    }
+    catch(error) {
+
+        return [];
+
+    }
+
+}
+
+
+function saveFavorite(name) {
+
+    const favorites =
+        getFavorites();
+
+
+    if (
+        favorites.includes(name)
+    ) {
+
+        alert(
+            "Already saved."
+        );
+
+        return;
+
+    }
+
+
+    favorites.push(name);
+
+
+    localStorage.setItem(
+        "nameLabFavorites",
+        JSON.stringify(favorites)
+    );
+
+
+    renderFavorites();
+
+
+    alert(
+        "Saved to favorites!"
+    );
+
+}
+
+
+function removeFavorite(name) {
+
+    let favorites =
+        getFavorites();
+
+
+    favorites =
+        favorites.filter(
+            function(item) {
+                return item !== name;
+            }
+        );
+
+
+    localStorage.setItem(
+        "nameLabFavorites",
+        JSON.stringify(favorites)
+    );
+
+
+    renderFavorites();
+
+}
+
+
+function renderFavorites() {
+
+    const list =
+        document.getElementById(
+            "favoritesList"
+        );
+
+
+    const favorites =
+        getFavorites();
+
+
+    if (!favorites.length) {
+
+        list.innerHTML = `
+            <div class="favorite-empty">
+                No saved names yet.
+                Tap ♡ on a name to save it.
             </div>
         `;
-    });
+
+        return;
+
+    }
+
+
+    list.innerHTML = "";
+
+
+    favorites.forEach(
+        function(name) {
+
+            const score =
+                calculateScores(name);
+
+
+            list.innerHTML += `
+
+                <div class="favorite-item">
+
+                    <div>
+
+                        <div class="favorite-name">
+                            ${escapeHTML(name)}
+                        </div>
+
+                        <div class="idea-meta">
+                            ${score ? score.overall : 0}/100
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <button
+                            class="small-btn"
+                            onclick="copyName('${escapeJS(name)}')">
+                            COPY
+                        </button>
+
+                        <button
+                            class="small-btn"
+                            onclick="removeFavorite('${escapeJS(name)}')">
+                            REMOVE
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
 }
+
+
+/* =========================
+   PRO MESSAGE
+========================= */
+
+function showProMessage() {
+
+    alert(
+        "PRO is planned for the next version. Payment and real PRO accounts will be connected after we add a proper backend."
+    );
+
+}
+
+
+/* =========================
+   SECURITY HELPERS
+========================= */
+
+function escapeHTML(text) {
+
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+function escapeJS(text) {
+
+    return text
+        .replace(/\\/g, "\\\\")
+        .replace(/'/g, "\\'");
+
+}
+
+
+/* =========================
+   LOAD FAVORITES
+========================= */
+
+renderFavorites();
+
+
+/* =========================
+   ENTER KEY
+========================= */
+
+document
+    .getElementById("businessName")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                analyze();
+
+            }
+
+        }
+    );
 
 </script>
 
 </body>
-    </html>
+      </html>
