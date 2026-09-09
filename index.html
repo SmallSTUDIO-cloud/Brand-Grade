@@ -664,17 +664,171 @@ function closeLogin() {
 
 
 /* NAME ANALYZER */
-
 function analyze() {
-
-    const input = document.getElementById("businessName");
-
+    const input = document.getElementById("nameInput");
     const name = input.value.trim();
 
     if (!name) {
         alert("Enter a business name first.");
         return;
     }
+
+    const clean = name.replace(/[^a-zA-Z0-9 ]/g, "");
+    const words = clean.split(/\s+/).filter(Boolean);
+    const letters = clean.replace(/[^a-zA-Z]/g, "");
+    const lower = name.toLowerCase();
+
+    let memory = 70;
+    let brand = 70;
+    let clarity = 70;
+    let unique = 70;
+    let pronounce = 70;
+
+    // LENGTH
+    if (letters.length >= 4 && letters.length <= 10) {
+        memory += 15;
+    } else if (letters.length <= 14) {
+        memory += 8;
+    } else if (letters.length > 20) {
+        memory -= 20;
+    } else {
+        memory -= 5;
+    }
+
+    // WORD COUNT
+    if (words.length === 1) {
+        memory += 8;
+        brand += 8;
+    } else if (words.length === 2) {
+        clarity += 10;
+        brand += 5;
+    } else if (words.length >= 4) {
+        memory -= 15;
+        clarity -= 15;
+    }
+
+    // NUMBERS
+    if (/\d/.test(name)) {
+        brand -= 10;
+        memory -= 5;
+    }
+
+    // SPECIAL CHARACTERS
+    if (/[^a-zA-Z0-9 ]/.test(name)) {
+        pronounce -= 10;
+        clarity -= 5;
+    }
+
+    // VOWEL BALANCE
+    const vowels = (letters.match(/[aeiou]/gi) || []).length;
+    const vowelRatio = letters.length ? vowels / letters.length : 0;
+
+    if (vowelRatio >= 0.25 && vowelRatio <= 0.55) {
+        pronounce += 12;
+    } else if (vowelRatio < 0.15 || vowelRatio > 0.65) {
+        pronounce -= 15;
+    }
+
+    // REPEATED LETTERS
+    if (/(.)\1\1/i.test(name)) {
+        pronounce -= 15;
+        clarity -= 8;
+    }
+
+    // COMMON BUSINESS WORDS
+    const commonWords = [
+        "shop", "store", "company", "business",
+        "services", "solutions", "official",
+        "online", "world", "group"
+    ];
+
+    if (commonWords.some(word => lower.includes(word))) {
+        unique -= 15;
+        brand -= 8;
+    }
+
+    // UNIQUE LETTERS
+    const uniqueLetters = new Set(letters.toLowerCase()).size;
+
+    if (uniqueLetters >= 5 && uniqueLetters <= 10) {
+        unique += 12;
+    } else if (uniqueLetters <= 3) {
+        unique -= 15;
+    }
+
+    // SHORT, CLEAN NAMES
+    if (letters.length >= 5 && letters.length <= 12 && words.length <= 2) {
+        brand += 8;
+        memory += 8;
+    }
+
+    // VERY LONG NAMES
+    if (letters.length > 18) {
+        brand -= 12;
+        memory -= 15;
+    }
+
+    // CLAMP SCORES
+    memory = Math.max(0, Math.min(100, memory));
+    brand = Math.max(0, Math.min(100, brand));
+    clarity = Math.max(0, Math.min(100, clarity));
+    unique = Math.max(0, Math.min(100, unique));
+    pronounce = Math.max(0, Math.min(100, pronounce));
+
+    const overall = Math.round(
+        (memory + brand + clarity + unique + pronounce) / 5
+    );
+
+    // UPDATE MAIN SCORE
+    document.getElementById("score").textContent = overall;
+
+    // UPDATE CIRCLES
+    updateMeter("memoryMeter", memory);
+    updateMeter("brandMeter", brand);
+    updateMeter("clarityMeter", clarity);
+    updateMeter("uniqueMeter", unique);
+    updateMeter("pronounceMeter", pronounce);
+
+    // FEEDBACK
+    let good = [];
+    let bad = [];
+
+    if (memory >= 85) good.push("Easy to remember");
+    if (brand >= 85) good.push("Strong branding potential");
+    if (clarity >= 85) good.push("Clear and understandable");
+    if (unique >= 85) good.push("Feels distinctive");
+    if (pronounce >= 85) good.push("Easy to pronounce");
+
+    if (memory < 70) bad.push("May be difficult to remember");
+    if (brand < 70) bad.push("Brand identity could be stronger");
+    if (clarity < 70) bad.push("The meaning may not be immediately clear");
+    if (unique < 70) bad.push("Could feel generic");
+    if (pronounce < 70) bad.push("May be difficult to pronounce");
+
+    document.getElementById("good").innerHTML =
+        good.length ? good.map(x => "✓ " + x).join("<br>") : "No major strengths detected yet.";
+
+    document.getElementById("bad").innerHTML =
+        bad.length ? bad.map(x => "• " + x).join("<br>") : "No major weaknesses detected.";
+
+    // SCORE LABEL
+    const label = document.getElementById("scoreLabel");
+
+    if (overall >= 90) {
+        label.textContent = "EXCELLENT";
+    } else if (overall >= 80) {
+        label.textContent = "STRONG";
+    } else if (overall >= 70) {
+        label.textContent = "DECENT";
+    } else if (overall >= 60) {
+        label.textContent = "NEEDS WORK";
+    } else {
+        label.textContent = "WEAK";
+    }
+}
+
+
+    const input = document.getElementById("businessName
 
     const clean = name.toLowerCase();
 
