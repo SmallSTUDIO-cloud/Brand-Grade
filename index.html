@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAME//LAB</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #050505;
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .login {
+            border: 1px solid white;
+            padding: 10px 18px;
+            border-radius: 30px;
+            background: white;
+            color: black;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .tag {
+            color: #999;
+            letter-spacing: 3px;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(45px, 12vw, 90px);
+            line-height: 0.95;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            color: #777;
+        }
+
+        .description {
+            color: #aaa;
+            max-width: 600px;
+            margin: auto;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .card {
+            margin-top: 50px;
+            padding: 25px;
+            border: 1px solid #292929;
+            border-radius: 25px;
+            background: #0c0c0c;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 17px;
+            background: #151515;
+            border: 1px solid #333;
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: white;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 17px;
+            border: none;
+            border-radius: 12px;
+            background: white;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        #result {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 15px;
+            background: #111;
+        }
+
+        .score {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .small {
+            color: #888;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            color: #555;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NAME//LAB</div>
+    <div class="login">LOGIN</div>
+</header>
+
+<main>
+
+    <div class="tag">BUSINESS NAME INTELLIGENCE</div>
+
+    <h1>
+        Name it.<br>
+        <span>Rate it.</span>
+    </h1>
+
+    <p class="description">
+        Test your business name, discover its strengths,
+        find its weaknesses, and get better ideas.
+    </p>
+
+    <div class="card">
+
+        <label>Enter your business name</label>
+
+        <input
+            id="businessName"
+            type="text"
+            placeholder="Example: Nova Coffee"
+        >
+
+        <button onclick="rateName()">
+            ANALYZE NAME →
+        </button>
+
+        <div id="result">
+
+            <div class="score" id="score">--</div>
+
+            <p id="rating"></p>
+
+            <p class="small" id="feedback"></p>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    NAME//LAB — Build a name worth remembering.
+</footer>
+
+
+<script>
+
+function rateName() {
+
+    let name = document.getElementById("businessName").value.trim();
+
+    if (name === "") {
+        alert("Enter a business name first.");
+        return;
+    }
+
+    let score = 50;
+
+    // Length logic
+    if (name.length >= 4 && name.length <= 16) {
+        score += 15;
+    }
+
+    if (name.length > 25) {
+        score -= 15;
+    }
+
+    // Word logic
+    let words = name.split(" ");
+
+    if (words.length <= 3) {
+        score += 10;
+    }
+
+    // Capitalization
+    if (name[0] === name[0].toUpperCase()) {
+        score += 5;
+    }
+
+    // Numbers
+    if (/\d/.test(name)) {
+        score -= 5;
+    }
+
+    // Special characters
+    if (/[^a-zA-Z0-9 ]/.test(name)) {
+        score -= 5;
+    }
+
+    // Keep score between 0 and 100
+    score = Math.max(0, Math.min(100, score));
+
+    let rating;
+
+    if (score >= 85) {
+        rating = "🔥 Excellent brand potential";
+    } else if (score >= 70) {
+        rating = "✨ Strong business name";
+    } else if (score >= 50) {
+        rating = "👍 Decent, but could be improved";
+    } else {
+        rating = "⚠️ Needs some work";
+    }
+
+    document.getElementById("score").innerText = score + "/100";
+
+    document.getElementById("rating").innerText = rating;
+
+    document.getElementById("feedback").innerText =
+        "The full AI-style analysis system will be added in the next steps.";
+
+    document.getElementById("result").style.display = "block";
+}
+
+</script>
+
+</body>
+  </html>
