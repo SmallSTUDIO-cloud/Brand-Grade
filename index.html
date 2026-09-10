@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 <title>Brand//Grade — Business Name Intelligence</title>
 
 <style>
 
 /* =========================================================
-   BRAND//GRADE
-   COMPLETE SINGLE-FILE WEBSITE
+   RESET
 ========================================================= */
 
 * {
@@ -19,54 +18,37 @@
     padding: 0;
 }
 
-:root {
-    --bg: #050505;
-    --card: #0d0d0d;
-    --card2: #121212;
-    --line: #292929;
-    --white: #ffffff;
-    --gray: #999999;
-    --muted: #666666;
-}
-
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background: var(--bg);
-    color: var(--white);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 Helvetica, Arial, sans-serif;
+    background: #050505;
+    color: #f5f5f5;
+    line-height: 1.5;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 button,
 input,
 select {
-    font-family: inherit;
+    font: inherit;
 }
 
 button {
     cursor: pointer;
 }
 
-
-/* =========================================================
-   PAGE LOAD ANIMATION
-========================================================= */
-
-body {
-    animation: pageIn .7s ease both;
+input,
+select {
+    outline: none;
 }
 
-@keyframes pageIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+::selection {
+    background: #ffffff;
+    color: #000000;
 }
 
 
@@ -75,105 +57,75 @@ body {
 ========================================================= */
 
 header {
-    height: 68px;
-    padding: 0 18px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    height: 72px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid var(--line);
+    padding: 0 28px;
 
-    position: sticky;
-    top: 0;
-    z-index: 50;
+    background: rgba(5, 5, 5, .82);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    background: rgba(5,5,5,.94);
-    backdrop-filter: blur(15px);
-
-    animation: headerIn .7s ease both;
-}
-
-@keyframes headerIn {
-    from {
-        opacity: 0;
-        transform: translateY(-12px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    border-bottom: 1px solid #171717;
 }
 
 .logo {
-    font-size: 18px;
-    font-weight: 900;
-    letter-spacing: 3px;
-
-    transition: opacity .2s ease,
-                transform .2s ease;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
 }
 
-.logo:hover {
-    opacity: .8;
-    transform: translateX(2px);
+.logo span {
+    color: #777;
 }
 
-.header-actions {
+.header-right {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
-.plan-badge {
-    border: 1px solid #444;
+.badge {
+    border: 1px solid #292929;
+    background: #101010;
     color: #aaa;
 
-    border-radius: 30px;
+    padding: 6px 10px;
+    border-radius: 999px;
 
-    padding: 7px 10px;
-
-    font-size: 10px;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .8px;
 }
 
 .login-btn {
-    border: none;
-    border-radius: 30px;
+    border: 1px solid #303030;
+    background: #111;
+    color: #fff;
 
-    padding: 10px 15px;
+    padding: 9px 15px;
+    border-radius: 10px;
 
-    background: white;
-    color: black;
+    font-size: 13px;
+    font-weight: 700;
 
-    font-weight: 900;
-
-    transition:
-        transform .15s ease,
-        opacity .2s ease;
+    transition: .2s ease;
 }
 
 .login-btn:hover {
-    opacity: .9;
+    background: #1a1a1a;
+    transform: translateY(-1px);
 }
 
 .login-btn:active {
-    transform: scale(.96);
-}
-
-
-/* =========================================================
-   MAIN
-========================================================= */
-
-main {
-    width: 100%;
-    max-width: 1000px;
-
-    margin: auto;
-
-    padding: 45px 18px 70px;
+    transform: scale(.97);
 }
 
 
@@ -181,86 +133,18 @@ main {
    HERO
 ========================================================= */
 
-.tag {
-    color: #777;
+.hero {
+    max-width: 950px;
+    margin: 0 auto;
 
-    font-size: 11px;
-    letter-spacing: 3px;
-
-    text-align: center;
-
-    margin-bottom: 18px;
-
-    animation: heroUp .8s .05s ease both;
-}
-
-h1 {
-    font-size: clamp(48px, 15vw, 90px);
-
-    line-height: .9;
+    padding: 90px 20px 55px;
 
     text-align: center;
 
-    letter-spacing: -4px;
-
-    animation: heroUp .8s .12s ease both;
+    animation: heroIn .7s ease both;
 }
 
-h1 span {
-    color: #555;
-}
-
-.description {
-    color: #aaa;
-
-    text-align: center;
-
-    line-height: 1.6;
-
-    max-width: 620px;
-
-    margin: 25px auto 17px;
-
-    animation: heroUp .8s .2s ease both;
-}
-
-
-/* =========================================================
-   SIMPLE FAST FREE
-========================================================= */
-
-.promise {
-    text-align: center;
-
-    color: #666;
-
-    font-size: 10px;
-
-    font-weight: bold;
-
-    letter-spacing: 2.8px;
-
-    margin-bottom: 35px;
-
-    animation:
-        heroUp .8s .28s ease both,
-        promisePulse 4s 1s ease-in-out infinite;
-}
-
-@keyframes promisePulse {
-
-    0%,
-    100% {
-        opacity: .55;
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
-@keyframes heroUp {
-
+@keyframes heroIn {
     from {
         opacity: 0;
         transform: translateY(18px);
@@ -272,177 +156,183 @@ h1 span {
     }
 }
 
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
 
-/* =========================================================
-   CARDS
-========================================================= */
+    padding: 7px 12px;
 
-.input-card,
-.result-card,
-.generator-card,
-.pro-card,
-.favorites-card {
+    border: 1px solid #252525;
+    border-radius: 999px;
 
-    background: var(--card);
+    background: #0d0d0d;
 
-    border: 1px solid var(--line);
+    color: #8d8d8d;
 
-    border-radius: 24px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
 
-    transition:
-        border-color .25s ease,
-        transform .25s ease,
-        box-shadow .25s ease;
+    margin-bottom: 24px;
 }
 
-.input-card:hover,
-.generator-card:hover,
-.favorites-card:hover,
-.pro-card:hover {
+.hero h1 {
+    font-size: clamp(58px, 11vw, 110px);
+    line-height: .88;
 
-    border-color: #383838;
+    letter-spacing: -6px;
 
-    transform: translateY(-2px);
+    font-weight: 850;
 
-    box-shadow:
-        0 14px 40px rgba(0,0,0,.18);
+    margin-bottom: 28px;
 }
 
-.input-card {
-    padding: 20px;
-
-    max-width: 650px;
-
-    margin: auto;
-
-    animation: cardIn .8s .35s ease both;
-}
-
-@keyframes cardIn {
-
-    from {
-        opacity: 0;
-        transform: translateY(25px) scale(.985);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.input-label {
-    color: #999;
-
-    font-size: 13px;
-
-    margin-bottom: 9px;
-
-    display: block;
-
-    letter-spacing: .5px;
-}
-
-input,
-select {
-
-    width: 100%;
-
-    height: 54px;
-
-    background: #151515;
-
-    border: 1px solid #303030;
-
-    color: white;
-
-    border-radius: 14px;
-
-    padding: 0 15px;
-
-    font-size: 16px;
-
-    outline: none;
-
-    transition:
-        border-color .2s ease,
-        box-shadow .2s ease,
-        background .2s ease;
-}
-
-input::placeholder {
+.hero h1 .muted {
     color: #555;
 }
 
-input:focus,
-select:focus {
+.hero-description {
+    max-width: 650px;
+    margin: 0 auto;
 
-    border-color: #666;
+    color: #8f8f8f;
 
-    background: #171717;
+    font-size: 17px;
+    line-height: 1.7;
+}
 
-    box-shadow:
-        0 0 0 3px rgba(255,255,255,.035);
+.promise {
+    margin-top: 24px;
+
+    color: #aaa;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
 }
 
 
 /* =========================================================
-   ANALYZE BUTTON
+   MAIN
 ========================================================= */
 
-.analyze-btn {
+main {
+    width: min(1050px, calc(100% - 32px));
+    margin: 0 auto 100px;
+}
 
-    width: 100%;
+.section {
+    margin-top: 45px;
+}
 
-    min-height: 54px;
+.section-label {
+    color: #777;
 
-    margin-top: 12px;
+    font-size: 11px;
+    font-weight: 800;
 
-    border: none;
+    letter-spacing: 1.5px;
 
-    border-radius: 14px;
+    margin-bottom: 12px;
+}
 
-    background: white;
+.card {
+    background: linear-gradient(145deg, #101010, #090909);
 
-    color: black;
+    border: 1px solid #242424;
 
-    font-size: 14px;
+    border-radius: 22px;
 
+    box-shadow: 0 20px 70px rgba(0,0,0,.25);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    border-color: #303030;
+}
+
+
+/* =========================================================
+   ANALYZER
+========================================================= */
+
+.analyzer {
+    padding: 26px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.name-input {
+    flex: 1;
+
+    min-width: 0;
+
+    background: #080808;
+
+    border: 1px solid #292929;
+
+    color: #fff;
+
+    padding: 17px 18px;
+
+    border-radius: 13px;
+
+    font-size: 15px;
+
+    transition: .2s ease;
+}
+
+.name-input::placeholder {
+    color: #555;
+}
+
+.name-input:focus {
+    border-color: #555;
+
+    box-shadow:
+        0 0 0 4px rgba(255,255,255,.035);
+}
+
+.primary-btn {
+    border: 1px solid #fff;
+
+    background: #fff;
+    color: #000;
+
+    padding: 0 21px;
+
+    border-radius: 13px;
+
+    font-size: 12px;
     font-weight: 900;
 
-    letter-spacing: .5px;
+    letter-spacing: .4px;
 
     transition:
         transform .15s ease,
-        opacity .2s ease,
-        box-shadow .2s ease;
+        opacity .2s ease;
 }
 
-.analyze-btn:hover {
-
-    opacity: .92;
-
-    box-shadow:
-        0 8px 25px rgba(255,255,255,.08);
+.primary-btn:hover {
+    opacity: .9;
 }
 
-.analyze-btn:active,
-.small-btn:active {
-
+.primary-btn:active {
     transform: scale(.97);
 }
 
-.analyze-btn.loading {
-
-    opacity: .7;
-
+.primary-btn.loading {
+    opacity: .65;
     pointer-events: none;
-}
-
-.secondary-btn {
-    background: #171717;
-    color: white;
-    border: 1px solid #333;
 }
 
 
@@ -450,24 +340,22 @@ select:focus {
    RESULTS
 ========================================================= */
 
-#results {
-
+.results {
     display: none;
 
-    margin-top: 25px;
+    margin-top: 20px;
+
+    animation: resultIn .45s ease both;
 }
 
-#results.show {
-
-    animation:
-        resultIn .7s ease both;
+.results.show {
+    display: block;
 }
 
 @keyframes resultIn {
-
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(15px);
     }
 
     to {
@@ -476,131 +364,94 @@ select:focus {
     }
 }
 
-.result-card {
-    padding: 25px 18px;
-}
+.score-area {
+    padding: 35px 25px;
 
-.score-section {
     text-align: center;
+
+    border-bottom: 1px solid #202020;
 }
 
-.section-label {
+.score-ring {
+    width: 160px;
+    height: 160px;
 
-    color: #777;
-
-    font-size: 11px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 20px;
-}
-
-
-/* =========================================================
-   MAIN SCORE CIRCLE
-========================================================= */
-
-.circle {
-
-    width: 190px;
-    height: 190px;
-
-    margin: auto;
+    margin: 0 auto 20px;
 
     border-radius: 50%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
 
     position: relative;
 
     background:
         conic-gradient(
-            white var(--score),
-            #292929 var(--score)
+            #fff var(--score, 0deg),
+            #202020 var(--score, 0deg)
         );
-
-    transform: rotate(-90deg);
-
-    transition:
-        background .1s linear;
 }
 
-.circle::before {
-
+.score-ring::before {
     content: "";
 
     position: absolute;
 
-    width: 166px;
-    height: 166px;
-
-    background: #0b0b0b;
+    width: 132px;
+    height: 132px;
 
     border-radius: 50%;
+
+    background: #0a0a0a;
 }
 
-.circle-content {
-
+.score-number {
     position: relative;
+    z-index: 1;
 
-    z-index: 2;
+    font-size: 45px;
+    font-weight: 850;
 
-    text-align: center;
-
-    transform: rotate(90deg);
+    letter-spacing: -2px;
 }
 
-.big-score {
+.score-out-of {
+    position: relative;
+    z-index: 1;
 
-    font-size: 42px;
+    font-size: 11px;
+    color: #666;
 
-    font-weight: 900;
+    margin-left: 3px;
 }
 
-.out-of {
-
-    color: #777;
-
-    font-size: 13px;
-}
-
-.score-status {
-
-    margin-top: 5px;
-
-    font-size: 13px;
+.status {
+    font-size: 12px;
 
     color: #aaa;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
 }
 
-.name-display {
+.result-name {
+    margin-top: 10px;
 
-    text-align: center;
-
-    margin: 22px 0 5px;
-
-    font-size: 27px;
-
+    font-size: 25px;
     font-weight: 800;
 
     word-break: break-word;
 }
 
 .summary {
+    max-width: 600px;
 
-    text-align: center;
+    margin: 12px auto 0;
 
-    color: #999;
-
-    line-height: 1.5;
+    color: #777;
 
     font-size: 14px;
-
-    max-width: 550px;
-
-    margin: auto;
 }
 
 
@@ -608,103 +459,63 @@ select:focus {
    METERS
 ========================================================= */
 
-.meters {
-
+.metrics {
     display: grid;
 
-    grid-template-columns:
-        repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 
-    gap: 10px;
+    gap: 1px;
 
-    margin-top: 30px;
+    background: #222;
+}
 
-    border-top: 1px solid var(--line);
+.metric {
+    background: #0b0b0b;
 
-    padding-top: 25px;
+    padding: 22px 15px;
+
+    text-align: center;
+}
+
+.metric-name {
+    color: #666;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+.metric-score {
+    font-size: 21px;
+
+    font-weight: 800;
+
+    margin-bottom: 10px;
 }
 
 .meter {
+    height: 5px;
 
-    text-align: center;
+    background: #222;
 
-    opacity: 0;
+    border-radius: 99px;
 
-    transform: translateY(10px);
+    overflow: hidden;
 }
 
-.meter.animate {
+.meter-fill {
+    height: 100%;
 
-    animation:
-        meterIn .5s ease forwards;
-}
+    width: 0%;
 
-@keyframes meterIn {
+    background: #fff;
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+    border-radius: inherit;
 
-.meter-circle {
-
-    width: 70px;
-    height: 70px;
-
-    margin: auto;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background:
-        conic-gradient(
-            white var(--meter),
-            #292929 var(--meter)
-        );
-
-    position: relative;
-
-    transition:
-        background .08s linear;
-}
-
-.meter-circle::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 58px;
-    height: 58px;
-
-    background: #0d0d0d;
-
-    border-radius: 50%;
-}
-
-.meter-number {
-
-    position: relative;
-
-    z-index: 2;
-
-    font-size: 15px;
-
-    font-weight: bold;
-}
-
-.meter-title {
-
-    margin-top: 9px;
-
-    font-size: 10px;
-
-    color: #aaa;
+    transition: width 1s cubic-bezier(.2,.8,.2,1);
 }
 
 
@@ -713,217 +524,166 @@ select:focus {
 ========================================================= */
 
 .feedback {
-
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
     gap: 12px;
 
-    margin-top: 25px;
+    padding: 18px;
 }
 
 .feedback-box {
+    padding: 20px;
 
-    border: 1px solid var(--line);
+    border: 1px solid #202020;
 
-    background: var(--card2);
+    border-radius: 15px;
 
-    border-radius: 18px;
-
-    padding: 18px;
+    background: #0b0b0b;
 
     opacity: 0;
 
-    transform: translateY(12px);
+    transform: translateY(8px);
 }
 
-.feedback-box.animate {
-
-    animation:
-        feedbackIn .55s ease forwards;
+.feedback-box.show {
+    animation: feedbackIn .5s ease forwards;
 }
 
 @keyframes feedbackIn {
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.feedback-box h3 {
-
-    font-size: 15px;
-
-    margin-bottom: 13px;
-}
-
-.feedback-box p {
-
-    color: #aaa;
-
-    font-size: 13px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   IDEAS
-========================================================= */
-
-.ideas {
-
-    margin-top: 15px;
-
-    border: 1px solid var(--line);
-
-    background: var(--card2);
-
-    border-radius: 18px;
-
-    padding: 18px;
-}
-
-.ideas h3 {
-    margin-bottom: 10px;
-}
-
-.idea {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 10px;
-
-    border-top: 1px solid #222;
-
-    padding: 14px 0;
-
-    opacity: 0;
-
-    transform: translateY(10px);
-}
-
-.idea.animate {
-
-    animation:
-        ideaIn .45s ease forwards;
-}
-
-@keyframes ideaIn {
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.idea:first-of-type {
-    border-top: none;
-}
-
-.idea-left {
-    min-width: 0;
-}
-
-.idea-name {
-
-    font-weight: bold;
-
-    word-break: break-word;
-}
-
-.idea-meta {
-
-    color: #666;
-
-    font-size: 11px;
-
-    margin-top: 4px;
-}
-
-.idea-right {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    flex-shrink: 0;
-}
-
-.idea-score {
-
-    color: #aaa;
-
+.feedback-title {
     font-size: 12px;
 
-    font-weight: bold;
+    font-weight: 850;
+
+    margin-bottom: 9px;
 }
 
-.small-btn {
-
-    border: 1px solid #333;
-
-    background: #171717;
-
-    color: white;
-
-    border-radius: 9px;
-
-    padding: 7px 9px;
-
-    font-size: 11px;
-
-    transition:
-        background .2s ease,
-        border-color .2s ease,
-        transform .15s ease;
+.feedback-good .feedback-title {
+    color: #d5d5d5;
 }
 
-.small-btn:hover {
-
-    background: #202020;
-
-    border-color: #4a4a4a;
+.feedback-bad .feedback-title {
+    color: #888;
 }
 
-
-/* =========================================================
-   GENERATOR
-========================================================= */
-
-.generator-card {
-
-    margin-top: 25px;
-
-    padding: 20px;
-}
-
-.generator-title {
-
-    font-size: 20px;
-
-    font-weight: 900;
-
-    margin-bottom: 7px;
-}
-
-.generator-description {
-
+.feedback-text {
     color: #777;
 
     font-size: 13px;
 
-    line-height: 1.5;
+    line-height: 1.6;
+}
 
-    margin-bottom: 20px;
+
+/* =========================================================
+   VARIATIONS
+========================================================= */
+
+.variations {
+    padding: 22px;
+
+    border-top: 1px solid #202020;
+}
+
+.variations-title {
+    color: #777;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    margin-bottom: 13px;
+}
+
+.variation-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.variation {
+    background: #101010;
+
+    border: 1px solid #252525;
+
+    color: #ddd;
+
+    padding: 9px 12px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+.variation.show {
+    animation: variationIn .35s ease forwards;
+}
+
+@keyframes variationIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   SMART GENERATOR
+========================================================= */
+
+.generator {
+    padding: 26px;
+}
+
+.generator-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 200px auto;
+
+    gap: 10px;
+}
+
+.field {
+    width: 100%;
+
+    background: #080808;
+
+    border: 1px solid #292929;
+
+    color: #fff;
+
+    padding: 15px 16px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    transition: .2s ease;
+}
+
+.field::placeholder {
+    color: #555;
+}
+
+.field:focus {
+    border-color: #555;
+
+    box-shadow: 0 0 0 4px rgba(255,255,255,.035);
 }
 
 
@@ -931,64 +691,51 @@ select:focus {
    CUSTOM STYLE SELECTOR
 ========================================================= */
 
-.custom-select {
-
+.style-selector {
     position: relative;
-
-    width: 100%;
 }
 
-.select-button {
-
+.style-button {
     width: 100%;
-
-    height: 54px;
-
-    background: #151515;
-
-    border: 1px solid #303030;
-
-    color: white;
-
-    border-radius: 14px;
-
-    padding: 0 15px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    font-size: 15px;
+    background: #080808;
 
-    transition:
-        border-color .2s ease,
-        background .2s ease;
+    border: 1px solid #292929;
+
+    color: #fff;
+
+    padding: 15px 16px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    text-align: left;
+
+    transition: .2s ease;
 }
 
-.select-button:hover {
-
+.style-button:hover {
     border-color: #444;
-
-    background: #171717;
 }
 
-.select-arrow {
-
+.style-arrow {
     color: #777;
 
-    transition:
-        transform .2s ease;
+    font-size: 11px;
+
+    transition: transform .2s ease;
 }
 
-.custom-select.open .select-arrow {
-
+.style-selector.open .style-arrow {
     transform: rotate(180deg);
 }
 
-.select-menu {
-
+.style-menu {
     position: absolute;
 
     left: 0;
@@ -996,69 +743,132 @@ select:focus {
 
     top: calc(100% + 7px);
 
-    background: #111;
+    background: #101010;
 
-    border: 1px solid #333;
+    border: 1px solid #303030;
 
-    border-radius: 14px;
+    border-radius: 13px;
 
     padding: 6px;
 
-    z-index: 20;
+    box-shadow: 0 20px 50px rgba(0,0,0,.6);
 
     opacity: 0;
 
     visibility: hidden;
 
-    transform:
-        translateY(-6px) scale(.98);
+    transform: translateY(-5px);
 
-    transition:
-        opacity .18s ease,
-        transform .18s ease,
-        visibility .18s ease;
+    transition: .18s ease;
+
+    z-index: 20;
 }
 
-.custom-select.open .select-menu {
-
+.style-selector.open .style-menu {
     opacity: 1;
 
     visibility: visible;
 
-    transform:
-        translateY(0) scale(1);
+    transform: translateY(0);
 }
 
-.select-option {
-
+.style-option {
     width: 100%;
-
-    border: none;
 
     background: transparent;
 
+    border: 0;
+
     color: #aaa;
 
-    padding: 12px;
-
-    text-align: left;
+    padding: 11px;
 
     border-radius: 9px;
 
+    text-align: left;
+
+    font-size: 13px;
+}
+
+.style-option:hover {
+    background: #191919;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   GENERATED NAMES
+========================================================= */
+
+.generated {
+    margin-top: 20px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.generated-name {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 15px 16px;
+
+    background: #0b0b0b;
+
+    border: 1px solid #222;
+
+    border-radius: 13px;
+
+    transition: .2s ease;
+}
+
+.generated-name:hover {
+    transform: translateY(-2px);
+
+    border-color: #444;
+}
+
+.generated-name-text {
+    font-weight: 750;
+
     font-size: 14px;
+
+    word-break: break-word;
 }
 
-.select-option:hover,
-.select-option.selected {
+.save-name {
+    flex-shrink: 0;
 
-    background: #1d1d1d;
+    width: 34px;
+    height: 34px;
 
-    color: white;
+    border-radius: 9px;
+
+    border: 1px solid #292929;
+
+    background: #111;
+
+    color: #777;
+
+    transition: .2s ease;
 }
 
-.generator-results {
+.save-name:hover {
+    color: #fff;
+}
 
-    margin-top: 18px;
+.save-name.saved {
+    color: #fff;
+
+    border-color: #fff;
 }
 
 
@@ -1066,58 +876,70 @@ select:focus {
    FAVORITES
 ========================================================= */
 
-.favorites-card {
-
-    margin-top: 25px;
-
-    padding: 20px;
+.favorites {
+    padding: 26px;
 }
 
-.favorite-empty {
-
-    color: #666;
-
-    font-size: 13px;
-
-    padding-top: 10px;
-}
-
-.favorite-item {
-
+.favorite-list {
     display: flex;
 
-    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    min-height: 30px;
+}
+
+.empty-favorites {
+    color: #555;
+
+    font-size: 13px;
+}
+
+.favorite-pill {
+    display: flex;
 
     align-items: center;
 
-    gap: 10px;
+    gap: 7px;
 
-    border-top: 1px solid #222;
+    background: #111;
 
-    padding: 13px 0;
+    border: 1px solid #282828;
 
-    animation:
-        favoriteIn .4s ease both;
+    border-radius: 999px;
+
+    padding: 8px 11px;
+
+    font-size: 12px;
+
+    animation: favoriteIn .3s ease both;
 }
 
 @keyframes favoriteIn {
-
     from {
         opacity: 0;
-        transform: translateX(-8px);
+        transform: scale(.9);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: scale(1);
     }
 }
 
-.favorite-name {
+.remove-favorite {
+    border: 0;
 
-    font-weight: bold;
+    background: transparent;
 
-    word-break: break-word;
+    color: #555;
+
+    font-size: 13px;
+}
+
+.remove-favorite:hover {
+    color: #fff;
 }
 
 
@@ -1126,64 +948,45 @@ select:focus {
 ========================================================= */
 
 .pro-card {
-
-    margin-top: 25px;
-
-    padding: 24px;
+    padding: 32px;
 
     text-align: center;
-
-    background:
-        linear-gradient(
-            145deg,
-            #151515,
-            #090909
-        );
 }
 
 .pro-card h2 {
+    font-size: 27px;
 
-    font-size: 25px;
+    letter-spacing: -1px;
 
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .pro-card p {
+    color: #777;
 
-    color: #888;
+    max-width: 550px;
 
-    font-size: 13px;
+    margin: 0 auto 22px;
 
-    line-height: 1.6;
+    font-size: 14px;
 }
 
-.pro-list {
+.pro-button {
+    display: inline-block;
 
-    list-style: none;
+    background: #fff;
 
-    text-align: left;
+    color: #000;
 
-    max-width: 400px;
+    border: 0;
 
-    margin: 20px auto;
-}
+    border-radius: 11px;
 
-.pro-list li {
+    padding: 13px 20px;
 
-    padding: 8px 0;
+    font-size: 12px;
 
-    color: #bbb;
-
-    font-size: 13px;
-}
-
-.pro-list li::before {
-
-    content: "✓ ";
-
-    color: white;
-
-    font-weight: bold;
+    font-weight: 850;
 }
 
 
@@ -1191,125 +994,126 @@ select:focus {
    LOGIN MODAL
 ========================================================= */
 
-#loginModal {
-
-    display: none;
-
+.modal {
     position: fixed;
 
     inset: 0;
 
-    background: rgba(0,0,0,.88);
-
     z-index: 100;
 
-    align-items: center;
+    display: none;
 
+    align-items: center;
     justify-content: center;
 
     padding: 20px;
+
+    background: rgba(0,0,0,.72);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
-#loginModal.open {
-
+.modal.show {
     display: flex;
-
-    animation:
-        modalBg .25s ease both;
 }
 
-@keyframes modalBg {
+.modal-card {
+    width: min(410px, 100%);
 
+    background: #0d0d0d;
+
+    border: 1px solid #292929;
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    box-shadow: 0 30px 100px rgba(0,0,0,.7);
+
+    animation: modalIn .3s ease both;
+}
+
+@keyframes modalIn {
     from {
         opacity: 0;
+        transform: translateY(12px) scale(.97);
     }
 
     to {
         opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
-.login-box {
-
-    width: 100%;
-
-    max-width: 400px;
-
-    background: #101010;
-
-    border: 1px solid #333;
-
-    border-radius: 22px;
-
-    padding: 25px;
-
-    position: relative;
-
-    animation:
-        modalBox .35s ease both;
-}
-
-@keyframes modalBox {
-
-    from {
-        opacity: 0;
-        transform: scale(.95) translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-.login-box h2 {
-
+.modal-card h2 {
     margin-bottom: 8px;
 }
 
-.login-box p {
-
-    color: #777;
+.modal-card p {
+    color: #666;
 
     font-size: 13px;
 
     margin-bottom: 20px;
 }
 
-.close {
+.modal-input {
+    width: 100%;
 
-    position: absolute;
+    background: #070707;
 
-    top: 12px;
-    right: 15px;
+    border: 1px solid #282828;
 
-    background: none;
+    color: #fff;
 
-    border: none;
+    padding: 14px;
 
-    color: white;
+    border-radius: 11px;
 
-    font-size: 25px;
-
-    transition:
-        transform .2s ease,
-        opacity .2s ease;
+    margin-bottom: 10px;
 }
 
-.close:hover {
+.modal-actions {
+    display: flex;
 
-    transform: rotate(90deg);
+    gap: 8px;
+}
 
-    opacity: .7;
+.modal-actions button {
+    flex: 1;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.modal-cancel {
+    background: #111;
+
+    color: #aaa;
+
+    border: 1px solid #282828;
+}
+
+.modal-demo {
+    background: #fff;
+
+    color: #000;
+
+    border: 1px solid #fff;
 }
 
 
 /* =========================================================
-   INSIGHT BULB
+   BUSINESS INSIGHT WIDGET
 ========================================================= */
 
 .insight-widget {
-
     position: fixed;
 
     right: 20px;
@@ -1320,17 +1124,15 @@ select:focus {
     display: flex;
 
     align-items: flex-end;
-
     justify-content: flex-end;
 
     pointer-events: none;
 }
 
 
-/* The panel starts at the bulb and expands outward */
+/* THE PANEL */
 
 .insight-panel {
-
     position: absolute;
 
     right: 0;
@@ -1341,11 +1143,7 @@ select:focus {
     min-height: 170px;
 
     background:
-        linear-gradient(
-            145deg,
-            #151515,
-            #0b0b0b
-        );
+        linear-gradient(145deg, #151515, #0b0b0b);
 
     border: 1px solid #333;
 
@@ -1354,18 +1152,18 @@ select:focus {
     padding: 20px;
 
     box-shadow:
-        0 20px 70px rgba(0,0,0,.55);
+        0 20px 70px rgba(0,0,0,.55),
+        0 0 35px rgba(255,255,255,.025);
 
     opacity: 0;
 
     visibility: hidden;
 
-    transform:
-        translate(0, 0)
-        scale(.18);
+    transform: translate(0, 0) scale(.18);
 
-    transform-origin:
-        bottom right;
+    transform-origin: bottom right;
+
+    pointer-events: none;
 
     transition:
         opacity .32s ease,
@@ -1373,9 +1171,15 @@ select:focus {
         visibility .32s ease;
 }
 
-.insight-widget.open
-.insight-panel {
 
+/*
+   IMPORTANT FIX:
+
+   The panel is not clickable when closed,
+   but becomes clickable when open.
+*/
+
+.insight-widget.open .insight-panel {
     opacity: 1;
 
     visibility: visible;
@@ -1383,250 +1187,208 @@ select:focus {
     transform:
         translateY(-66px)
         scale(1);
+
+    pointer-events: auto;
 }
 
 
-/* Small connector/glow toward bulb */
-
-.insight-panel::after {
-
-    content: "";
-
-    position: absolute;
-
-    right: 24px;
-
-    bottom: -7px;
-
-    width: 14px;
-    height: 14px;
-
-    background: #0d0d0d;
-
-    border-right: 1px solid #333;
-
-    border-bottom: 1px solid #333;
-
-    transform: rotate(45deg);
-}
+/* PANEL HEADER */
 
 .insight-header {
-
     display: flex;
 
     align-items: center;
 
     gap: 8px;
 
-    color: #888;
+    color: #777;
 
     font-size: 10px;
 
-    font-weight: bold;
+    font-weight: 850;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.3px;
 
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 
 .insight-header-icon {
+    font-size: 16px;
 
-    font-size: 15px;
-
-    filter:
-        grayscale(1);
+    filter: grayscale(1);
 }
 
-.insight-text {
 
-    color: #eee;
+/* TIP TEXT */
+
+.insight-text {
+    min-height: 58px;
+
+    color: #f1f1f1;
 
     font-size: 17px;
 
-    line-height: 1.4;
+    font-weight: 700;
 
-    font-weight: 800;
+    line-height: 1.45;
 
-    min-height: 72px;
-
-    display: flex;
-
-    align-items: center;
-
-    animation: none;
+    letter-spacing: -.2px;
 }
 
 .insight-text.change {
-
-    animation:
-        insightText .35s ease both;
+    animation: insightTextIn .35s ease both;
 }
 
-@keyframes insightText {
-
+@keyframes insightTextIn {
     from {
         opacity: 0;
-        transform: translateY(7px);
+
+        transform:
+            translateY(7px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
+
+/* NEXT BUTTON */
+
 .insight-next {
+    margin-top: 15px;
 
-    border: 1px solid #333;
+    border: 1px solid #292929;
 
-    background: #171717;
+    background: #111;
 
     color: #aaa;
 
-    border-radius: 9px;
+    padding: 9px 12px;
 
-    padding: 8px 11px;
+    border-radius: 9px;
 
     font-size: 10px;
 
-    font-weight: bold;
+    font-weight: 850;
 
-    letter-spacing: .7px;
+    letter-spacing: .5px;
 
-    margin-top: 10px;
-
-    transition:
-        background .2s ease,
-        color .2s ease,
-        transform .15s ease;
+    transition: .2s ease;
 }
 
 .insight-next:hover {
+    color: #fff;
 
-    background: #222;
+    border-color: #444;
 
-    color: white;
+    background: #181818;
+
+    transform: translateY(-1px);
 }
 
 .insight-next:active {
-
     transform: scale(.96);
 }
 
 
-/* Bulb button */
+/* BULB */
 
 .insight-bulb {
-
     pointer-events: auto;
+
+    position: relative;
 
     width: 54px;
     height: 54px;
 
     border-radius: 50%;
 
-    border: 1px solid #333;
+    border: 1px solid #303030;
 
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            #222,
-            #0d0d0d 70%
-        );
+    background: #101010;
 
-    color: white;
+    color: #777;
 
-    display: flex;
+    display: grid;
 
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-
-    z-index: 2;
+    place-items: center;
 
     box-shadow:
-        0 8px 30px rgba(0,0,0,.5);
+        0 10px 30px rgba(0,0,0,.4);
 
     transition:
-        transform .3s cubic-bezier(.2,.8,.2,1),
+        background .3s ease,
         border-color .3s ease,
-        box-shadow .3s ease,
-        background .3s ease;
+        color .3s ease,
+        box-shadow .4s ease,
+        transform .25s ease;
 }
 
 .insight-bulb:hover {
+    transform: translateY(-2px);
 
-    transform: translateY(-3px);
+    border-color: #444;
 
-    border-color: #555;
+    color: #fff;
+}
+
+.insight-bulb:active {
+    transform: scale(.94);
 }
 
 .bulb-icon {
+    font-size: 22px;
 
-    font-size: 25px;
-
-    line-height: 1;
-
-    filter:
-        grayscale(1)
-        brightness(.75);
+    filter: grayscale(1);
 
     transition:
         filter .3s ease,
         transform .3s ease;
 }
 
-.insight-bulb::before {
 
-    content: "";
-
-    position: absolute;
-
-    inset: -5px;
-
-    border-radius: 50%;
-
-    border: 1px solid transparent;
-
-    transition:
-        border-color .3s ease,
-        box-shadow .3s ease;
-}
+/*
+   GLOW STATE
+*/
 
 .insight-widget.open .insight-bulb {
+    background: #171717;
 
-    border-color: #666;
+    border-color: #777;
 
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            #303030,
-            #101010 70%
-        );
+    color: #fff;
 
     box-shadow:
-        0 0 0 4px rgba(255,255,255,.025),
-        0 0 28px rgba(255,255,255,.13),
-        0 12px 35px rgba(0,0,0,.55);
+        0 0 0 5px rgba(255,255,255,.025),
+        0 0 28px rgba(255,255,255,.15),
+        0 10px 35px rgba(0,0,0,.5);
 }
 
 .insight-widget.open .bulb-icon {
+    filter: grayscale(0);
 
-    filter:
-        grayscale(0)
-        brightness(1.25);
+    transform: scale(1.06);
 
-    transform:
-        scale(1.08);
+    animation: bulbPulse 1.8s ease-in-out infinite;
 }
 
-.insight-widget.open .insight-bulb::before {
+@keyframes bulbPulse {
+    0%,
+    100% {
+        filter:
+            grayscale(0)
+            brightness(1);
+    }
 
-    border-color: rgba(255,255,255,.12);
-
-    box-shadow:
-        0 0 22px rgba(255,255,255,.08);
+    50% {
+        filter:
+            grayscale(0)
+            brightness(1.35);
+    }
 }
 
 
@@ -1635,16 +1397,15 @@ select:focus {
 ========================================================= */
 
 footer {
+    border-top: 1px solid #151515;
 
-    border-top: 1px solid #222;
+    padding: 35px 20px;
 
     text-align: center;
 
-    padding: 30px 20px;
+    color: #444;
 
-    color: #555;
-
-    font-size: 12px;
+    font-size: 11px;
 }
 
 
@@ -1652,126 +1413,115 @@ footer {
    MOBILE
 ========================================================= */
 
-@media(max-width:600px) {
+@media (max-width: 750px) {
 
     header {
         height: 64px;
+
+        padding: 0 16px;
     }
 
     .logo {
-        font-size: 15px;
+        font-size: 17px;
     }
 
-    .plan-badge {
+    .badge {
         display: none;
     }
 
-    .login-btn {
-        padding: 9px 14px;
-        font-size: 12px;
+    .hero {
+        padding-top: 65px;
     }
 
-    main {
-        padding-top: 38px;
+    .hero h1 {
+        letter-spacing: -4px;
+
+        font-size: clamp(55px, 18vw, 90px);
     }
 
-    h1 {
-        font-size: 57px;
+    .hero-description {
+        font-size: 15px;
     }
 
-    .description {
-        font-size: 14px;
+    .input-row {
+        flex-direction: column;
     }
 
-    .promise {
-        font-size: 9px;
-        letter-spacing: 2px;
-    }
-
-    .meters {
-
-        grid-template-columns:
-            repeat(3, 1fr);
-
-        row-gap: 22px;
-    }
-
-    .feedback {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .circle {
-
-        width: 175px;
-        height: 175px;
-    }
-
-    .circle::before {
-
-        width: 153px;
-        height: 153px;
-    }
-
-    .idea-right {
-
-        flex-wrap: wrap;
-
-        justify-content: flex-end;
-    }
-
-    .insight-widget {
-
-        right: 14px;
-        bottom: 14px;
-    }
-
-    .insight-bulb {
-
-        width: 52px;
+    .primary-btn {
         height: 52px;
     }
 
-    .insight-panel {
-
-        width:
-            min(330px, calc(100vw - 28px));
+    .metrics {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .insight-widget.open
-    .insight-panel {
-
-        transform:
-            translateY(-62px)
-            scale(1);
+    .metric:last-child {
+        grid-column: span 2;
     }
 
-    .insight-text {
+    .feedback {
+        grid-template-columns: 1fr;
+    }
 
-        font-size: 16px;
+    .generator-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .generated {
+        grid-template-columns: 1fr;
+    }
+
+    .insight-widget {
+        right: 14px;
+
+        bottom: 14px;
+    }
+
+    .insight-panel {
+        width: min(330px, calc(100vw - 28px));
     }
 
 }
 
 
 /* =========================================================
-   REDUCED MOTION
+   SMALL MOBILE
 ========================================================= */
 
-@media(prefers-reduced-motion: reduce) {
+@media (max-width: 420px) {
 
-    *,
-    *::before,
-    *::after {
+    main {
+        width: min(100% - 20px, 1050px);
+    }
 
-        animation-duration: .01ms !important;
+    .analyzer,
+    .generator,
+    .favorites {
+        padding: 18px;
+    }
 
-        animation-iteration-count: 1 !important;
+    .score-ring {
+        width: 145px;
+        height: 145px;
+    }
 
-        transition-duration: .01ms !important;
+    .score-ring::before {
+        width: 120px;
+        height: 120px;
+    }
 
-        scroll-behavior: auto !important;
+    .score-number {
+        font-size: 39px;
+    }
+
+    .insight-panel {
+        min-height: 160px;
+
+        padding: 17px;
+    }
+
+    .insight-text {
+        font-size: 15px;
     }
 }
 
@@ -1782,28 +1532,26 @@ footer {
 <body>
 
 
-<!-- =======================================================
+<!-- =====================================================
      HEADER
-======================================================= -->
+===================================================== -->
 
 <header>
 
     <div class="logo">
-        BRAND//GRADE
+        BRAND<span>//</span>GRADE
     </div>
 
-    <div class="header-actions">
+    <div class="header-right">
 
-        <div class="plan-badge" id="planBadge">
+        <div class="badge">
             FREE
         </div>
 
         <button
             class="login-btn"
-            onclick="openLogin()">
-
+            id="loginBtn">
             LOGIN
-
         </button>
 
     </div>
@@ -1812,127 +1560,101 @@ footer {
 
 
 
-<!-- =======================================================
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-tag">
+        BUSINESS NAME INTELLIGENCE
+    </div>
+
+    <h1>
+        Name it.<br>
+        <span class="muted">Rate it.</span>
+    </h1>
+
+    <p class="hero-description">
+        Discover how powerful your business name is,
+        understand what's missing, and generate stronger
+        brand ideas.
+    </p>
+
+    <div class="promise">
+        • SIMPLE • FAST • FREE •
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
      MAIN
-======================================================= -->
+===================================================== -->
 
 <main>
 
 
-    <!-- HERO -->
+<!-- =====================================================
+     STEP 1 — ANALYZER
+===================================================== -->
 
-    <div class="tag">
-        BUSINESS NAME INTELLIGENCE
+<section class="section">
+
+    <div class="section-label">
+        STEP 1 — ANALYZE YOUR NAME
     </div>
 
+    <div class="card analyzer">
 
-    <h1>
+        <div class="input-row">
 
-        Name it.<br>
+            <input
+                id="nameInput"
+                class="name-input"
+                type="text"
+                maxlength="80"
+                placeholder="Enter your business name..."
+                autocomplete="off"
+            >
 
-        <span>Rate it.</span>
+            <button
+                id="analyzeBtn"
+                class="primary-btn">
+                ANALYZE NAME →
+            </button>
 
-    </h1>
-
-
-    <p class="description">
-
-        Discover how powerful your business name is,
-        understand what's missing, and generate
-        stronger brand ideas.
-
-    </p>
-
-
-    <div class="promise">
-
-        • SIMPLE • FAST • FREE •
-
-    </div>
+        </div>
 
 
+        <!-- RESULTS -->
 
-    <!-- ===================================================
-         ANALYZER
-    =================================================== -->
-
-    <div class="input-card">
-
-        <label class="input-label">
-
-            ENTER YOUR BUSINESS NAME
-
-        </label>
+        <div
+            id="results"
+            class="results">
 
 
-        <input
-            id="businessName"
-            type="text"
-            placeholder="Example: Nova Coffee"
-            autocomplete="off"
-            maxlength="80"
-        >
+            <!-- SCORE -->
 
-
-        <button
-            class="analyze-btn"
-            id="analyzeButton"
-            onclick="analyze()">
-
-            ANALYZE NAME →
-
-        </button>
-
-    </div>
-
-
-
-    <!-- ===================================================
-         RESULTS
-    =================================================== -->
-
-    <section id="results">
-
-        <div class="result-card">
-
-
-            <div class="score-section">
-
-                <div class="section-label">
-
-                    YOUR NAME SCORE
-
-                </div>
-
+            <div class="score-area">
 
                 <div
-                    class="circle"
-                    id="mainCircle"
-                    style="--score:0%;">
+                    class="score-ring"
+                    id="scoreRing"
+                    style="--score:0deg;">
 
-                    <div class="circle-content">
+                    <div>
 
-                        <div
-                            class="big-score"
-                            id="mainScore">
-
+                        <span
+                            class="score-number"
+                            id="scoreNumber">
                             0
+                        </span>
 
-                        </div>
-
-                        <div class="out-of">
-
+                        <span class="score-out-of">
                             /100
-
-                        </div>
-
-                        <div
-                            class="score-status"
-                            id="status">
-
-                            Ready
-
-                        </div>
+                        </span>
 
                     </div>
 
@@ -1940,142 +1662,137 @@ footer {
 
 
                 <div
-                    class="name-display"
-                    id="nameDisplay">
-
+                    class="status"
+                    id="status">
+                    READY
                 </div>
 
+                <div
+                    class="result-name"
+                    id="resultName">
+                    —
+                </div>
 
                 <p
                     class="summary"
                     id="summary">
-
+                    Enter a name to see your Brand//Grade.
                 </p>
 
             </div>
 
 
 
-            <!-- METERS -->
+            <!-- METRICS -->
 
-            <div class="meters">
+            <div class="metrics">
 
 
-                <div class="meter">
+                <div class="metric">
 
-                    <div
-                        class="meter-circle"
-                        id="memCircle"
-                        style="--meter:0%;">
-
-                        <span
-                            class="meter-number"
-                            id="memScore">
-
-                            0
-
-                        </span>
-
-                    </div>
-
-                    <div class="meter-title">
+                    <div class="metric-name">
                         MEMORY
                     </div>
 
+                    <div
+                        class="metric-score"
+                        id="memoryScore">
+                        0
+                    </div>
+
+                    <div class="meter">
+                        <div
+                            class="meter-fill"
+                            id="memoryMeter">
+                        </div>
+                    </div>
+
                 </div>
 
 
-                <div class="meter">
+                <div class="metric">
 
-                    <div
-                        class="meter-circle"
-                        id="brandCircle"
-                        style="--meter:0%;">
-
-                        <span
-                            class="meter-number"
-                            id="brandScore">
-
-                            0
-
-                        </span>
-
-                    </div>
-
-                    <div class="meter-title">
+                    <div class="metric-name">
                         BRAND
                     </div>
 
+                    <div
+                        class="metric-score"
+                        id="brandScore">
+                        0
+                    </div>
+
+                    <div class="meter">
+                        <div
+                            class="meter-fill"
+                            id="brandMeter">
+                        </div>
+                    </div>
+
                 </div>
 
 
-                <div class="meter">
+                <div class="metric">
 
-                    <div
-                        class="meter-circle"
-                        id="clearCircle"
-                        style="--meter:0%;">
-
-                        <span
-                            class="meter-number"
-                            id="clearScore">
-
-                            0
-
-                        </span>
-
-                    </div>
-
-                    <div class="meter-title">
+                    <div class="metric-name">
                         CLARITY
                     </div>
 
+                    <div
+                        class="metric-score"
+                        id="clarityScore">
+                        0
+                    </div>
+
+                    <div class="meter">
+                        <div
+                            class="meter-fill"
+                            id="clarityMeter">
+                        </div>
+                    </div>
+
                 </div>
 
 
-                <div class="meter">
+                <div class="metric">
 
-                    <div
-                        class="meter-circle"
-                        id="uniqueCircle"
-                        style="--meter:0%;">
-
-                        <span
-                            class="meter-number"
-                            id="uniqueScore">
-
-                            0
-
-                        </span>
-
-                    </div>
-
-                    <div class="meter-title">
+                    <div class="metric-name">
                         UNIQUE
                     </div>
 
+                    <div
+                        class="metric-score"
+                        id="uniqueScore">
+                        0
+                    </div>
+
+                    <div class="meter">
+                        <div
+                            class="meter-fill"
+                            id="uniqueMeter">
+                        </div>
+                    </div>
+
                 </div>
 
 
-                <div class="meter">
+                <div class="metric">
 
-                    <div
-                        class="meter-circle"
-                        id="pronCircle"
-                        style="--meter:0%;">
-
-                        <span
-                            class="meter-number"
-                            id="pronScore">
-
-                            0
-
-                        </span>
-
+                    <div class="metric-name">
+                        PRONOUNCE
                     </div>
 
-                    <div class="meter-title">
-                        PRONOUNCE
+                    <div
+                        class="metric-score"
+                        id="pronounceScore">
+                        0
+                    </div>
+
+                    <div class="meter">
+                        <div
+                            class="meter-fill"
+                            id="pronounceMeter">
+                        </div>
                     </div>
 
                 </div>
@@ -2088,25 +1805,36 @@ footer {
 
             <div class="feedback">
 
+                <div
+                    class="feedback-box feedback-good"
+                    id="goodBox">
 
-                <div class="feedback-box">
-
-                    <h3>
+                    <div class="feedback-title">
                         ✓ What's good
-                    </h3>
+                    </div>
 
-                    <p id="good"></p>
+                    <div
+                        class="feedback-text"
+                        id="goodText">
+                        —
+                    </div>
 
                 </div>
 
 
-                <div class="feedback-box">
+                <div
+                    class="feedback-box feedback-bad"
+                    id="badBox">
 
-                    <h3>
+                    <div class="feedback-title">
                         ⚠ What's lacking
-                    </h3>
+                    </div>
 
-                    <p id="bad"></p>
+                    <div
+                        class="feedback-text"
+                        id="badText">
+                        —
+                    </div>
 
                 </div>
 
@@ -2114,369 +1842,213 @@ footer {
 
 
 
-            <!-- IDEAS -->
+            <!-- VARIATIONS -->
 
-            <div class="ideas">
+            <div class="variations">
 
-                <h3>
-                    ✦ Name ideas
-                </h3>
+                <div class="variations-title">
+                    STRONGER VARIATIONS
+                </div>
 
-                <div id="ideasList"></div>
+                <div
+                    class="variation-list"
+                    id="variationList">
+                </div>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
-    <!-- ===================================================
-         STEP 7 — GENERATOR
-    =================================================== -->
+<!-- =====================================================
+     STEP 7 — SMART GENERATOR
+===================================================== -->
 
-    <div class="generator-card">
+<section class="section">
 
-        <div class="section-label">
+    <div class="section-label">
+        STEP 7 — SMART GENERATOR
+    </div>
 
-            STEP 7 — SMART GENERATOR
+    <div class="card generator">
 
-        </div>
+        <div class="generator-grid">
 
-
-        <div class="generator-title">
-
-            Generate better names.
-
-        </div>
-
-
-        <p class="generator-description">
-
-            Tell Brand//Grade what you're building and
-            choose a style. The generator creates names
-            and scores them using the same rating system.
-
-        </p>
-
-
-        <label class="input-label">
-
-            WHAT IS YOUR BUSINESS?
-
-        </label>
-
-
-        <input
-            id="businessType"
-            type="text"
-            placeholder="Example: Coffee shop"
-            autocomplete="off"
-            maxlength="80"
-        >
-
-
-        <label
-            class="input-label"
-            style="margin-top:15px;">
-
-            WHAT VIBE DO YOU WANT?
-
-        </label>
-
-
-        <!-- CUSTOM SELECT -->
-
-        <div
-            class="custom-select"
-            id="styleSelector">
-
-            <button
-                type="button"
-                class="select-button"
-                id="styleButton"
-                onclick="toggleStyleMenu()">
-
-                <span id="selectedStyle">
-                    Modern
-                </span>
-
-                <span class="select-arrow">
-                    ▼
-                </span>
-
-            </button>
+            <input
+                id="businessType"
+                class="field"
+                type="text"
+                maxlength="50"
+                placeholder="What is your business? e.g. coffee shop"
+                autocomplete="off"
+            >
 
 
             <div
-                class="select-menu"
-                id="styleMenu">
-
+                class="style-selector"
+                id="styleSelector">
 
                 <button
-                    type="button"
-                    class="select-option selected"
-                    data-value="modern"
-                    onclick="chooseStyle('modern','Modern')">
+                    class="style-button"
+                    id="styleButton"
+                    type="button">
 
-                    Modern
+                    <span id="selectedStyle">
+                        Modern
+                    </span>
+
+                    <span class="style-arrow">
+                        ▼
+                    </span>
 
                 </button>
 
 
-                <button
-                    type="button"
-                    class="select-option"
-                    data-value="luxury"
-                    onclick="chooseStyle('luxury','Luxury')">
+                <div
+                    class="style-menu"
+                    id="styleMenu">
 
-                    Luxury
+                    <button
+                        class="style-option"
+                        data-value="Modern"
+                        type="button">
+                        Modern
+                    </button>
 
-                </button>
+                    <button
+                        class="style-option"
+                        data-value="Luxury"
+                        type="button">
+                        Luxury
+                    </button>
+
+                    <button
+                        class="style-option"
+                        data-value="Cute"
+                        type="button">
+                        Cute
+                    </button>
+
+                    <button
+                        class="style-option"
+                        data-value="Minimal"
+                        type="button">
+                        Minimal
+                    </button>
+
+                    <button
+                        class="style-option"
+                        data-value="Bold"
+                        type="button">
+                        Bold
+                    </button>
+
+                </div>
+
+            </div>
 
 
-                <button
-                    type="button"
-                    class="select-option"
-                    data-value="cute"
-                    onclick="chooseStyle('cute','Cute')">
+            <button
+                id="generateBtn"
+                class="primary-btn">
+                GENERATE 10 →
+            </button>
 
-                    Cute
-
-                </button>
+        </div>
 
 
-                <button
-                    type="button"
-                    class="select-option"
-                    data-value="minimal"
-                    onclick="chooseStyle('minimal','Minimal')">
+        <div
+            id="generated"
+            class="generated">
+        </div>
 
-                    Minimal
+    </div>
 
-                </button>
+</section>
 
 
-                <button
-                    type="button"
-                    class="select-option"
-                    data-value="bold"
-                    onclick="chooseStyle('bold','Bold')">
 
-                    Bold
+<!-- =====================================================
+     FAVORITES
+===================================================== -->
 
-                </button>
+<section class="section">
 
+    <div class="section-label">
+        SAVED NAMES
+    </div>
+
+    <div class="card favorites">
+
+        <div
+            id="favoriteList"
+            class="favorite-list">
+
+            <div class="empty-favorites">
+                No saved names yet.
             </div>
 
         </div>
 
-
-        <button
-            class="analyze-btn"
-            id="generateButton"
-            onclick="generateBusinessNames()">
-
-            GENERATE 10 NAMES ✦
-
-        </button>
-
-
-        <div
-            class="generator-results"
-            id="generatedNames">
-
-        </div>
-
     </div>
 
+</section>
 
 
-    <!-- ===================================================
-         STEP 10 — FAVORITES
-    =================================================== -->
 
-    <div class="favorites-card">
+<!-- =====================================================
+     STEP 11 — PRO
+===================================================== -->
 
-        <div class="section-label">
+<section class="section">
 
-            STEP 10 — SAVED NAMES
-
-        </div>
-
-
-        <h2>
-
-            Your favorites
-
-        </h2>
-
-
-        <div
-            id="favoritesList"
-            style="margin-top:12px;">
-
-        </div>
-
+    <div class="section-label">
+        STEP 11 — PRO
     </div>
 
-
-
-    <!-- ===================================================
-         STEP 11 — PRO
-    =================================================== -->
-
-    <div class="pro-card">
-
-        <div class="section-label">
-
-            STEP 11 — PRO
-
-        </div>
-
+    <div class="card pro-card">
 
         <h2>
-
-            Build a stronger brand.
-
+            Go deeper.
         </h2>
-
 
         <p>
-
-            PRO will eventually unlock advanced
-            business-name intelligence.
-
+            Unlock deeper brand analysis, advanced naming
+            intelligence, unlimited generations and more.
         </p>
 
-
-        <ul class="pro-list">
-
-            <li>
-                Unlimited name analysis
-            </li>
-
-            <li>
-                Advanced naming insights
-            </li>
-
-            <li>
-                More generated names
-            </li>
-
-            <li>
-                Industry-specific suggestions
-            </li>
-
-            <li>
-                Unlimited favorites
-            </li>
-
-            <li>
-                Future domain checking
-            </li>
-
-        </ul>
-
-
         <button
-            class="analyze-btn"
-            onclick="showProMessage()">
-
-            EXPLORE PRO
-
+            class="pro-button"
+            id="proButton">
+            COMING SOON
         </button>
 
     </div>
+
+</section>
+
 
 </main>
 
 
 
-<!-- =======================================================
-     FOOTER
-======================================================= -->
-
-<footer>
-
-    BRAND//GRADE — Build a name worth remembering.
-
-</footer>
-
-
-
-<!-- =======================================================
-     LOGIN MODAL
-======================================================= -->
-
-<div id="loginModal">
-
-    <div class="login-box">
-
-        <button
-            class="close"
-            onclick="closeLogin()">
-
-            ×
-
-        </button>
-
-
-        <h2>
-
-            Welcome back.
-
-        </h2>
-
-
-        <p>
-
-            Demo login for now.
-            A real account system can be connected later.
-
-        </p>
-
-
-        <input
-            id="loginEmail"
-            type="email"
-            placeholder="Email"
-        >
-
-
-        <input
-            id="loginPassword"
-            style="margin-top:10px;"
-            type="password"
-            placeholder="Password"
-        >
-
-
-        <button
-            class="analyze-btn"
-            onclick="demoLogin()">
-
-            LOGIN
-
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<!-- =======================================================
-     💡 BUSINESS INSIGHT BULB
-======================================================= -->
+<!-- =====================================================
+     BUSINESS INSIGHT BULB
+===================================================== -->
 
 <div
     class="insight-widget"
     id="insightWidget">
 
 
-    <div class="insight-panel">
+    <div
+        class="insight-panel"
+        id="insightPanel">
 
         <div class="insight-header">
 
@@ -2500,7 +2072,8 @@ footer {
 
         <button
             class="insight-next"
-            onclick="nextInsight(event)">
+            id="insightNext"
+            type="button">
 
             NEXT TIP →
 
@@ -2512,8 +2085,9 @@ footer {
     <button
         class="insight-bulb"
         id="insightBulb"
-        onclick="toggleInsight()"
-        aria-label="Business insights">
+        type="button"
+        aria-label="Business insights"
+        aria-expanded="false">
 
         <span class="bulb-icon">
             💡
@@ -2525,1234 +2099,283 @@ footer {
 
 
 
+<!-- =====================================================
+     LOGIN MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="loginModal">
+
+    <div class="modal-card">
+
+        <h2>
+            Welcome back.
+        </h2>
+
+        <p>
+            Login is currently a demo. Your account system
+            can be connected later.
+        </p>
+
+        <input
+            class="modal-input"
+            type="email"
+            placeholder="Email"
+            autocomplete="email"
+        >
+
+        <input
+            class="modal-input"
+            type="password"
+            placeholder="Password"
+            autocomplete="current-password"
+        >
+
+        <div class="modal-actions">
+
+            <button
+                class="modal-cancel"
+                id="modalCancel"
+                type="button">
+                CANCEL
+            </button>
+
+            <button
+                class="modal-demo"
+                id="modalDemo"
+                type="button">
+                DEMO LOGIN
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    BRAND//GRADE — BUSINESS NAME INTELLIGENCE
+
+</footer>
+
+
+
 <script>
 
 /* =========================================================
-   BRAND//GRADE JAVASCRIPT
+   HELPERS
 ========================================================= */
 
+function escapeHTML(value) {
 
-/* =========================================================
-   LOGIN
-========================================================= */
-
-function openLogin() {
-
-    document
-        .getElementById("loginModal")
-        .classList.add("open");
-
-}
-
-
-function closeLogin() {
-
-    document
-        .getElementById("loginModal")
-        .classList.remove("open");
-
-}
-
-
-function demoLogin() {
-
-    const email =
-        document
-            .getElementById("loginEmail")
-            .value
-            .trim();
-
-
-    const password =
-        document
-            .getElementById("loginPassword")
-            .value
-            .trim();
-
-
-    if (!email || !password) {
-
-        alert(
-            "Enter your email and password."
-        );
-
-        return;
-
-    }
-
-
-    localStorage.setItem(
-        "brandGradeUser",
-        email
-    );
-
-
-    document
-        .getElementById("planBadge")
-        .innerText = "FREE";
-
-
-    closeLogin();
-
-
-    alert(
-        "Demo login successful! Real authentication will be added later."
-    );
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 
 }
 
 
 /* =========================================================
-   SCORE LIMIT
+   SCORE ENGINE
 ========================================================= */
 
-function limit(number) {
+function calculateScore(name) {
 
-    return Math.max(
-        0,
-        Math.min(
-            100,
-            Math.round(number)
-        )
-    );
+    const clean = name.trim();
 
-}
-
-
-/* =========================================================
-   METER
-========================================================= */
-
-function setMeter(
-    id,
-    value,
-    variable
-) {
-
-    const element =
-        document.getElementById(id);
-
-
-    if (!element) return;
-
-
-    element.style.setProperty(
-        variable,
-        value + "%"
-    );
-
-}
-
-
-/* =========================================================
-   CALCULATE SCORES
-========================================================= */
-
-function calculateScores(name) {
-
-    const clean =
-        name.replace(
-            /[^a-zA-Z0-9 ]/g,
-            ""
-        );
-
-
-    const lower =
-        clean.toLowerCase();
-
+    const lower = clean.toLowerCase();
 
     const words =
-        clean
-            .split(/\s+/)
-            .filter(Boolean);
-
+        lower
+        .split(/\s+/)
+        .filter(Boolean);
 
     const letters =
-        clean.replace(
-            /[^a-zA-Z]/g,
-            ""
-        );
-
-
-    if (!letters.length) {
-
-        return null;
-
-    }
-
-
-    let memory = 50;
-
-    let brand = 50;
-
-    let clarity = 50;
-
-    let unique = 50;
-
-    let pronounce = 50;
-
-
-
-    /* =====================================================
-       MEMORY
-    ===================================================== */
+        lower.replace(/[^a-z]/g, "");
 
     const length =
         letters.length;
 
+    const wordCount =
+        words.length;
 
-    if (
-        length >= 5 &&
-        length <= 10
-    ) {
 
-        memory += 25;
+    /* MEMORY */
 
+    let memory = 100;
+
+    if (length > 18) memory -= 28;
+    else if (length > 14) memory -= 18;
+    else if (length > 10) memory -= 8;
+
+    if (wordCount > 3) memory -= 18;
+    else if (wordCount === 3) memory -= 8;
+
+    if (/(\w)\1\1/.test(lower)) {
+        memory -= 8;
     }
 
-    else if (
-        length <= 14
-    ) {
-
-        memory += 15;
-
-    }
-
-    else if (
-        length <= 18
-    ) {
-
-        memory += 5;
-
-    }
-
-    else {
-
-        memory -= 15;
-
-    }
+    memory = Math.max(35, Math.min(100, memory));
 
 
-    if (
-        words.length === 1
-    ) {
+    /* BRAND */
 
-        memory += 10;
+    let brand = 70;
 
-    }
-
-    else if (
-        words.length === 2
-    ) {
-
-        memory += 5;
-
-    }
-
-    else if (
-        words.length === 3
-    ) {
-
-        memory -= 5;
-
-    }
-
-    else {
-
-        memory -= 15;
-
-    }
-
-
-
-    /* =====================================================
-       BRAND
-    ===================================================== */
-
-    if (
-        length >= 5 &&
-        length <= 12
-    ) {
-
-        brand += 20;
-
-    }
-
-    else if (
-        length <= 16
-    ) {
-
-        brand += 8;
-
-    }
-
-    else {
-
-        brand -= 15;
-
-    }
-
-
-    if (
-        words.length === 1
-    ) {
-
-        brand += 10;
-
-    }
-
-    else if (
-        words.length === 2
-    ) {
-
-        brand += 5;
-
-    }
-
-
-    if (
-        /\d/.test(name)
-    ) {
-
-        brand -= 15;
-
-    }
-
-
-
-    /* =====================================================
-       CLARITY
-    ===================================================== */
-
-    const businessWords = [
-
-        "coffee",
-        "cafe",
-        "food",
-        "fashion",
-        "wear",
-        "tech",
-        "digital",
-        "fitness",
-        "beauty",
+    const brandWords = [
+        "brand",
         "studio",
-        "design",
-        "media",
-        "market",
-        "bakery",
-        "restaurant",
-        "shop",
-        "store",
+        "lab",
+        "works",
+        "house",
+        "co",
+        "company",
+        "group",
+        "collective",
         "agency",
-        "travel",
-        "home",
-        "gaming",
-        "game",
-        "pet",
-        "auto",
-        "car",
-        "music",
-        "app",
-        "software",
-        "salon",
-        "gym",
-        "clothing"
-
+        "shop",
+        "hub"
     ];
 
-
-    let hasBusinessWord =
-        false;
-
-
-    businessWords.forEach(
-        function(word) {
-
-            if (
-                lower.includes(word)
-            ) {
-
-                hasBusinessWord = true;
-
-            }
-
-        }
-    );
-
-
-    if (hasBusinessWord) {
-
-        clarity += 25;
-
-    }
-
-    else {
-
-        clarity += 5;
-
-    }
-
-
     if (
-        words.length >= 4
+        brandWords.some(word =>
+            lower.includes(word)
+        )
     ) {
-
-        clarity -= 15;
-
+        brand += 12;
     }
 
-
-    if (
-        /\d/.test(name)
-    ) {
-
-        clarity -= 5;
-
+    if (length >= 5 && length <= 12) {
+        brand += 10;
     }
 
+    if (wordCount <= 2) {
+        brand += 8;
+    }
+
+    brand = Math.max(35, Math.min(100, brand));
 
 
-    /* =====================================================
-       UNIQUE
-    ===================================================== */
+    /* CLARITY */
+
+    let clarity = 72;
 
     const genericWords = [
-
-        "shop",
-        "store",
-        "company",
-        "business",
-        "services",
-        "solutions",
-        "official",
-        "online",
-        "world",
-        "group",
         "best",
-        "pro"
-
+        "online",
+        "official",
+        "solutions",
+        "services",
+        "global",
+        "digital",
+        "premium",
+        "quality",
+        "business"
     ];
 
+    genericWords.forEach(word => {
 
-    let genericCount = 0;
-
-
-    genericWords.forEach(
-        function(word) {
-
-            if (
-                lower.includes(word)
-            ) {
-
-                genericCount++;
-
-            }
-
+        if (lower.includes(word)) {
+            clarity -= 7;
         }
-    );
+
+    });
+
+    if (wordCount > 3) {
+        clarity -= 12;
+    }
+
+    clarity = Math.max(35, Math.min(100, clarity));
 
 
-    unique += 18;
+    /* UNIQUE */
 
+    let unique = 68;
 
-    unique -=
-        genericCount * 12;
-
-
-    const uniqueLetters =
-        new Set(
-            letters.toLowerCase()
-        ).size;
-
-
-    if (
-        uniqueLetters >= 6
-    ) {
-
+    if (length >= 6 && length <= 13) {
         unique += 10;
-
     }
 
-
-    if (
-        uniqueLetters <= 3
-    ) {
-
-        unique -= 15;
-
+    if (wordCount === 1) {
+        unique += 10;
     }
 
-
-    if (
-        /(.)\1\1/i.test(name)
-    ) {
-
-        unique -= 15;
-
+    if (/[^a-z0-9\s]/i.test(clean)) {
+        unique += 4;
     }
 
+    genericWords.forEach(word => {
+
+        if (lower.includes(word)) {
+            unique -= 9;
+        }
+
+    });
+
+    unique = Math.max(30, Math.min(100, unique));
 
 
-    /* =====================================================
-       PRONUNCIATION
-    ===================================================== */
+    /* PRONUNCE */
+
+    let pronounce = 78;
 
     const vowels =
-        (
-            letters.match(
-                /[aeiou]/gi
-            ) || []
-        ).length;
-
+        letters.match(/[aeiou]/g) || [];
 
     const vowelRatio =
-        vowels /
-        letters.length;
+        length
+            ? vowels.length / length
+            : 0;
 
-
-    if (
-        vowelRatio >= .25 &&
-        vowelRatio <= .55
-    ) {
-
-        pronounce += 22;
-
+    if (vowelRatio < .2) {
+        pronounce -= 20;
     }
 
-    else if (
-        vowelRatio >= .20 &&
-        vowelRatio <= .60
-    ) {
-
-        pronounce += 10;
-
+    if (vowelRatio > .7) {
+        pronounce -= 10;
     }
 
-    else {
-
+    if (length > 15) {
         pronounce -= 12;
-
     }
 
-
-    if (
-        /[bcdfghjklmnpqrstvwxyz]{4,}/i
-            .test(letters)
-    ) {
-
-        pronounce -= 18;
-
+    if (/[^a-z\s]/i.test(clean)) {
+        pronounce -= 5;
     }
 
-
-    if (
-        /\d/.test(name)
-    ) {
-
-        pronounce -= 8;
-
-    }
+    pronounce = Math.max(30, Math.min(100, pronounce));
 
 
-    if (
-        /[^a-zA-Z0-9 ]/.test(name)
-    ) {
-
-        pronounce -= 8;
-
-    }
-
-
-
-    /* =====================================================
-       CLEAN NAME BONUS
-    ===================================================== */
-
-    if (
-        length >= 5 &&
-        length <= 12 &&
-        words.length <= 2 &&
-        !/\d/.test(name)
-    ) {
-
-        memory += 5;
-
-        brand += 5;
-
-        pronounce += 5;
-
-    }
-
-
-
-    /* =====================================================
-       EXTREME LENGTH
-    ===================================================== */
-
-    if (
-        length > 20
-    ) {
-
-        memory -= 15;
-
-        brand -= 10;
-
-        clarity -= 8;
-
-    }
-
-
-
-    memory =
-        limit(memory);
-
-    brand =
-        limit(brand);
-
-    clarity =
-        limit(clarity);
-
-    unique =
-        limit(unique);
-
-    pronounce =
-        limit(pronounce);
-
-
-    const overall =
-        Math.round(
-            (
-                memory +
-                brand +
-                clarity +
-                unique +
-                pronounce
-            ) / 5
-        );
+    const overall = Math.round(
+        (
+            memory +
+            brand +
+            clarity +
+            unique +
+            pronounce
+        ) / 5
+    );
 
 
     return {
-
         overall,
         memory,
         brand,
         clarity,
         unique,
         pronounce
-
     };
-
-}
-
-
-/* =========================================================
-   ANIMATE NUMBER
-========================================================= */
-
-function animateNumber(
-    element,
-    from,
-    to,
-    duration
-) {
-
-    const start =
-        performance.now();
-
-
-    function frame(now) {
-
-        const progress =
-            Math.min(
-                (now - start) /
-                duration,
-                1
-            );
-
-
-        const eased =
-            1 -
-            Math.pow(
-                1 - progress,
-                3
-            );
-
-
-        const value =
-            Math.round(
-                from +
-                (to - from) *
-                eased
-            );
-
-
-        element.innerText =
-            value;
-
-
-        if (progress < 1) {
-
-            requestAnimationFrame(frame);
-
-        }
-
-    }
-
-
-    requestAnimationFrame(frame);
-
-}
-
-
-/* =========================================================
-   ANIMATE CIRCLE
-========================================================= */
-
-function animateCircle(
-    element,
-    from,
-    to,
-    variable,
-    duration
-) {
-
-    const start =
-        performance.now();
-
-
-    function frame(now) {
-
-        const progress =
-            Math.min(
-                (now - start) /
-                duration,
-                1
-            );
-
-
-        const eased =
-            1 -
-            Math.pow(
-                1 - progress,
-                3
-            );
-
-
-        const value =
-            from +
-            (to - from) *
-            eased;
-
-
-        element.style.setProperty(
-            variable,
-            value + "%"
-        );
-
-
-        if (progress < 1) {
-
-            requestAnimationFrame(frame);
-
-        }
-
-    }
-
-
-    requestAnimationFrame(frame);
-
-}
-
-
-/* =========================================================
-   ANALYZE
-========================================================= */
-
-function analyze() {
-
-    const input =
-        document.getElementById(
-            "businessName"
-        );
-
-
-    const button =
-        document.getElementById(
-            "analyzeButton"
-        );
-
-
-    const name =
-        input.value.trim();
-
-
-    if (!name) {
-
-        alert(
-            "Enter a business name first."
-        );
-
-        input.focus();
-
-        return;
-
-    }
-
-
-    const scores =
-        calculateScores(name);
-
-
-    if (!scores) {
-
-        alert(
-            "Please enter a valid business name."
-        );
-
-        return;
-
-    }
-
-
-    /* Button animation */
-
-    button.classList.add("loading");
-
-    button.innerText =
-        "ANALYZING...";
-
-
-    setTimeout(
-        function() {
-
-            button.classList.remove(
-                "loading"
-            );
-
-            button.innerText =
-                "ANALYZE NAME →";
-
-
-            showResults(
-                name,
-                scores
-            );
-
-        },
-        550
-    );
-
-}
-
-
-/* =========================================================
-   SHOW RESULTS
-========================================================= */
-
-function showResults(
-    name,
-    scores
-) {
-
-    const results =
-        document.getElementById(
-            "results"
-        );
-
-
-    results.style.display =
-        "block";
-
-
-    results.classList.remove(
-        "show"
-    );
-
-
-    void results.offsetWidth;
-
-
-    results.classList.add(
-        "show"
-    );
-
-
-    document.getElementById(
-        "nameDisplay"
-    ).innerText =
-        name;
-
-
-    document.getElementById(
-        "status"
-    ).innerText =
-        getStatus(
-            scores.overall
-        );
-
-
-    document.getElementById(
-        "summary"
-    ).innerText =
-        getSummary(
-            scores.overall
-        );
-
-
-    /* Reset circles */
-
-    setMeter(
-        "mainCircle",
-        0,
-        "--score"
-    );
-
-
-    setMeter(
-        "memCircle",
-        0,
-        "--meter"
-    );
-
-
-    setMeter(
-        "brandCircle",
-        0,
-        "--meter"
-    );
-
-
-    setMeter(
-        "clearCircle",
-        0,
-        "--meter"
-    );
-
-
-    setMeter(
-        "uniqueCircle",
-        0,
-        "--meter"
-    );
-
-
-    setMeter(
-        "pronCircle",
-        0,
-        "--meter"
-    );
-
-
-    /* Reset meter numbers */
-
-    document.getElementById(
-        "mainScore"
-    ).innerText = "0";
-
-
-    document.getElementById(
-        "memScore"
-    ).innerText = "0";
-
-
-    document.getElementById(
-        "brandScore"
-    ).innerText = "0";
-
-
-    document.getElementById(
-        "clearScore"
-    ).innerText = "0";
-
-
-    document.getElementById(
-        "uniqueScore"
-    ).innerText = "0";
-
-
-    document.getElementById(
-        "pronScore"
-    ).innerText = "0";
-
-
-    /* Main animation */
-
-    setTimeout(
-        function() {
-
-            animateNumber(
-                document.getElementById(
-                    "mainScore"
-                ),
-                0,
-                scores.overall,
-                900
-            );
-
-
-            animateCircle(
-                document.getElementById(
-                    "mainCircle"
-                ),
-                0,
-                scores.overall,
-                "--score",
-                900
-            );
-
-        },
-        150
-    );
-
-
-    /* Meter animations */
-
-    const meterData = [
-
-        [
-            "memCircle",
-            "memScore",
-            scores.memory
-        ],
-
-        [
-            "brandCircle",
-            "brandScore",
-            scores.brand
-        ],
-
-        [
-            "clearCircle",
-            "clearScore",
-            scores.clarity
-        ],
-
-        [
-            "uniqueCircle",
-            "uniqueScore",
-            scores.unique
-        ],
-
-        [
-            "pronCircle",
-            "pronScore",
-            scores.pronounce
-        ]
-
-    ];
-
-
-    document
-        .querySelectorAll(".meter")
-        .forEach(
-            function(meter, index) {
-
-                meter.classList.remove(
-                    "animate"
-                );
-
-
-                setTimeout(
-                    function() {
-
-                        meter.classList.add(
-                            "animate"
-                        );
-
-
-                        const data =
-                            meterData[index];
-
-
-                        animateNumber(
-                            document.getElementById(
-                                data[1]
-                            ),
-                            0,
-                            data[2],
-                            650
-                        );
-
-
-                        animateCircle(
-                            document.getElementById(
-                                data[0]
-                            ),
-                            0,
-                            data[2],
-                            "--meter",
-                            650
-                        );
-
-                    },
-                    220 +
-                    index * 90
-                );
-
-            }
-        );
-
-
-    generateFeedback(
-        scores
-    );
-
-
-    generateIdeas(
-        name
-    );
-
-
-    /* Scroll after animation begins */
-
-    setTimeout(
-        function() {
-
-            results.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        },
-        100
-    );
-
-}
-
-
-/* =========================================================
-   FEEDBACK
-========================================================= */
-
-function generateFeedback(scores) {
-
-    const good = [];
-
-    const bad = [];
-
-
-    if (
-        scores.memory >= 82
-    )
-        good.push(
-            "Easy to remember."
-        );
-
-
-    if (
-        scores.brand >= 82
-    )
-        good.push(
-            "Strong branding potential."
-        );
-
-
-    if (
-        scores.clarity >= 82
-    )
-        good.push(
-            "The business idea is easy to understand."
-        );
-
-
-    if (
-        scores.unique >= 82
-    )
-        good.push(
-            "The name feels distinctive."
-        );
-
-
-    if (
-        scores.pronounce >= 82
-    )
-        good.push(
-            "Easy to say and pronounce."
-        );
-
-
-    if (
-        scores.memory < 70
-    )
-        bad.push(
-            "Could be easier to remember."
-        );
-
-
-    if (
-        scores.brand < 70
-    )
-        bad.push(
-            "Brand identity could be stronger."
-        );
-
-
-    if (
-        scores.clarity < 70
-    )
-        bad.push(
-            "The business purpose may not be obvious."
-        );
-
-
-    if (
-        scores.unique < 70
-    )
-        bad.push(
-            "The name may feel generic."
-        );
-
-
-    if (
-        scores.pronounce < 70
-    )
-        bad.push(
-            "Pronunciation could be simpler."
-        );
-
-
-    document.getElementById(
-        "good"
-    ).innerText =
-        good.length
-            ? good.join(" ")
-            : "Solid overall structure.";
-
-
-    document.getElementById(
-        "bad"
-    ).innerText =
-        bad.length
-            ? bad.join(" ")
-            : "Very few obvious weaknesses.";
-
-
-    document
-        .querySelectorAll(
-            ".feedback-box"
-        )
-        .forEach(
-            function(box, index) {
-
-                box.classList.remove(
-                    "animate"
-                );
-
-
-                setTimeout(
-                    function() {
-
-                        box.classList.add(
-                            "animate"
-                        );
-
-                    },
-                    500 +
-                    index * 120
-                );
-
-            }
-        );
 
 }
 
@@ -3763,27 +2386,27 @@ function generateFeedback(scores) {
 
 function getStatus(score) {
 
-    if (score >= 92)
-        return "Exceptional";
+    if (score >= 90) {
+        return "EXCEPTIONAL";
+    }
 
+    if (score >= 80) {
+        return "STRONG";
+    }
 
-    if (score >= 85)
-        return "Excellent";
+    if (score >= 70) {
+        return "GOOD";
+    }
 
+    if (score >= 60) {
+        return "PROMISING";
+    }
 
-    if (score >= 76)
-        return "Strong";
+    if (score >= 50) {
+        return "NEEDS WORK";
+    }
 
-
-    if (score >= 66)
-        return "Good potential";
-
-
-    if (score >= 50)
-        return "Needs improvement";
-
-
-    return "Needs work";
+    return "WEAK";
 
 }
 
@@ -3794,260 +2417,367 @@ function getStatus(score) {
 
 function getSummary(score) {
 
-    if (score >= 92)
+    if (score >= 90) {
+        return "This name has strong brand potential and is easy to remember.";
+    }
 
-        return "An unusually strong name with excellent branding potential.";
+    if (score >= 80) {
+        return "A strong name with several qualities that can support a memorable brand.";
+    }
 
+    if (score >= 70) {
+        return "A solid foundation, but a few improvements could make the name stronger.";
+    }
 
-    if (score >= 85)
+    if (score >= 60) {
+        return "The idea has potential, but the name could be sharper and more distinctive.";
+    }
 
-        return "A powerful name with strong potential for a memorable brand.";
+    if (score >= 50) {
+        return "There are useful qualities here, but the name needs more refinement.";
+    }
 
-
-    if (score >= 76)
-
-        return "A strong business name with a few areas that could be improved.";
-
-
-    if (score >= 66)
-
-        return "A decent foundation, but the name could become more distinctive.";
-
-
-    if (score >= 50)
-
-        return "The name has potential, but several areas need improvement.";
-
-
-    return "This name needs significant improvement before becoming a strong brand.";
-
+    return "The name may struggle with memorability, clarity or differentiation.";
 }
 
 
 /* =========================================================
-   ANALYZED NAME IDEAS
+   FEEDBACK
 ========================================================= */
 
-function generateIdeas(name) {
+function getGoodText(scores) {
+
+    const strongest = Object.entries({
+        Memory: scores.memory,
+        Brandability: scores.brand,
+        Clarity: scores.clarity,
+        Uniqueness: scores.unique,
+        Pronunciation: scores.pronounce
+    })
+    .sort((a, b) => b[1] - a[1])[0];
+
+
+    return strongest[1] >= 80
+        ? `${strongest[0]} is one of the strongest parts of this name.`
+        : "The name has a workable foundation that can be developed further.";
+}
+
+
+function getBadText(scores) {
+
+    const weakest = Object.entries({
+        Memory: scores.memory,
+        Brandability: scores.brand,
+        Clarity: scores.clarity,
+        Uniqueness: scores.unique,
+        Pronunciation: scores.pronounce
+    })
+    .sort((a, b) => a[1] - b[1])[0];
+
+
+    return weakest[1] < 70
+        ? `${weakest[0]} could be improved to make the name stronger.`
+        : "There are no major weaknesses, but refinement can still improve the name.";
+}
+
+
+/* =========================================================
+   VARIATIONS
+========================================================= */
+
+function generateVariations(name) {
 
     const clean =
         name
-            .replace(
-                /[^a-zA-Z ]/g,
-                ""
-            )
-            .trim();
-
-
-    if (!clean) return;
-
+        .trim()
+        .replace(/\s+/g, " ");
 
     const words =
-        clean.split(/\s+/);
-
+        clean.split(" ");
 
     const first =
-        words[0];
+        words[0] || clean;
+
+    const last =
+        words[words.length - 1] || clean;
 
 
-    const cap =
-        first.charAt(0).toUpperCase() +
-        first.slice(1).toLowerCase();
-
-
-    const ideas = [
-
-        cap + " Studio",
-
-        cap + " Labs",
-
-        "Nova " + cap,
-
-        cap + " Co",
-
-        cap + " Works"
-
+    const variations = [
+        `${first}Lab`,
+        `${first}Works`,
+        `${first}Co`,
+        `${first}House`,
+        `${first}Studio`,
+        `${last}Lab`,
+        `${first}ly`,
+        `${first}ly Co`,
+        `${first} Collective`,
+        `The ${first}`
     ];
 
 
-    const list =
-        document.getElementById(
-            "ideasList"
-        );
-
-
-    list.innerHTML = "";
-
-
-    ideas.forEach(
-        function(idea, index) {
-
-            const score =
-                calculateScores(
-                    idea
-                );
-
-
-            if (!score) return;
-
-
-            const div =
-                document.createElement(
-                    "div"
-                );
-
-
-            div.className =
-                "idea";
-
-
-            div.innerHTML = `
-
-                <div class="idea-left">
-
-                    <div class="idea-name">
-                        ${escapeHTML(idea)}
-                    </div>
-
-                    <div class="idea-meta">
-                        Generated variation
-                    </div>
-
-                </div>
-
-
-                <div class="idea-right">
-
-                    <span class="idea-score">
-                        ${score.overall}/100
-                    </span>
-
-                    <button
-                        class="small-btn"
-                        onclick="copyName('${escapeJS(idea)}')">
-
-                        COPY
-
-                    </button>
-
-                    <button
-                        class="small-btn"
-                        onclick="saveFavorite('${escapeJS(idea)}')">
-
-                        ♡
-
-                    </button>
-
-                </div>
-
-            `;
-
-
-            list.appendChild(div);
-
-
-            setTimeout(
-                function() {
-
-                    div.classList.add(
-                        "animate"
-                    );
-
-                },
-                650 +
-                index * 90
-            );
-
-        }
-    );
-
+    return [...new Set(variations)]
+        .filter(Boolean)
+        .slice(0, 10);
 }
 
 
 /* =========================================================
-   CUSTOM SELECT
+   ANALYZE
 ========================================================= */
 
-let selectedBusinessStyle =
-    "modern";
+const nameInput =
+    document.getElementById("nameInput");
+
+const analyzeBtn =
+    document.getElementById("analyzeBtn");
+
+const results =
+    document.getElementById("results");
 
 
-function toggleStyleMenu() {
+function animateNumber(element, from, to, duration) {
 
-    document
-        .getElementById(
-            "styleSelector"
-        )
-        .classList.toggle(
-            "open"
-        );
+    const start =
+        performance.now();
 
+    function update(now) {
+
+        const progress =
+            Math.min(
+                1,
+                (now - start) / duration
+            );
+
+        const eased =
+            1 - Math.pow(1 - progress, 3);
+
+        const value =
+            Math.round(
+                from +
+                (to - from) * eased
+            );
+
+        element.textContent =
+            value;
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+
+    }
+
+    requestAnimationFrame(update);
 }
 
 
-function chooseStyle(
-    value,
-    label
-) {
+function analyzeName() {
 
-    selectedBusinessStyle =
-        value;
+    const name =
+        nameInput.value.trim();
 
 
-    document
-        .getElementById(
-            "selectedStyle"
-        )
-        .innerText =
-        label;
+    if (!name) {
+
+        nameInput.focus();
+
+        return;
+    }
 
 
-    document
-        .querySelectorAll(
-            ".select-option"
-        )
-        .forEach(
-            function(option) {
+    analyzeBtn.textContent =
+        "ANALYZING...";
 
-                option.classList.toggle(
-                    "selected",
-                    option.dataset.value === value
+    analyzeBtn.classList.add("loading");
+
+
+    setTimeout(() => {
+
+        const scores =
+            calculateScore(name);
+
+        const score =
+            scores.overall;
+
+
+        results.classList.add("show");
+
+
+        document.getElementById("resultName")
+            .textContent = name;
+
+
+        document.getElementById("status")
+            .textContent = getStatus(score);
+
+
+        document.getElementById("summary")
+            .textContent = getSummary(score);
+
+
+        const scoreNumber =
+            document.getElementById("scoreNumber");
+
+        animateNumber(
+            scoreNumber,
+            0,
+            score,
+            900
+        );
+
+
+        const ring =
+            document.getElementById("scoreRing");
+
+        ring.style.setProperty(
+            "--score",
+            `${score * 3.6}deg`
+        );
+
+
+        const metricData = [
+            ["memory", scores.memory],
+            ["brand", scores.brand],
+            ["clarity", scores.clarity],
+            ["unique", scores.unique],
+            ["pronounce", scores.pronounce]
+        ];
+
+
+        metricData.forEach(([key, value], index) => {
+
+            const scoreElement =
+                document.getElementById(
+                    `${key}Score`
                 );
 
-            }
-        );
+            const meter =
+                document.getElementById(
+                    `${key}Meter`
+                );
 
 
-    document
-        .getElementById(
-            "styleSelector"
-        )
-        .classList.remove(
-            "open"
-        );
+            scoreElement.textContent = "0";
+
+            meter.style.width = "0%";
+
+
+            setTimeout(() => {
+
+                animateNumber(
+                    scoreElement,
+                    0,
+                    value,
+                    700
+                );
+
+                meter.style.width =
+                    `${value}%`;
+
+            }, 150 + index * 100);
+
+        });
+
+
+        document.getElementById("goodText")
+            .textContent =
+            getGoodText(scores);
+
+
+        document.getElementById("badText")
+            .textContent =
+            getBadText(scores);
+
+
+        document.getElementById("goodBox")
+            .classList.remove("show");
+
+        document.getElementById("badBox")
+            .classList.remove("show");
+
+
+        setTimeout(() => {
+
+            document.getElementById("goodBox")
+                .classList.add("show");
+
+        }, 500);
+
+
+        setTimeout(() => {
+
+            document.getElementById("badBox")
+                .classList.add("show");
+
+        }, 650);
+
+
+        const variationList =
+            document.getElementById(
+                "variationList"
+            );
+
+
+        variationList.innerHTML = "";
+
+
+        const variations =
+            generateVariations(name);
+
+
+        variations.forEach((variation, index) => {
+
+            const div =
+                document.createElement("div");
+
+            div.className =
+                "variation";
+
+            div.textContent =
+                variation;
+
+
+            variationList.appendChild(div);
+
+
+            setTimeout(() => {
+
+                div.classList.add("show");
+
+            }, 650 + index * 70);
+
+        });
+
+
+        analyzeBtn.textContent =
+            "ANALYZE AGAIN →";
+
+        analyzeBtn.classList.remove("loading");
+
+
+        results.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+
+    }, 650);
 
 }
 
 
-document.addEventListener(
+analyzeBtn.addEventListener(
     "click",
-    function(event) {
-
-        const selector =
-            document.getElementById(
-                "styleSelector"
-            );
+    analyzeName
+);
 
 
-        if (
-            selector &&
-            !selector.contains(event.target)
-        ) {
+nameInput.addEventListener(
+    "keydown",
+    event => {
 
-            selector.classList.remove(
-                "open"
-            );
-
+        if (event.key === "Enter") {
+            analyzeName();
         }
 
     }
@@ -4055,600 +2785,421 @@ document.addEventListener(
 
 
 /* =========================================================
-   STEP 7 GENERATOR
+   GENERATOR
 ========================================================= */
 
-function generateBusinessNames() {
+const businessType =
+    document.getElementById(
+        "businessType"
+    );
+
+const generateBtn =
+    document.getElementById(
+        "generateBtn"
+    );
+
+const generated =
+    document.getElementById(
+        "generated"
+    );
+
+const selectedStyle =
+    document.getElementById(
+        "selectedStyle"
+    );
+
+
+let currentStyle =
+    "Modern";
+
+
+const styleWords = {
+
+    Modern: [
+        "Nova",
+        "Nexa",
+        "Modo",
+        "Vero",
+        "Nomi",
+        "Luma",
+        "Vanta",
+        "Aero",
+        "Nivo",
+        "Kivo"
+    ],
+
+    Luxury: [
+        "Aure",
+        "Velour",
+        "Maison",
+        "Luxe",
+        "Élan",
+        "Vellum",
+        "Monarch",
+        "Opal",
+        "Verre",
+        "Arden"
+    ],
+
+    Cute: [
+        "Mimi",
+        "Bibi",
+        "Piko",
+        "Momo",
+        "Lulu",
+        "Nini",
+        "Poppy",
+        "Kiki",
+        "Boba",
+        "Coco"
+    ],
+
+    Minimal: [
+        "Noma",
+        "Mono",
+        "Form",
+        "Plain",
+        "Line",
+        "Modo",
+        "Nude",
+        "Base",
+        "Kind",
+        "Core"
+    ],
+
+    Bold: [
+        "Forge",
+        "Volt",
+        "Rogue",
+        "Titan",
+        "Peak",
+        "Dash",
+        "Blaze",
+        "Rift",
+        "Iron",
+        "Rise"
+    ]
+
+};
+
+
+function cleanBusinessType(value) {
+
+    return value
+        .trim()
+        .replace(/\s+/g, " ")
+        .replace(/[^a-zA-Z0-9\s]/g, "");
+
+}
+
+
+function generateNames() {
 
     const type =
-        document
-            .getElementById(
-                "businessType"
-            )
-            .value
-            .trim();
-
-
-    const button =
-        document.getElementById(
-            "generateButton"
+        cleanBusinessType(
+            businessType.value
         );
 
 
     if (!type) {
 
-        alert(
-            "Tell me what your business is first."
-        );
-
-        document
-            .getElementById(
-                "businessType"
-            )
-            .focus();
+        businessType.focus();
 
         return;
-
     }
 
 
-    button.classList.add(
-        "loading"
-    );
-
-
-    button.innerText =
+    generateBtn.textContent =
         "GENERATING...";
 
-
-    setTimeout(
-        function() {
-
-            const category =
-                getCategory(type);
+    generateBtn.classList.add("loading");
 
 
-            const names =
-                createNames(
-                    category,
-                    selectedBusinessStyle
+    setTimeout(() => {
+
+        generated.innerHTML = "";
+
+
+        const words =
+            styleWords[currentStyle];
+
+
+        const base =
+            type
+            .split(" ")[0]
+            .replace(/[^a-zA-Z]/g, "");
+
+
+        const names = [];
+
+
+        words.forEach(word => {
+
+            names.push(
+                `${word}${base}`
+            );
+
+            names.push(
+                `${base}${word}`
+            );
+
+        });
+
+
+        const uniqueNames =
+            [...new Set(names)]
+            .slice(0, 10);
+
+
+        uniqueNames.forEach(
+            (name, index) => {
+
+                const card =
+                    document.createElement(
+                        "div"
+                    );
+
+                card.className =
+                    "generated-name";
+
+
+                const text =
+                    document.createElement(
+                        "div"
+                    );
+
+                text.className =
+                    "generated-name-text";
+
+                text.textContent =
+                    name;
+
+
+                const save =
+                    document.createElement(
+                        "button"
+                    );
+
+                save.className =
+                    "save-name";
+
+                save.type =
+                    "button";
+
+                save.innerHTML =
+                    "☆";
+
+                save.setAttribute(
+                    "aria-label",
+                    `Save ${name}`
                 );
 
 
-            const container =
-                document.getElementById(
-                    "generatedNames"
-                );
+                save.addEventListener(
+                    "click",
+                    () => {
 
-
-            container.innerHTML = "";
-
-
-            names.forEach(
-                function(name, index) {
-
-                    const score =
-                        calculateScores(
+                        saveFavorite(
                             name
                         );
 
-
-                    if (!score) return;
-
-
-                    const div =
-                        document.createElement(
-                            "div"
+                        save.classList.add(
+                            "saved"
                         );
 
+                        save.innerHTML =
+                            "★";
 
-                    div.className =
-                        "idea";
-
-
-                    div.innerHTML = `
-
-                        <div class="idea-left">
-
-                            <div class="idea-name">
-                                ${escapeHTML(name)}
-                            </div>
-
-                            <div class="idea-meta">
-                                ${getStatus(score.overall)}
-                            </div>
-
-                        </div>
+                    }
+                );
 
 
-                        <div class="idea-right">
+                card.appendChild(text);
 
-                            <span class="idea-score">
-                                ${score.overall}/100
-                            </span>
+                card.appendChild(save);
 
-
-                            <button
-                                class="small-btn"
-                                onclick="copyName('${escapeJS(name)}')">
-
-                                COPY
-
-                            </button>
+                generated.appendChild(card);
 
 
-                            <button
-                                class="small-btn"
-                                onclick="saveFavorite('${escapeJS(name)}')">
+                card.style.opacity = "0";
 
-                                ♡
-
-                            </button>
-
-                        </div>
-
-                    `;
+                card.style.transform =
+                    "translateY(8px)";
 
 
-                    container.appendChild(
-                        div
-                    );
+                setTimeout(() => {
+
+                    card.style.transition =
+                        "opacity .35s ease, transform .35s ease";
+
+                    card.style.opacity = "1";
+
+                    card.style.transform =
+                        "translateY(0)";
+
+                }, index * 65);
+
+            }
+        );
 
 
-                    setTimeout(
-                        function() {
+        generateBtn.textContent =
+            "GENERATE AGAIN →";
 
-                            div.classList.add(
-                                "animate"
-                            );
+        generateBtn.classList.remove(
+            "loading"
+        );
 
-                        },
-                        index * 70
-                    );
-
-                }
-            );
-
-
-            button.classList.remove(
-                "loading"
-            );
-
-
-            button.innerText =
-                "GENERATE 10 NAMES ✦";
-
-        },
-        500
-    );
+    }, 450);
 
 }
 
 
-/* =========================================================
-   CATEGORY DETECTOR
-========================================================= */
-
-function getCategory(type) {
-
-    const text =
-        type.toLowerCase();
-
-
-    if (
-        text.includes("coffee") ||
-        text.includes("cafe")
-    )
-        return "coffee";
-
-
-    if (
-        text.includes("clothing") ||
-        text.includes("fashion") ||
-        text.includes("wear")
-    )
-        return "fashion";
-
-
-    if (
-        text.includes("tech") ||
-        text.includes("software") ||
-        text.includes("app") ||
-        text.includes("gaming")
-    )
-        return "tech";
-
-
-    if (
-        text.includes("beauty") ||
-        text.includes("skin") ||
-        text.includes("salon")
-    )
-        return "beauty";
-
-
-    if (
-        text.includes("food") ||
-        text.includes("restaurant") ||
-        text.includes("bakery")
-    )
-        return "food";
-
-
-    if (
-        text.includes("fitness") ||
-        text.includes("gym")
-    )
-        return "fitness";
-
-
-    return "general";
-
-}
-
-
-/* =========================================================
-   NAME CREATOR
-========================================================= */
-
-function createNames(
-    category,
-    style
-) {
-
-    const words = {
-
-        coffee: [
-            "Bean",
-            "Brew",
-            "Roast",
-            "Cup",
-            "Grind",
-            "Mocha",
-            "Drip",
-            "Crema"
-        ],
-
-        fashion: [
-            "Wear",
-            "Mode",
-            "Thread",
-            "Style",
-            "Form",
-            "Muse",
-            "Edit",
-            "Label"
-        ],
-
-        tech: [
-            "Labs",
-            "Byte",
-            "Pixel",
-            "Code",
-            "Core",
-            "Cloud",
-            "Logic",
-            "Nova"
-        ],
-
-        beauty: [
-            "Glow",
-            "Bloom",
-            "Aura",
-            "Luxe",
-            "Muse",
-            "Pure",
-            "Blush",
-            "Velvet"
-        ],
-
-        food: [
-            "Bite",
-            "Taste",
-            "Fork",
-            "Plate",
-            "Table",
-            "Feast",
-            "Crave",
-            "Dish"
-        ],
-
-        fitness: [
-            "Fit",
-            "Core",
-            "Peak",
-            "Motion",
-            "Force",
-            "Pulse",
-            "Lift",
-            "Active"
-        ],
-
-        general: [
-            "Works",
-            "Studio",
-            "Labs",
-            "Co",
-            "House",
-            "Collective",
-            "Craft",
-            "Hub"
-        ]
-
-    };
-
-
-    const prefixes = {
-
-        modern: [
-            "Nova",
-            "Nexa",
-            "Vero",
-            "Vela"
-        ],
-
-        luxury: [
-            "Aure",
-            "Velour",
-            "Elan",
-            "Vera"
-        ],
-
-        cute: [
-            "Lumi",
-            "Mimi",
-            "Nomi",
-            "Bibi"
-        ],
-
-        minimal: [
-            "Nua",
-            "Vae",
-            "Ova",
-            "Eli"
-        ],
-
-        bold: [
-            "Volt",
-            "Apex",
-            "Titan",
-            "Rush"
-        ]
-
-    };
-
-
-    const selectedWords =
-        words[category];
-
-
-    const selectedPrefixes =
-        prefixes[style];
-
-
-    const result = [
-
-        selectedPrefixes[0] +
-        selectedWords[0],
-
-        selectedPrefixes[1] +
-        " " +
-        selectedWords[1],
-
-        selectedWords[2] +
-        " " +
-        selectedPrefixes[2],
-
-        selectedPrefixes[3] +
-        " " +
-        selectedWords[3],
-
-        selectedWords[4] +
-        " " +
-        selectedPrefixes[0],
-
-        selectedPrefixes[0] +
-        " " +
-        selectedWords[5],
-
-        selectedWords[6] +
-        " " +
-        selectedPrefixes[1],
-
-        selectedPrefixes[2] +
-        selectedWords[7],
-
-        selectedWords[1] +
-        " " +
-        selectedPrefixes[3],
-
-        selectedPrefixes[1] +
-        selectedWords[4]
-
-    ];
-
-
-    return [
-        ...new Set(result)
-    ];
-
-}
-
-
-/* =========================================================
-   COPY
-========================================================= */
-
-function copyName(name) {
-
-    if (
-        navigator.clipboard &&
-        navigator.clipboard.writeText
-    ) {
-
-        navigator.clipboard
-            .writeText(name)
-            .then(
-                function() {
-
-                    alert(
-                        '"' +
-                        name +
-                        '" copied!'
-                    );
-
-                }
-            )
-            .catch(
-                function() {
-
-                    fallbackCopy(
-                        name
-                    );
-
-                }
-            );
+generateBtn.addEventListener(
+    "click",
+    generateNames
+);
+
+
+businessType.addEventListener(
+    "keydown",
+    event => {
+
+        if (event.key === "Enter") {
+            generateNames();
+        }
 
     }
+);
 
-    else {
 
-        fallbackCopy(
-            name
+/* =========================================================
+   CUSTOM SELECTOR
+========================================================= */
+
+const styleSelector =
+    document.getElementById(
+        "styleSelector"
+    );
+
+const styleButton =
+    document.getElementById(
+        "styleButton"
+    );
+
+const styleOptions =
+    document.querySelectorAll(
+        ".style-option"
+    );
+
+
+styleButton.addEventListener(
+    "click",
+    event => {
+
+        event.stopPropagation();
+
+        styleSelector.classList.toggle(
+            "open"
         );
 
     }
-
-}
-
-
-function fallbackCopy(text) {
-
-    const area =
-        document.createElement(
-            "textarea"
-        );
+);
 
 
-    area.value =
-        text;
+styleOptions.forEach(option => {
+
+    option.addEventListener(
+        "click",
+        event => {
+
+            event.stopPropagation();
 
 
-    document
-        .body
-        .appendChild(
-            area
-        );
+            currentStyle =
+                option.dataset.value;
 
 
-    area.select();
+            selectedStyle.textContent =
+                currentStyle;
 
 
-    document.execCommand(
-        "copy"
+            styleSelector.classList.remove(
+                "open"
+            );
+
+        }
     );
 
+});
 
-    area.remove();
 
+document.addEventListener(
+    "click",
+    () => {
 
-    alert(
-        '"' +
-        text +
-        '" copied!'
-    );
+        styleSelector.classList.remove(
+            "open"
+        );
 
-}
+    }
+);
 
 
 /* =========================================================
    FAVORITES
 ========================================================= */
 
-function getFavorites() {
+let favorites =
+    JSON.parse(
+        localStorage.getItem(
+            "brandGradeFavorites"
+        ) || "[]"
+    );
 
-    try {
 
-        return JSON.parse(
-            localStorage.getItem(
-                "brandGradeFavorites"
-            )
-        ) || [];
+const favoriteList =
+    document.getElementById(
+        "favoriteList"
+    );
 
-    }
 
-    catch(error) {
+function saveFavorites() {
 
-        return [];
-
-    }
+    localStorage.setItem(
+        "brandGradeFavorites",
+        JSON.stringify(favorites)
+    );
 
 }
 
 
 function saveFavorite(name) {
 
-    const favorites =
-        getFavorites();
-
-
     if (
         favorites.includes(name)
     ) {
-
-        alert(
-            "Already saved."
-        );
-
         return;
-
     }
 
 
     favorites.push(name);
 
-
-    localStorage.setItem(
-        "brandGradeFavorites",
-        JSON.stringify(
-            favorites
-        )
-    );
-
+    saveFavorites();
 
     renderFavorites();
-
-
-    alert(
-        "Saved to favorites!"
-    );
 
 }
 
 
 function removeFavorite(name) {
 
-    let favorites =
-        getFavorites();
-
-
     favorites =
         favorites.filter(
-            function(item) {
-
-                return item !== name;
-
-            }
+            item => item !== name
         );
 
-
-    localStorage.setItem(
-        "brandGradeFavorites",
-        JSON.stringify(
-            favorites
-        )
-    );
-
+    saveFavorites();
 
     renderFavorites();
 
@@ -4657,177 +3208,96 @@ function removeFavorite(name) {
 
 function renderFavorites() {
 
-    const list =
-        document.getElementById(
-            "favoritesList"
-        );
-
-
-    const favorites =
-        getFavorites();
+    favoriteList.innerHTML = "";
 
 
     if (!favorites.length) {
 
-        list.innerHTML = `
+        const empty =
+            document.createElement(
+                "div"
+            );
 
-            <div class="favorite-empty">
+        empty.className =
+            "empty-favorites";
 
-                No saved names yet.
-                Tap ♡ on a name to save it.
+        empty.textContent =
+            "No saved names yet.";
 
-            </div>
-
-        `;
+        favoriteList.appendChild(
+            empty
+        );
 
         return;
-
     }
 
 
-    list.innerHTML = "";
+    favorites.forEach(name => {
 
-
-    favorites.forEach(
-        function(name) {
-
-            const score =
-                calculateScores(
-                    name
-                );
-
-
-            const div =
-                document.createElement(
-                    "div"
-                );
-
-
-            div.className =
-                "favorite-item";
-
-
-            div.innerHTML = `
-
-                <div>
-
-                    <div class="favorite-name">
-
-                        ${escapeHTML(name)}
-
-                    </div>
-
-                    <div class="idea-meta">
-
-                        ${score ? score.overall : 0}/100
-
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <button
-                        class="small-btn"
-                        onclick="copyName('${escapeJS(name)}')">
-
-                        COPY
-
-                    </button>
-
-
-                    <button
-                        class="small-btn"
-                        onclick="removeFavorite('${escapeJS(name)}')">
-
-                        REMOVE
-
-                    </button>
-
-                </div>
-
-            `;
-
-
-            list.appendChild(
-                div
+        const pill =
+            document.createElement(
+                "div"
             );
 
-        }
-    );
-
-}
+        pill.className =
+            "favorite-pill";
 
 
-/* =========================================================
-   PRO
-========================================================= */
+        const text =
+            document.createElement(
+                "span"
+            );
 
-function showProMessage() {
-
-    alert(
-        "PRO is planned for the next version. Payment and real PRO accounts will be connected after we add a proper backend."
-    );
-
-}
+        text.textContent =
+            name;
 
 
-/* =========================================================
-   SECURITY HELPERS
-========================================================= */
+        const remove =
+            document.createElement(
+                "button"
+            );
 
-function escapeHTML(text) {
+        remove.className =
+            "remove-favorite";
 
-    return text
+        remove.type =
+            "button";
 
-        .replace(
-            /&/g,
-            "&amp;"
-        )
+        remove.textContent =
+            "×";
 
-        .replace(
-            /</g,
-            "&lt;"
-        )
-
-        .replace(
-            />/g,
-            "&gt;"
-        )
-
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-
-        .replace(
-            /'/g,
-            "&#039;"
+        remove.setAttribute(
+            "aria-label",
+            `Remove ${name}`
         );
 
-}
 
+        remove.addEventListener(
+            "click",
+            () => {
 
-function escapeJS(text) {
+                removeFavorite(name);
 
-    return text
-
-        .replace(
-            /\\/g,
-            "\\\\"
-        )
-
-        .replace(
-            /'/g,
-            "\\'"
+            }
         );
 
+
+        pill.appendChild(text);
+
+        pill.appendChild(remove);
+
+        favoriteList.appendChild(pill);
+
+    });
+
 }
+
+
+renderFavorites();
 
 
 /* =========================================================
-   💡 BUSINESS INSIGHTS
+   BUSINESS INSIGHTS
 ========================================================= */
 
 const businessInsights = [
@@ -4870,27 +3340,58 @@ const businessInsights = [
 let insightIndex = 0;
 
 
+const insightWidget =
+    document.getElementById(
+        "insightWidget"
+    );
+
+const insightBulb =
+    document.getElementById(
+        "insightBulb"
+    );
+
+const insightNext =
+    document.getElementById(
+        "insightNext"
+    );
+
+const insightText =
+    document.getElementById(
+        "insightText"
+    );
+
+
+/*
+   OPEN / CLOSE
+*/
+
 function toggleInsight() {
 
-    const widget =
-        document.getElementById(
-            "insightWidget"
+    const isOpen =
+        insightWidget.classList.toggle(
+            "open"
         );
 
 
-    widget.classList.toggle(
-        "open"
+    insightBulb.setAttribute(
+        "aria-expanded",
+        isOpen
+            ? "true"
+            : "false"
     );
 
 }
 
 
+/*
+   NEXT TIP
+*/
+
 function nextInsight(event) {
 
     if (event) {
-
+        event.preventDefault();
         event.stopPropagation();
-
     }
 
 
@@ -4907,40 +3408,136 @@ function nextInsight(event) {
     }
 
 
-    const text =
-        document.getElementById(
-            "insightText"
-        );
-
-
-    text.classList.remove(
+    insightText.classList.remove(
         "change"
     );
 
 
-    void text.offsetWidth;
+    /*
+       Forces browser to restart animation.
+    */
+
+    void insightText.offsetWidth;
 
 
-    text.innerText =
+    insightText.textContent =
         businessInsights[
             insightIndex
         ];
 
 
-    text.classList.add(
+    insightText.classList.add(
         "change"
     );
 
 }
 
 
+insightBulb.addEventListener(
+    "click",
+    toggleInsight
+);
+
+
+insightNext.addEventListener(
+    "click",
+    nextInsight
+);
+
+
 /* =========================================================
-   ESC KEY
+   LOGIN MODAL
 ========================================================= */
+
+const loginBtn =
+    document.getElementById(
+        "loginBtn"
+    );
+
+const loginModal =
+    document.getElementById(
+        "loginModal"
+    );
+
+const modalCancel =
+    document.getElementById(
+        "modalCancel"
+    );
+
+const modalDemo =
+    document.getElementById(
+        "modalDemo"
+    );
+
+const proButton =
+    document.getElementById(
+        "proButton"
+    );
+
+
+function openLogin() {
+
+    loginModal.classList.add(
+        "show"
+    );
+
+}
+
+
+function closeLogin() {
+
+    loginModal.classList.remove(
+        "show"
+    );
+
+}
+
+
+loginBtn.addEventListener(
+    "click",
+    openLogin
+);
+
+
+modalCancel.addEventListener(
+    "click",
+    closeLogin
+);
+
+
+modalDemo.addEventListener(
+    "click",
+    () => {
+
+        alert(
+            "Demo login successful!"
+        );
+
+        closeLogin();
+
+    }
+);
+
+
+loginModal.addEventListener(
+    "click",
+    event => {
+
+        if (
+            event.target === loginModal
+        ) {
+
+            closeLogin();
+
+        }
+
+    }
+);
+
 
 document.addEventListener(
     "keydown",
-    function(event) {
+    event => {
 
         if (
             event.key === "Escape"
@@ -4948,23 +3545,9 @@ document.addEventListener(
 
             closeLogin();
 
-
-            document
-                .getElementById(
-                    "styleSelector"
-                )
-                .classList.remove(
-                    "open"
-                );
-
-
-            document
-                .getElementById(
-                    "insightWidget"
-                )
-                .classList.remove(
-                    "open"
-                );
+            styleSelector.classList.remove(
+                "open"
+            );
 
         }
 
@@ -4973,84 +3556,21 @@ document.addEventListener(
 
 
 /* =========================================================
-   LOGIN MODAL OUTSIDE CLICK
+   PRO BUTTON
 ========================================================= */
 
-document
-    .getElementById(
-        "loginModal"
-    )
-    .addEventListener(
-        "click",
-        function(event) {
+proButton.addEventListener(
+    "click",
+    () => {
 
-            if (
-                event.target === this
-            ) {
+        alert(
+            "Brand//Grade PRO is coming soon."
+        );
 
-                closeLogin();
-
-            }
-
-        }
-    );
-
-
-/* =========================================================
-   LOAD FAVORITES
-========================================================= */
-
-renderFavorites();
-
-
-/* =========================================================
-   ENTER KEY — ANALYZER
-========================================================= */
-
-document
-    .getElementById(
-        "businessName"
-    )
-    .addEventListener(
-        "keydown",
-        function(event) {
-
-            if (
-                event.key === "Enter"
-            ) {
-
-                analyze();
-
-            }
-
-        }
-    );
-
-
-/* =========================================================
-   ENTER KEY — GENERATOR
-========================================================= */
-
-document
-    .getElementById(
-        "businessType"
-    )
-    .addEventListener(
-        "keydown",
-        function(event) {
-
-            if (
-                event.key === "Enter"
-            ) {
-
-                generateBusinessNames();
-
-            }
-
-        }
-    );
+    }
+);
 
 </script>
 
 </body>
-</html>
+   </html>
