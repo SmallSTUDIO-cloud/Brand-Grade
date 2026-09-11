@@ -23,11 +23,20 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                 Helvetica, Arial, sans-serif;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
     background: #050505;
     color: #f5f5f5;
+
     line-height: 1.5;
+
     min-height: 100vh;
 }
 
@@ -41,14 +50,13 @@ button {
     cursor: pointer;
 }
 
-input,
-select {
+input {
     outline: none;
 }
 
 ::selection {
-    background: #ffffff;
-    color: #000000;
+    background: #fff;
+    color: #000;
 }
 
 
@@ -59,6 +67,7 @@ select {
 header {
     position: sticky;
     top: 0;
+
     z-index: 50;
 
     height: 72px;
@@ -69,7 +78,8 @@ header {
 
     padding: 0 28px;
 
-    background: rgba(5, 5, 5, .82);
+    background: rgba(5,5,5,.86);
+
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
@@ -78,8 +88,10 @@ header {
 
 .logo {
     font-size: 19px;
-    font-weight: 800;
-    letter-spacing: -0.7px;
+
+    font-weight: 850;
+
+    letter-spacing: -.7px;
 }
 
 .logo span {
@@ -89,38 +101,49 @@ header {
 .header-right {
     display: flex;
     align-items: center;
+
     gap: 10px;
 }
 
 .badge {
+    padding: 6px 10px;
+
     border: 1px solid #292929;
+
     background: #101010;
+
     color: #aaa;
 
-    padding: 6px 10px;
     border-radius: 999px;
 
     font-size: 11px;
-    font-weight: 700;
+
+    font-weight: 800;
+
     letter-spacing: .8px;
 }
 
 .login-btn {
-    border: 1px solid #303030;
-    background: #111;
-    color: #fff;
-
     padding: 9px 15px;
+
     border-radius: 10px;
 
+    border: 1px solid #303030;
+
+    background: #111;
+
+    color: #fff;
+
     font-size: 13px;
-    font-weight: 700;
+
+    font-weight: 800;
 
     transition: .2s ease;
 }
 
 .login-btn:hover {
-    background: #1a1a1a;
+    background: #191919;
+
     transform: translateY(-1px);
 }
 
@@ -135,6 +158,7 @@ header {
 
 .hero {
     max-width: 950px;
+
     margin: 0 auto;
 
     padding: 90px 20px 55px;
@@ -145,6 +169,7 @@ header {
 }
 
 @keyframes heroIn {
+
     from {
         opacity: 0;
         transform: translateY(18px);
@@ -154,15 +179,16 @@ header {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
 .hero-tag {
     display: inline-flex;
-    align-items: center;
 
     padding: 7px 12px;
 
     border: 1px solid #252525;
+
     border-radius: 999px;
 
     background: #0d0d0d;
@@ -170,14 +196,17 @@ header {
     color: #8d8d8d;
 
     font-size: 10px;
+
     font-weight: 800;
+
     letter-spacing: 1.5px;
 
     margin-bottom: 24px;
 }
 
 .hero h1 {
-    font-size: clamp(58px, 11vw, 110px);
+    font-size: clamp(58px,11vw,110px);
+
     line-height: .88;
 
     letter-spacing: -6px;
@@ -193,11 +222,13 @@ header {
 
 .hero-description {
     max-width: 650px;
+
     margin: 0 auto;
 
     color: #8f8f8f;
 
     font-size: 17px;
+
     line-height: 1.7;
 }
 
@@ -207,6 +238,7 @@ header {
     color: #aaa;
 
     font-size: 11px;
+
     font-weight: 800;
 
     letter-spacing: 2px;
@@ -218,7 +250,8 @@ header {
 ========================================================= */
 
 main {
-    width: min(1050px, calc(100% - 32px));
+    width: min(1050px,calc(100% - 32px));
+
     margin: 0 auto 100px;
 }
 
@@ -230,6 +263,7 @@ main {
     color: #777;
 
     font-size: 11px;
+
     font-weight: 800;
 
     letter-spacing: 1.5px;
@@ -238,22 +272,28 @@ main {
 }
 
 .card {
-    background: linear-gradient(145deg, #101010, #090909);
+    background:
+        linear-gradient(
+            145deg,
+            #101010,
+            #090909
+        );
 
     border: 1px solid #242424;
 
     border-radius: 22px;
 
-    box-shadow: 0 20px 70px rgba(0,0,0,.25);
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.25);
 
     transition:
         transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
+        border-color .25s ease;
 }
 
 .card:hover {
     transform: translateY(-2px);
+
     border-color: #303030;
 }
 
@@ -268,6 +308,7 @@ main {
 
 .input-row {
     display: flex;
+
     gap: 10px;
 }
 
@@ -306,6 +347,7 @@ main {
     border: 1px solid #fff;
 
     background: #fff;
+
     color: #000;
 
     padding: 0 21px;
@@ -313,6 +355,7 @@ main {
     border-radius: 13px;
 
     font-size: 12px;
+
     font-weight: 900;
 
     letter-spacing: .4px;
@@ -331,7 +374,8 @@ main {
 }
 
 .primary-btn.loading {
-    opacity: .65;
+    opacity: .6;
+
     pointer-events: none;
 }
 
@@ -353,93 +397,148 @@ main {
 }
 
 @keyframes resultIn {
+
     from {
         opacity: 0;
-        transform: translateY(15px);
+
+        transform:
+            translateY(15px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
+
 }
 
+
+/* =========================================================
+   SCORE CIRCLE
+========================================================= */
+
 .score-area {
-    padding: 35px 25px;
+    padding: 38px 25px;
 
     text-align: center;
 
     border-bottom: 1px solid #202020;
 }
 
+
+/* BIG CIRCULAR SCORE */
+
 .score-ring {
-    width: 160px;
-    height: 160px;
+    width: 175px;
+    height: 175px;
 
     margin: 0 auto 20px;
 
     border-radius: 50%;
 
     display: grid;
+
     place-items: center;
 
     position: relative;
 
     background:
         conic-gradient(
-            #fff var(--score, 0deg),
-            #202020 var(--score, 0deg)
+            #fff var(--score,0deg),
+            #202020 var(--score,0deg)
         );
+
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.04),
+        0 15px 50px rgba(0,0,0,.45);
+
+    transition:
+        background 1s cubic-bezier(.2,.8,.2,1);
 }
+
+
+/* INNER CIRCLE */
 
 .score-ring::before {
     content: "";
 
     position: absolute;
 
-    width: 132px;
-    height: 132px;
+    width: 145px;
+    height: 145px;
 
     border-radius: 50%;
 
-    background: #0a0a0a;
+    background:
+        radial-gradient(
+            circle at center,
+            #111 0%,
+            #080808 70%
+        );
+
+    border: 1px solid #202020;
+}
+
+
+/* SMALL HIGHLIGHT */
+
+.score-ring::after {
+    content: "";
+
+    position: absolute;
+
+    width: 175px;
+    height: 175px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.05);
+
+    pointer-events: none;
 }
 
 .score-number {
     position: relative;
-    z-index: 1;
 
-    font-size: 45px;
-    font-weight: 850;
+    z-index: 2;
 
-    letter-spacing: -2px;
+    font-size: 48px;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
 }
 
 .score-out-of {
     position: relative;
-    z-index: 1;
+
+    z-index: 2;
+
+    color: #666;
 
     font-size: 11px;
-    color: #666;
 
     margin-left: 3px;
 }
 
 .status {
-    font-size: 12px;
-
     color: #aaa;
 
-    font-weight: 800;
+    font-size: 12px;
+
+    font-weight: 850;
 
     letter-spacing: 1px;
 }
 
 .result-name {
-    margin-top: 10px;
+    margin-top: 9px;
 
     font-size: 25px;
-    font-weight: 800;
+
+    font-weight: 850;
 
     word-break: break-word;
 }
@@ -456,13 +555,14 @@ main {
 
 
 /* =========================================================
-   METERS
+   METRICS
 ========================================================= */
 
 .metrics {
     display: grid;
 
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns:
+        repeat(5,1fr);
 
     gap: 1px;
 
@@ -481,7 +581,8 @@ main {
     color: #666;
 
     font-size: 10px;
-    font-weight: 800;
+
+    font-weight: 850;
 
     letter-spacing: 1px;
 
@@ -491,7 +592,7 @@ main {
 .metric-score {
     font-size: 21px;
 
-    font-weight: 800;
+    font-weight: 850;
 
     margin-bottom: 10px;
 }
@@ -515,7 +616,8 @@ main {
 
     border-radius: inherit;
 
-    transition: width 1s cubic-bezier(.2,.8,.2,1);
+    transition:
+        width 1s cubic-bezier(.2,.8,.2,1);
 }
 
 
@@ -526,7 +628,8 @@ main {
 .feedback {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 12px;
 
@@ -548,14 +651,19 @@ main {
 }
 
 .feedback-box.show {
-    animation: feedbackIn .5s ease forwards;
+    animation:
+        feedbackIn .5s ease forwards;
 }
 
 @keyframes feedbackIn {
+
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
+
 }
 
 .feedback-title {
@@ -564,14 +672,6 @@ main {
     font-weight: 850;
 
     margin-bottom: 9px;
-}
-
-.feedback-good .feedback-title {
-    color: #d5d5d5;
-}
-
-.feedback-bad .feedback-title {
-    color: #888;
 }
 
 .feedback-text {
@@ -584,66 +684,175 @@ main {
 
 
 /* =========================================================
-   VARIATIONS
+   NAME IDEAS
 ========================================================= */
 
-.variations {
+.name-ideas {
     padding: 22px;
 
     border-top: 1px solid #202020;
 }
 
-.variations-title {
+.name-ideas-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+.name-ideas-title {
     color: #777;
 
     font-size: 10px;
 
-    font-weight: 800;
+    font-weight: 850;
 
     letter-spacing: 1.2px;
-
-    margin-bottom: 13px;
 }
 
-.variation-list {
+.name-ideas-subtitle {
+    color: #444;
+
+    font-size: 10px;
+}
+
+
+/* NAME IDEA CARDS */
+
+.name-idea-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 9px;
+}
+
+.name-idea {
     display: flex;
 
-    flex-wrap: wrap;
+    align-items: center;
 
-    gap: 8px;
-}
+    justify-content: space-between;
 
-.variation {
-    background: #101010;
+    gap: 12px;
 
-    border: 1px solid #252525;
+    padding: 13px 13px 13px 15px;
 
-    color: #ddd;
+    background:
+        linear-gradient(
+            145deg,
+            #111,
+            #0b0b0b
+        );
 
-    padding: 9px 12px;
+    border: 1px solid #232323;
 
-    border-radius: 10px;
-
-    font-size: 12px;
+    border-radius: 13px;
 
     opacity: 0;
-    transform: translateY(6px);
+
+    transform:
+        translateY(8px);
+
+    transition:
+        border-color .2s ease,
+        transform .2s ease,
+        background .2s ease;
 }
 
-.variation.show {
-    animation: variationIn .35s ease forwards;
+.name-idea.show {
+    animation:
+        ideaIn .35s ease forwards;
 }
 
-@keyframes variationIn {
+@keyframes ideaIn {
+
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
+
+}
+
+.name-idea:hover {
+    border-color: #3a3a3a;
+
+    background: #121212;
+
+    transform:
+        translateY(-2px);
+}
+
+.name-idea-text {
+    min-width: 0;
+
+    color: #eee;
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+    word-break: break-word;
+}
+
+.name-idea-actions {
+    display: flex;
+
+    flex-shrink: 0;
+
+    gap: 6px;
+}
+
+.idea-action {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 9px;
+
+    border: 1px solid #292929;
+
+    background: #0c0c0c;
+
+    color: #777;
+
+    font-size: 15px;
+
+    transition: .2s ease;
+}
+
+.idea-action:hover {
+    color: #fff;
+
+    border-color: #444;
+
+    background: #181818;
+}
+
+.idea-action:active {
+    transform: scale(.91);
+}
+
+.idea-action.saved {
+    color: #fff;
+
+    border-color: #666;
 }
 
 
 /* =========================================================
-   SMART GENERATOR
+   GENERATOR
 ========================================================= */
 
 .generator {
@@ -653,7 +862,8 @@ main {
 .generator-grid {
     display: grid;
 
-    grid-template-columns: 1fr 200px auto;
+    grid-template-columns:
+        1fr 200px auto;
 
     gap: 10px;
 }
@@ -683,12 +893,13 @@ main {
 .field:focus {
     border-color: #555;
 
-    box-shadow: 0 0 0 4px rgba(255,255,255,.035);
+    box-shadow:
+        0 0 0 4px rgba(255,255,255,.035);
 }
 
 
 /* =========================================================
-   CUSTOM STYLE SELECTOR
+   CUSTOM SELECT
 ========================================================= */
 
 .style-selector {
@@ -699,7 +910,9 @@ main {
     width: 100%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     background: #080808;
@@ -726,9 +939,9 @@ main {
 .style-arrow {
     color: #777;
 
-    font-size: 11px;
+    font-size: 10px;
 
-    transition: transform .2s ease;
+    transition: .2s ease;
 }
 
 .style-selector.open .style-arrow {
@@ -738,10 +951,10 @@ main {
 .style-menu {
     position: absolute;
 
+    top: calc(100% + 7px);
+
     left: 0;
     right: 0;
-
-    top: calc(100% + 7px);
 
     background: #101010;
 
@@ -751,7 +964,8 @@ main {
 
     padding: 6px;
 
-    box-shadow: 0 20px 50px rgba(0,0,0,.6);
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.6);
 
     opacity: 0;
 
@@ -806,7 +1020,8 @@ main {
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2,1fr);
 
     gap: 10px;
 }
@@ -815,6 +1030,7 @@ main {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 10px;
@@ -837,9 +1053,9 @@ main {
 }
 
 .generated-name-text {
-    font-weight: 750;
-
     font-size: 14px;
+
+    font-weight: 750;
 
     word-break: break-word;
 }
@@ -913,19 +1129,26 @@ main {
 
     font-size: 12px;
 
-    animation: favoriteIn .3s ease both;
+    animation:
+        favoriteIn .3s ease both;
 }
 
 @keyframes favoriteIn {
+
     from {
         opacity: 0;
-        transform: scale(.9);
+
+        transform:
+            scale(.9);
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
+
 }
 
 .remove-favorite {
@@ -962,11 +1185,11 @@ main {
 }
 
 .pro-card p {
-    color: #777;
-
     max-width: 550px;
 
     margin: 0 auto 22px;
+
+    color: #777;
 
     font-size: 14px;
 }
@@ -991,7 +1214,265 @@ main {
 
 
 /* =========================================================
-   LOGIN MODAL
+   INSIGHT BULB
+========================================================= */
+
+.insight-widget {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 90;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: flex-end;
+
+    pointer-events: none;
+}
+
+.insight-panel {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width:
+        min(
+            340px,
+            calc(100vw - 40px)
+        );
+
+    min-height: 170px;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #0b0b0b
+        );
+
+    border: 1px solid #333;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.55);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+        translate(0,0)
+        scale(.18);
+
+    transform-origin:
+        bottom right;
+
+    transition:
+        opacity .32s ease,
+        transform .42s cubic-bezier(.2,.8,.2,1),
+        visibility .32s ease;
+}
+
+.insight-widget.open .insight-panel {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateY(-66px)
+        scale(1);
+}
+
+.insight-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: 1.3px;
+
+    margin-bottom: 16px;
+}
+
+.insight-header-icon {
+    font-size: 16px;
+}
+
+.insight-text {
+    min-height: 58px;
+
+    color: #f1f1f1;
+
+    font-size: 17px;
+
+    font-weight: 750;
+
+    line-height: 1.45;
+}
+
+.insight-text.change {
+    animation:
+        insightTextIn .35s ease both;
+}
+
+@keyframes insightTextIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+.insight-next {
+    margin-top: 15px;
+
+    border: 1px solid #292929;
+
+    background: #111;
+
+    color: #aaa;
+
+    padding: 9px 12px;
+
+    border-radius: 9px;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    transition: .2s ease;
+}
+
+.insight-next:hover {
+    color: #fff;
+
+    border-color: #444;
+
+    background: #181818;
+}
+
+.insight-bulb {
+    pointer-events: auto;
+
+    position: relative;
+
+    width: 54px;
+    height: 54px;
+
+    border-radius: 50%;
+
+    border: 1px solid #303030;
+
+    background: #101010;
+
+    color: #777;
+
+    display: grid;
+
+    place-items: center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.4);
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease,
+        box-shadow .4s ease,
+        transform .25s ease;
+}
+
+.insight-bulb:hover {
+    transform:
+        translateY(-2px);
+
+    border-color: #444;
+
+    color: #fff;
+}
+
+.insight-bulb:active {
+    transform:
+        scale(.94);
+}
+
+.bulb-icon {
+    font-size: 22px;
+
+    filter: grayscale(1);
+
+    transition: .3s ease;
+}
+
+.insight-widget.open .insight-bulb {
+    background: #171717;
+
+    border-color: #777;
+
+    color: #fff;
+
+    box-shadow:
+        0 0 0 5px rgba(255,255,255,.025),
+        0 0 28px rgba(255,255,255,.15),
+        0 10px 35px rgba(0,0,0,.5);
+}
+
+.insight-widget.open .bulb-icon {
+    filter: grayscale(0);
+
+    animation:
+        bulbPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes bulbPulse {
+
+    0%,
+    100% {
+        filter:
+            grayscale(0)
+            brightness(1);
+    }
+
+    50% {
+        filter:
+            grayscale(0)
+            brightness(1.35);
+    }
+
+}
+
+
+/* =========================================================
+   MODAL
 ========================================================= */
 
 .modal {
@@ -1008,7 +1489,8 @@ main {
 
     padding: 20px;
 
-    background: rgba(0,0,0,.72);
+    background:
+        rgba(0,0,0,.72);
 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -1019,7 +1501,11 @@ main {
 }
 
 .modal-card {
-    width: min(410px, 100%);
+    width:
+        min(
+            410px,
+            100%
+        );
 
     background: #0d0d0d;
 
@@ -1029,21 +1515,31 @@ main {
 
     padding: 28px;
 
-    box-shadow: 0 30px 100px rgba(0,0,0,.7);
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.7);
 
-    animation: modalIn .3s ease both;
+    animation:
+        modalIn .3s ease both;
 }
 
 @keyframes modalIn {
+
     from {
         opacity: 0;
-        transform: translateY(12px) scale(.97);
+
+        transform:
+            translateY(12px)
+            scale(.97);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
+
 }
 
 .modal-card h2 {
@@ -1110,289 +1606,6 @@ main {
 
 
 /* =========================================================
-   BUSINESS INSIGHT WIDGET
-========================================================= */
-
-.insight-widget {
-    position: fixed;
-
-    right: 20px;
-    bottom: 20px;
-
-    z-index: 90;
-
-    display: flex;
-
-    align-items: flex-end;
-    justify-content: flex-end;
-
-    pointer-events: none;
-}
-
-
-/* THE PANEL */
-
-.insight-panel {
-    position: absolute;
-
-    right: 0;
-    bottom: 0;
-
-    width: min(340px, calc(100vw - 40px));
-
-    min-height: 170px;
-
-    background:
-        linear-gradient(145deg, #151515, #0b0b0b);
-
-    border: 1px solid #333;
-
-    border-radius: 22px;
-
-    padding: 20px;
-
-    box-shadow:
-        0 20px 70px rgba(0,0,0,.55),
-        0 0 35px rgba(255,255,255,.025);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform: translate(0, 0) scale(.18);
-
-    transform-origin: bottom right;
-
-    pointer-events: none;
-
-    transition:
-        opacity .32s ease,
-        transform .42s cubic-bezier(.2,.8,.2,1),
-        visibility .32s ease;
-}
-
-
-/*
-   IMPORTANT FIX:
-
-   The panel is not clickable when closed,
-   but becomes clickable when open.
-*/
-
-.insight-widget.open .insight-panel {
-    opacity: 1;
-
-    visibility: visible;
-
-    transform:
-        translateY(-66px)
-        scale(1);
-
-    pointer-events: auto;
-}
-
-
-/* PANEL HEADER */
-
-.insight-header {
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    color: #777;
-
-    font-size: 10px;
-
-    font-weight: 850;
-
-    letter-spacing: 1.3px;
-
-    margin-bottom: 16px;
-}
-
-.insight-header-icon {
-    font-size: 16px;
-
-    filter: grayscale(1);
-}
-
-
-/* TIP TEXT */
-
-.insight-text {
-    min-height: 58px;
-
-    color: #f1f1f1;
-
-    font-size: 17px;
-
-    font-weight: 700;
-
-    line-height: 1.45;
-
-    letter-spacing: -.2px;
-}
-
-.insight-text.change {
-    animation: insightTextIn .35s ease both;
-}
-
-@keyframes insightTextIn {
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(7px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-
-/* NEXT BUTTON */
-
-.insight-next {
-    margin-top: 15px;
-
-    border: 1px solid #292929;
-
-    background: #111;
-
-    color: #aaa;
-
-    padding: 9px 12px;
-
-    border-radius: 9px;
-
-    font-size: 10px;
-
-    font-weight: 850;
-
-    letter-spacing: .5px;
-
-    transition: .2s ease;
-}
-
-.insight-next:hover {
-    color: #fff;
-
-    border-color: #444;
-
-    background: #181818;
-
-    transform: translateY(-1px);
-}
-
-.insight-next:active {
-    transform: scale(.96);
-}
-
-
-/* BULB */
-
-.insight-bulb {
-    pointer-events: auto;
-
-    position: relative;
-
-    width: 54px;
-    height: 54px;
-
-    border-radius: 50%;
-
-    border: 1px solid #303030;
-
-    background: #101010;
-
-    color: #777;
-
-    display: grid;
-
-    place-items: center;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.4);
-
-    transition:
-        background .3s ease,
-        border-color .3s ease,
-        color .3s ease,
-        box-shadow .4s ease,
-        transform .25s ease;
-}
-
-.insight-bulb:hover {
-    transform: translateY(-2px);
-
-    border-color: #444;
-
-    color: #fff;
-}
-
-.insight-bulb:active {
-    transform: scale(.94);
-}
-
-.bulb-icon {
-    font-size: 22px;
-
-    filter: grayscale(1);
-
-    transition:
-        filter .3s ease,
-        transform .3s ease;
-}
-
-
-/*
-   GLOW STATE
-*/
-
-.insight-widget.open .insight-bulb {
-    background: #171717;
-
-    border-color: #777;
-
-    color: #fff;
-
-    box-shadow:
-        0 0 0 5px rgba(255,255,255,.025),
-        0 0 28px rgba(255,255,255,.15),
-        0 10px 35px rgba(0,0,0,.5);
-}
-
-.insight-widget.open .bulb-icon {
-    filter: grayscale(0);
-
-    transform: scale(1.06);
-
-    animation: bulbPulse 1.8s ease-in-out infinite;
-}
-
-@keyframes bulbPulse {
-    0%,
-    100% {
-        filter:
-            grayscale(0)
-            brightness(1);
-    }
-
-    50% {
-        filter:
-            grayscale(0)
-            brightness(1.35);
-    }
-}
-
-
-/* =========================================================
    FOOTER
 ========================================================= */
 
@@ -1413,7 +1626,7 @@ footer {
    MOBILE
 ========================================================= */
 
-@media (max-width: 750px) {
+@media (max-width:750px) {
 
     header {
         height: 64px;
@@ -1434,9 +1647,14 @@ footer {
     }
 
     .hero h1 {
-        letter-spacing: -4px;
+        font-size:
+            clamp(
+                55px,
+                18vw,
+                90px
+            );
 
-        font-size: clamp(55px, 18vw, 90px);
+        letter-spacing: -4px;
     }
 
     .hero-description {
@@ -1452,23 +1670,37 @@ footer {
     }
 
     .metrics {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .metric:last-child {
-        grid-column: span 2;
+        grid-column:
+            span 2;
     }
 
     .feedback {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .generator-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .generated {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
+    }
+
+    .name-idea-list {
+        grid-template-columns:
+            1fr;
+    }
+
+    .name-idea {
+        padding: 12px;
     }
 
     .insight-widget {
@@ -1478,7 +1710,11 @@ footer {
     }
 
     .insight-panel {
-        width: min(330px, calc(100vw - 28px));
+        width:
+            min(
+                330px,
+                calc(100vw - 28px)
+            );
     }
 
 }
@@ -1488,10 +1724,11 @@ footer {
    SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 420px) {
+@media (max-width:420px) {
 
     main {
-        width: min(100% - 20px, 1050px);
+        width:
+            calc(100% - 20px);
     }
 
     .analyzer,
@@ -1501,28 +1738,81 @@ footer {
     }
 
     .score-ring {
-        width: 145px;
-        height: 145px;
+        width: 150px;
+        height: 150px;
     }
 
     .score-ring::before {
-        width: 120px;
-        height: 120px;
+        width: 124px;
+        height: 124px;
+    }
+
+    .score-ring::after {
+        width: 150px;
+        height: 150px;
     }
 
     .score-number {
-        font-size: 39px;
+        font-size: 40px;
     }
 
-    .insight-panel {
-        min-height: 160px;
-
-        padding: 17px;
+    .name-idea-text {
+        font-size: 13px;
     }
 
-    .insight-text {
-        font-size: 15px;
+    .idea-action {
+        width: 32px;
+        height: 32px;
     }
+
+}
+
+
+/* =========================================================
+   COPY TOAST
+========================================================= */
+
+.copy-toast {
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 28px;
+
+    z-index: 200;
+
+    padding: 10px 15px;
+
+    background: #fff;
+
+    color: #000;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.5);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%,10px);
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+.copy-toast.show {
+    opacity: 1;
+
+    transform:
+        translate(-50%,0);
 }
 
 </style>
@@ -1559,7 +1849,6 @@ footer {
 </header>
 
 
-
 <!-- =====================================================
      HERO
 ===================================================== -->
@@ -1588,16 +1877,11 @@ footer {
 </section>
 
 
-
-<!-- =====================================================
-     MAIN
-===================================================== -->
-
 <main>
 
 
 <!-- =====================================================
-     STEP 1 — ANALYZER
+     ANALYZER
 ===================================================== -->
 
 <section class="section">
@@ -1627,8 +1911,6 @@ footer {
 
         </div>
 
-
-        <!-- RESULTS -->
 
         <div
             id="results"
@@ -1667,11 +1949,13 @@ footer {
                     READY
                 </div>
 
+
                 <div
                     class="result-name"
                     id="resultName">
                     —
                 </div>
+
 
                 <p
                     class="summary"
@@ -1680,7 +1964,6 @@ footer {
                 </p>
 
             </div>
-
 
 
             <!-- METRICS -->
@@ -1701,10 +1984,12 @@ footer {
                     </div>
 
                     <div class="meter">
+
                         <div
                             class="meter-fill"
                             id="memoryMeter">
                         </div>
+
                     </div>
 
                 </div>
@@ -1723,10 +2008,12 @@ footer {
                     </div>
 
                     <div class="meter">
+
                         <div
                             class="meter-fill"
                             id="brandMeter">
                         </div>
+
                     </div>
 
                 </div>
@@ -1745,10 +2032,12 @@ footer {
                     </div>
 
                     <div class="meter">
+
                         <div
                             class="meter-fill"
                             id="clarityMeter">
                         </div>
+
                     </div>
 
                 </div>
@@ -1767,10 +2056,12 @@ footer {
                     </div>
 
                     <div class="meter">
+
                         <div
                             class="meter-fill"
                             id="uniqueMeter">
                         </div>
+
                     </div>
 
                 </div>
@@ -1789,10 +2080,12 @@ footer {
                     </div>
 
                     <div class="meter">
+
                         <div
                             class="meter-fill"
                             id="pronounceMeter">
                         </div>
+
                     </div>
 
                 </div>
@@ -1800,13 +2093,12 @@ footer {
             </div>
 
 
-
             <!-- FEEDBACK -->
 
             <div class="feedback">
 
                 <div
-                    class="feedback-box feedback-good"
+                    class="feedback-box"
                     id="goodBox">
 
                     <div class="feedback-title">
@@ -1823,7 +2115,7 @@ footer {
 
 
                 <div
-                    class="feedback-box feedback-bad"
+                    class="feedback-box"
                     id="badBox">
 
                     <div class="feedback-title">
@@ -1841,17 +2133,25 @@ footer {
             </div>
 
 
+            <!-- NAME IDEAS -->
 
-            <!-- VARIATIONS -->
+            <div class="name-ideas">
 
-            <div class="variations">
+                <div class="name-ideas-header">
 
-                <div class="variations-title">
-                    STRONGER VARIATIONS
+                    <div class="name-ideas-title">
+                        NAME IDEAS
+                    </div>
+
+                    <div class="name-ideas-subtitle">
+                        SAVE • COPY
+                    </div>
+
                 </div>
 
+
                 <div
-                    class="variation-list"
+                    class="name-idea-list"
                     id="variationList">
                 </div>
 
@@ -1864,9 +2164,8 @@ footer {
 </section>
 
 
-
 <!-- =====================================================
-     STEP 7 — SMART GENERATOR
+     GENERATOR
 ===================================================== -->
 
 <section class="section">
@@ -1972,9 +2271,8 @@ footer {
 </section>
 
 
-
 <!-- =====================================================
-     FAVORITES
+     SAVED NAMES
 ===================================================== -->
 
 <section class="section">
@@ -2000,9 +2298,8 @@ footer {
 </section>
 
 
-
 <!-- =====================================================
-     STEP 11 — PRO
+     PRO
 ===================================================== -->
 
 <section class="section">
@@ -2036,15 +2333,13 @@ footer {
 </main>
 
 
-
 <!-- =====================================================
-     BUSINESS INSIGHT BULB
+     BUSINESS INSIGHT
 ===================================================== -->
 
 <div
     class="insight-widget"
     id="insightWidget">
-
 
     <div
         class="insight-panel"
@@ -2060,23 +2355,17 @@ footer {
 
         </div>
 
-
         <div
             class="insight-text"
             id="insightText">
-
             Better names = better business.
-
         </div>
-
 
         <button
             class="insight-next"
             id="insightNext"
             type="button">
-
             NEXT TIP →
-
         </button>
 
     </div>
@@ -2097,6 +2386,16 @@ footer {
 
 </div>
 
+
+<!-- =====================================================
+     COPY TOAST
+===================================================== -->
+
+<div
+    class="copy-toast"
+    id="copyToast">
+    COPIED ✓
+</div>
 
 
 <!-- =====================================================
@@ -2155,36 +2454,12 @@ footer {
 </div>
 
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
 <footer>
-
     BRAND//GRADE — BUSINESS NAME INTELLIGENCE
-
 </footer>
 
 
-
 <script>
-
-/* =========================================================
-   HELPERS
-========================================================= */
-
-function escapeHTML(value) {
-
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-
-}
-
 
 /* =========================================================
    SCORE ENGINE
@@ -2192,9 +2467,11 @@ function escapeHTML(value) {
 
 function calculateScore(name) {
 
-    const clean = name.trim();
+    const clean =
+        name.trim();
 
-    const lower = clean.toLowerCase();
+    const lower =
+        clean.toLowerCase();
 
     const words =
         lower
@@ -2202,7 +2479,7 @@ function calculateScore(name) {
         .filter(Boolean);
 
     const letters =
-        lower.replace(/[^a-z]/g, "");
+        lower.replace(/[^a-z]/g,"");
 
     const length =
         letters.length;
@@ -2211,29 +2488,41 @@ function calculateScore(name) {
         words.length;
 
 
-    /* MEMORY */
-
     let memory = 100;
 
-    if (length > 18) memory -= 28;
-    else if (length > 14) memory -= 18;
-    else if (length > 10) memory -= 8;
+    if (length > 18)
+        memory -= 28;
 
-    if (wordCount > 3) memory -= 18;
-    else if (wordCount === 3) memory -= 8;
+    else if (length > 14)
+        memory -= 18;
 
-    if (/(\w)\1\1/.test(lower)) {
+    else if (length > 10)
         memory -= 8;
-    }
-
-    memory = Math.max(35, Math.min(100, memory));
 
 
-    /* BRAND */
+    if (wordCount > 3)
+        memory -= 18;
+
+    else if (wordCount === 3)
+        memory -= 8;
+
+
+    if (/(\w)\1\1/.test(lower))
+        memory -= 8;
+
+
+    memory =
+        Math.max(
+            35,
+            Math.min(100,memory)
+        );
+
 
     let brand = 70;
 
+
     const brandWords = [
+
         "brand",
         "studio",
         "lab",
@@ -2246,32 +2535,43 @@ function calculateScore(name) {
         "agency",
         "shop",
         "hub"
+
     ];
 
+
     if (
-        brandWords.some(word =>
-            lower.includes(word)
+        brandWords.some(
+            word => lower.includes(word)
         )
     ) {
         brand += 12;
     }
 
-    if (length >= 5 && length <= 12) {
+
+    if (
+        length >= 5 &&
+        length <= 12
+    ) {
         brand += 10;
     }
 
-    if (wordCount <= 2) {
+
+    if (wordCount <= 2)
         brand += 8;
-    }
-
-    brand = Math.max(35, Math.min(100, brand));
 
 
-    /* CLARITY */
+    brand =
+        Math.max(
+            35,
+            Math.min(100,brand)
+        );
+
 
     let clarity = 72;
 
+
     const genericWords = [
+
         "best",
         "online",
         "official",
@@ -2282,90 +2582,121 @@ function calculateScore(name) {
         "premium",
         "quality",
         "business"
+
     ];
+
 
     genericWords.forEach(word => {
 
-        if (lower.includes(word)) {
+        if (
+            lower.includes(word)
+        ) {
             clarity -= 7;
         }
 
     });
 
-    if (wordCount > 3) {
+
+    if (wordCount > 3)
         clarity -= 12;
-    }
-
-    clarity = Math.max(35, Math.min(100, clarity));
 
 
-    /* UNIQUE */
+    clarity =
+        Math.max(
+            35,
+            Math.min(100,clarity)
+        );
+
 
     let unique = 68;
 
-    if (length >= 6 && length <= 13) {
+
+    if (
+        length >= 6 &&
+        length <= 13
+    ) {
         unique += 10;
     }
 
-    if (wordCount === 1) {
-        unique += 10;
-    }
 
-    if (/[^a-z0-9\s]/i.test(clean)) {
+    if (wordCount === 1)
+        unique += 10;
+
+
+    if (
+        /[^a-z0-9\s]/i.test(clean)
+    ) {
         unique += 4;
     }
 
+
     genericWords.forEach(word => {
 
-        if (lower.includes(word)) {
+        if (
+            lower.includes(word)
+        ) {
             unique -= 9;
         }
 
     });
 
-    unique = Math.max(30, Math.min(100, unique));
 
+    unique =
+        Math.max(
+            30,
+            Math.min(100,unique)
+        );
 
-    /* PRONUNCE */
 
     let pronounce = 78;
 
+
     const vowels =
         letters.match(/[aeiou]/g) || [];
+
 
     const vowelRatio =
         length
             ? vowels.length / length
             : 0;
 
-    if (vowelRatio < .2) {
+
+    if (vowelRatio < .2)
         pronounce -= 20;
-    }
 
-    if (vowelRatio > .7) {
+
+    if (vowelRatio > .7)
         pronounce -= 10;
-    }
 
-    if (length > 15) {
+
+    if (length > 15)
         pronounce -= 12;
-    }
 
-    if (/[^a-z\s]/i.test(clean)) {
+
+    if (
+        /[^a-z\s]/i.test(clean)
+    ) {
         pronounce -= 5;
     }
 
-    pronounce = Math.max(30, Math.min(100, pronounce));
+
+    pronounce =
+        Math.max(
+            30,
+            Math.min(100,pronounce)
+        );
 
 
-    const overall = Math.round(
-        (
-            memory +
-            brand +
-            clarity +
-            unique +
-            pronounce
-        ) / 5
-    );
+    const overall =
+        Math.round(
+            (
+                memory +
+                brand +
+                clarity +
+                unique +
+                pronounce
+            ) / 5
+        );
 
 
     return {
@@ -2386,28 +2717,22 @@ function calculateScore(name) {
 
 function getStatus(score) {
 
-    if (score >= 90) {
+    if (score >= 90)
         return "EXCEPTIONAL";
-    }
 
-    if (score >= 80) {
+    if (score >= 80)
         return "STRONG";
-    }
 
-    if (score >= 70) {
+    if (score >= 70)
         return "GOOD";
-    }
 
-    if (score >= 60) {
+    if (score >= 60)
         return "PROMISING";
-    }
 
-    if (score >= 50) {
+    if (score >= 50)
         return "NEEDS WORK";
-    }
 
     return "WEAK";
-
 }
 
 
@@ -2417,25 +2742,20 @@ function getStatus(score) {
 
 function getSummary(score) {
 
-    if (score >= 90) {
+    if (score >= 90)
         return "This name has strong brand potential and is easy to remember.";
-    }
 
-    if (score >= 80) {
+    if (score >= 80)
         return "A strong name with several qualities that can support a memorable brand.";
-    }
 
-    if (score >= 70) {
+    if (score >= 70)
         return "A solid foundation, but a few improvements could make the name stronger.";
-    }
 
-    if (score >= 60) {
+    if (score >= 60)
         return "The idea has potential, but the name could be sharper and more distinctive.";
-    }
 
-    if (score >= 50) {
+    if (score >= 50)
         return "There are useful qualities here, but the name needs more refinement.";
-    }
 
     return "The name may struggle with memorability, clarity or differentiation.";
 }
@@ -2447,42 +2767,62 @@ function getSummary(score) {
 
 function getGoodText(scores) {
 
-    const strongest = Object.entries({
-        Memory: scores.memory,
-        Brandability: scores.brand,
-        Clarity: scores.clarity,
-        Uniqueness: scores.unique,
-        Pronunciation: scores.pronounce
-    })
-    .sort((a, b) => b[1] - a[1])[0];
+    const strongest =
+        Object.entries({
+
+            Memory: scores.memory,
+            Brandability: scores.brand,
+            Clarity: scores.clarity,
+            Uniqueness: scores.unique,
+            Pronunciation: scores.pronounce
+
+        })
+        .sort(
+            (a,b) => b[1] - a[1]
+        )[0];
 
 
-    return strongest[1] >= 80
-        ? `${strongest[0]} is one of the strongest parts of this name.`
-        : "The name has a workable foundation that can be developed further.";
+    if (strongest[1] >= 80) {
+
+        return `${strongest[0]} is one of the strongest parts of this name.`;
+
+    }
+
+
+    return "The name has a workable foundation that can be developed further.";
 }
 
 
 function getBadText(scores) {
 
-    const weakest = Object.entries({
-        Memory: scores.memory,
-        Brandability: scores.brand,
-        Clarity: scores.clarity,
-        Uniqueness: scores.unique,
-        Pronunciation: scores.pronounce
-    })
-    .sort((a, b) => a[1] - b[1])[0];
+    const weakest =
+        Object.entries({
+
+            Memory: scores.memory,
+            Brandability: scores.brand,
+            Clarity: scores.clarity,
+            Uniqueness: scores.unique,
+            Pronunciation: scores.pronounce
+
+        })
+        .sort(
+            (a,b) => a[1] - b[1]
+        )[0];
 
 
-    return weakest[1] < 70
-        ? `${weakest[0]} could be improved to make the name stronger.`
-        : "There are no major weaknesses, but refinement can still improve the name.";
+    if (weakest[1] < 70) {
+
+        return `${weakest[0]} could be improved to make the name stronger.`;
+
+    }
+
+
+    return "There are no major weaknesses, but refinement can still improve the name.";
 }
 
 
 /* =========================================================
-   VARIATIONS
+   NAME IDEAS
 ========================================================= */
 
 function generateVariations(name) {
@@ -2490,19 +2830,23 @@ function generateVariations(name) {
     const clean =
         name
         .trim()
-        .replace(/\s+/g, " ");
+        .replace(/\s+/g," ");
+
 
     const words =
         clean.split(" ");
 
+
     const first =
         words[0] || clean;
+
 
     const last =
         words[words.length - 1] || clean;
 
 
     const variations = [
+
         `${first}Lab`,
         `${first}Works`,
         `${first}Co`,
@@ -2513,33 +2857,32 @@ function generateVariations(name) {
         `${first}ly Co`,
         `${first} Collective`,
         `The ${first}`
+
     ];
 
 
-    return [...new Set(variations)]
-        .filter(Boolean)
-        .slice(0, 10);
+    return [
+        ...new Set(variations)
+    ]
+    .filter(Boolean)
+    .slice(0,10);
 }
 
 
 /* =========================================================
-   ANALYZE
+   NUMBER ANIMATION
 ========================================================= */
 
-const nameInput =
-    document.getElementById("nameInput");
-
-const analyzeBtn =
-    document.getElementById("analyzeBtn");
-
-const results =
-    document.getElementById("results");
-
-
-function animateNumber(element, from, to, duration) {
+function animateNumber(
+    element,
+    from,
+    to,
+    duration
+) {
 
     const start =
         performance.now();
+
 
     function update(now) {
 
@@ -2549,26 +2892,58 @@ function animateNumber(element, from, to, duration) {
                 (now - start) / duration
             );
 
-        const eased =
-            1 - Math.pow(1 - progress, 3);
 
-        const value =
-            Math.round(
-                from +
-                (to - from) * eased
+        const eased =
+            1 -
+            Math.pow(
+                1 - progress,
+                3
             );
 
+
         element.textContent =
-            value;
+            Math.round(
+                from +
+                (to - from) *
+                eased
+            );
+
 
         if (progress < 1) {
-            requestAnimationFrame(update);
+
+            requestAnimationFrame(
+                update
+            );
+
         }
 
     }
 
-    requestAnimationFrame(update);
+
+    requestAnimationFrame(
+        update
+    );
 }
+
+
+/* =========================================================
+   ANALYZE
+========================================================= */
+
+const nameInput =
+    document.getElementById(
+        "nameInput"
+    );
+
+const analyzeBtn =
+    document.getElementById(
+        "analyzeBtn"
+    );
+
+const results =
+    document.getElementById(
+        "results"
+    );
 
 
 function analyzeName() {
@@ -2588,7 +2963,9 @@ function analyzeName() {
     analyzeBtn.textContent =
         "ANALYZING...";
 
-    analyzeBtn.classList.add("loading");
+    analyzeBtn.classList.add(
+        "loading"
+    );
 
 
     setTimeout(() => {
@@ -2596,27 +2973,39 @@ function analyzeName() {
         const scores =
             calculateScore(name);
 
+
         const score =
             scores.overall;
 
 
-        results.classList.add("show");
+        results.classList.add(
+            "show"
+        );
 
 
-        document.getElementById("resultName")
-            .textContent = name;
+        document.getElementById(
+            "resultName"
+        ).textContent =
+            name;
 
 
-        document.getElementById("status")
-            .textContent = getStatus(score);
+        document.getElementById(
+            "status"
+        ).textContent =
+            getStatus(score);
 
 
-        document.getElementById("summary")
-            .textContent = getSummary(score);
+        document.getElementById(
+            "summary"
+        ).textContent =
+            getSummary(score);
 
 
         const scoreNumber =
-            document.getElementById("scoreNumber");
+            document.getElementById(
+                "scoreNumber"
+            );
+
 
         animateNumber(
             scoreNumber,
@@ -2627,7 +3016,10 @@ function analyzeName() {
 
 
         const ring =
-            document.getElementById("scoreRing");
+            document.getElementById(
+                "scoreRing"
+            );
+
 
         ring.style.setProperty(
             "--score",
@@ -2636,132 +3028,119 @@ function analyzeName() {
 
 
         const metricData = [
-            ["memory", scores.memory],
-            ["brand", scores.brand],
-            ["clarity", scores.clarity],
-            ["unique", scores.unique],
-            ["pronounce", scores.pronounce]
+
+            ["memory",scores.memory],
+            ["brand",scores.brand],
+            ["clarity",scores.clarity],
+            ["unique",scores.unique],
+            ["pronounce",scores.pronounce]
+
         ];
 
 
-        metricData.forEach(([key, value], index) => {
+        metricData.forEach(
+            ([key,value],index) => {
 
-            const scoreElement =
-                document.getElementById(
-                    `${key}Score`
-                );
-
-            const meter =
-                document.getElementById(
-                    `${key}Meter`
-                );
+                const scoreElement =
+                    document.getElementById(
+                        `${key}Score`
+                    );
 
 
-            scoreElement.textContent = "0";
+                const meter =
+                    document.getElementById(
+                        `${key}Meter`
+                    );
 
-            meter.style.width = "0%";
 
+                scoreElement.textContent =
+                    "0";
 
-            setTimeout(() => {
-
-                animateNumber(
-                    scoreElement,
-                    0,
-                    value,
-                    700
-                );
 
                 meter.style.width =
-                    `${value}%`;
-
-            }, 150 + index * 100);
-
-        });
+                    "0%";
 
 
-        document.getElementById("goodText")
-            .textContent =
+                setTimeout(() => {
+
+                    animateNumber(
+                        scoreElement,
+                        0,
+                        value,
+                        700
+                    );
+
+
+                    meter.style.width =
+                        `${value}%`;
+
+                },150 + index * 100);
+
+            }
+        );
+
+
+        document.getElementById(
+            "goodText"
+        ).textContent =
             getGoodText(scores);
 
 
-        document.getElementById("badText")
-            .textContent =
+        document.getElementById(
+            "badText"
+        ).textContent =
             getBadText(scores);
 
 
-        document.getElementById("goodBox")
-            .classList.remove("show");
+        document.getElementById(
+            "goodBox"
+        ).classList.remove(
+            "show"
+        );
 
-        document.getElementById("badBox")
-            .classList.remove("show");
+
+        document.getElementById(
+            "badBox"
+        ).classList.remove(
+            "show"
+        );
 
 
         setTimeout(() => {
 
-            document.getElementById("goodBox")
-                .classList.add("show");
-
-        }, 500);
-
-
-        setTimeout(() => {
-
-            document.getElementById("badBox")
-                .classList.add("show");
-
-        }, 650);
-
-
-        const variationList =
             document.getElementById(
-                "variationList"
+                "goodBox"
+            ).classList.add(
+                "show"
             );
 
-
-        variationList.innerHTML = "";
-
-
-        const variations =
-            generateVariations(name);
+        },500);
 
 
-        variations.forEach((variation, index) => {
+        setTimeout(() => {
 
-            const div =
-                document.createElement("div");
+            document.getElementById(
+                "badBox"
+            ).classList.add(
+                "show"
+            );
 
-            div.className =
-                "variation";
-
-            div.textContent =
-                variation;
-
-
-            variationList.appendChild(div);
+        },650);
 
 
-            setTimeout(() => {
-
-                div.classList.add("show");
-
-            }, 650 + index * 70);
-
-        });
+        createNameIdeas(name);
 
 
         analyzeBtn.textContent =
             "ANALYZE AGAIN →";
 
-        analyzeBtn.classList.remove("loading");
+
+        analyzeBtn.classList.remove(
+            "loading"
+        );
 
 
-        results.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-
-    }, 650);
+    },650);
 
 }
 
@@ -2777,11 +3156,312 @@ nameInput.addEventListener(
     event => {
 
         if (event.key === "Enter") {
+
             analyzeName();
+
         }
 
     }
 );
+
+
+/* =========================================================
+   NAME IDEA UI
+========================================================= */
+
+function createNameIdeas(name) {
+
+    const list =
+        document.getElementById(
+            "variationList"
+        );
+
+
+    list.innerHTML = "";
+
+
+    const ideas =
+        generateVariations(name);
+
+
+    ideas.forEach(
+        (idea,index) => {
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "name-idea";
+
+
+            const text =
+                document.createElement(
+                    "div"
+                );
+
+
+            text.className =
+                "name-idea-text";
+
+
+            text.textContent =
+                idea;
+
+
+            const actions =
+                document.createElement(
+                    "div"
+                );
+
+
+            actions.className =
+                "name-idea-actions";
+
+
+            /* SAVE */
+
+            const save =
+                document.createElement(
+                    "button"
+                );
+
+
+            save.className =
+                "idea-action";
+
+
+            save.type =
+                "button";
+
+
+            save.innerHTML =
+                "☆";
+
+
+            save.title =
+                "Save name";
+
+
+            save.addEventListener(
+                "click",
+                () => {
+
+                    saveFavorite(
+                        idea
+                    );
+
+
+                    save.classList.add(
+                        "saved"
+                    );
+
+
+                    save.innerHTML =
+                        "★";
+
+
+                    save.title =
+                        "Saved";
+
+                }
+            );
+
+
+            /* COPY */
+
+            const copy =
+                document.createElement(
+                    "button"
+                );
+
+
+            copy.className =
+                "idea-action";
+
+
+            copy.type =
+                "button";
+
+
+            copy.innerHTML =
+                "⧉";
+
+
+            copy.title =
+                "Copy name";
+
+
+            copy.addEventListener(
+                "click",
+                () => {
+
+                    copyName(
+                        idea
+                    );
+
+                }
+            );
+
+
+            actions.appendChild(
+                save
+            );
+
+
+            actions.appendChild(
+                copy
+            );
+
+
+            card.appendChild(
+                text
+            );
+
+
+            card.appendChild(
+                actions
+            );
+
+
+            list.appendChild(
+                card
+            );
+
+
+            setTimeout(() => {
+
+                card.classList.add(
+                    "show"
+                );
+
+            },650 + index * 70);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   COPY
+========================================================= */
+
+const copyToast =
+    document.getElementById(
+        "copyToast"
+    );
+
+
+let toastTimer;
+
+
+function copyName(name) {
+
+    if (
+        navigator.clipboard &&
+        window.isSecureContext
+    ) {
+
+        navigator.clipboard
+            .writeText(name)
+            .then(() => {
+
+                showCopyToast();
+
+            })
+            .catch(() => {
+
+                fallbackCopy(name);
+
+            });
+
+    } else {
+
+        fallbackCopy(name);
+
+    }
+
+}
+
+
+function fallbackCopy(name) {
+
+    const textarea =
+        document.createElement(
+            "textarea"
+        );
+
+
+    textarea.value =
+        name;
+
+
+    textarea.style.position =
+        "fixed";
+
+    textarea.style.opacity =
+        "0";
+
+
+    document.body.appendChild(
+        textarea
+    );
+
+
+    textarea.focus();
+
+    textarea.select();
+
+
+    try {
+
+        document.execCommand(
+            "copy"
+        );
+
+        showCopyToast();
+
+    } catch (error) {
+
+        alert(
+            "Copy failed. Please copy the name manually."
+        );
+
+    }
+
+
+    document.body.removeChild(
+        textarea
+    );
+
+}
+
+
+function showCopyToast() {
+
+    copyToast.classList.add(
+        "show"
+    );
+
+
+    clearTimeout(
+        toastTimer
+    );
+
+
+    toastTimer =
+        setTimeout(() => {
+
+            copyToast.classList.remove(
+                "show"
+            );
+
+        },1600);
+
+}
 
 
 /* =========================================================
@@ -2816,6 +3496,7 @@ let currentStyle =
 const styleWords = {
 
     Modern: [
+
         "Nova",
         "Nexa",
         "Modo",
@@ -2826,22 +3507,26 @@ const styleWords = {
         "Aero",
         "Nivo",
         "Kivo"
+
     ],
 
     Luxury: [
+
         "Aure",
         "Velour",
         "Maison",
         "Luxe",
-        "Élan",
+        "Elan",
         "Vellum",
         "Monarch",
         "Opal",
         "Verre",
         "Arden"
+
     ],
 
     Cute: [
+
         "Mimi",
         "Bibi",
         "Piko",
@@ -2852,9 +3537,11 @@ const styleWords = {
         "Kiki",
         "Boba",
         "Coco"
+
     ],
 
     Minimal: [
+
         "Noma",
         "Mono",
         "Form",
@@ -2865,9 +3552,11 @@ const styleWords = {
         "Base",
         "Kind",
         "Core"
+
     ],
 
     Bold: [
+
         "Forge",
         "Volt",
         "Rogue",
@@ -2878,26 +3567,21 @@ const styleWords = {
         "Rift",
         "Iron",
         "Rise"
+
     ]
 
 };
 
 
-function cleanBusinessType(value) {
-
-    return value
-        .trim()
-        .replace(/\s+/g, " ")
-        .replace(/[^a-zA-Z0-9\s]/g, "");
-
-}
-
-
 function generateNames() {
 
     const type =
-        cleanBusinessType(
-            businessType.value
+        businessType.value
+        .trim()
+        .replace(/\s+/g," ")
+        .replace(
+            /[^a-zA-Z0-9\s]/g,
+            ""
         );
 
 
@@ -2912,22 +3596,31 @@ function generateNames() {
     generateBtn.textContent =
         "GENERATING...";
 
-    generateBtn.classList.add("loading");
+
+    generateBtn.classList.add(
+        "loading"
+    );
 
 
     setTimeout(() => {
 
-        generated.innerHTML = "";
+        generated.innerHTML =
+            "";
 
 
         const words =
-            styleWords[currentStyle];
+            styleWords[
+                currentStyle
+            ];
 
 
         const base =
             type
             .split(" ")[0]
-            .replace(/[^a-zA-Z]/g, "");
+            .replace(
+                /[^a-zA-Z]/g,
+                ""
+            );
 
 
         const names = [];
@@ -2946,18 +3639,18 @@ function generateNames() {
         });
 
 
-        const uniqueNames =
-            [...new Set(names)]
-            .slice(0, 10);
-
-
-        uniqueNames.forEach(
-            (name, index) => {
+        [
+            ...new Set(names)
+        ]
+        .slice(0,10)
+        .forEach(
+            (name,index) => {
 
                 const card =
                     document.createElement(
                         "div"
                     );
+
 
                 card.className =
                     "generated-name";
@@ -2968,8 +3661,10 @@ function generateNames() {
                         "div"
                     );
 
+
                 text.className =
                     "generated-name-text";
+
 
                 text.textContent =
                     name;
@@ -2980,19 +3675,21 @@ function generateNames() {
                         "button"
                     );
 
+
                 save.className =
                     "save-name";
+
 
                 save.type =
                     "button";
 
+
                 save.innerHTML =
                     "☆";
 
-                save.setAttribute(
-                    "aria-label",
-                    `Save ${name}`
-                );
+
+                save.title =
+                    "Save name";
 
 
                 save.addEventListener(
@@ -3003,41 +3700,47 @@ function generateNames() {
                             name
                         );
 
+
                         save.classList.add(
                             "saved"
                         );
 
+
                         save.innerHTML =
                             "★";
+
+
+                        save.title =
+                            "Saved";
 
                     }
                 );
 
 
-                card.appendChild(text);
-
-                card.appendChild(save);
-
-                generated.appendChild(card);
+                card.appendChild(
+                    text
+                );
 
 
-                card.style.opacity = "0";
+                card.appendChild(
+                    save
+                );
 
-                card.style.transform =
-                    "translateY(8px)";
+
+                generated.appendChild(
+                    card
+                );
 
 
                 setTimeout(() => {
 
-                    card.style.transition =
-                        "opacity .35s ease, transform .35s ease";
-
-                    card.style.opacity = "1";
+                    card.style.opacity =
+                        "1";
 
                     card.style.transform =
                         "translateY(0)";
 
-                }, index * 65);
+                },index * 65);
 
             }
         );
@@ -3046,11 +3749,13 @@ function generateNames() {
         generateBtn.textContent =
             "GENERATE AGAIN →";
 
+
         generateBtn.classList.remove(
             "loading"
         );
 
-    }, 450);
+
+    },450);
 
 }
 
@@ -3066,7 +3771,9 @@ businessType.addEventListener(
     event => {
 
         if (event.key === "Enter") {
+
             generateNames();
+
         }
 
     }
@@ -3074,7 +3781,7 @@ businessType.addEventListener(
 
 
 /* =========================================================
-   CUSTOM SELECTOR
+   STYLE SELECTOR
 ========================================================= */
 
 const styleSelector =
@@ -3107,31 +3814,33 @@ styleButton.addEventListener(
 );
 
 
-styleOptions.forEach(option => {
+styleOptions.forEach(
+    option => {
 
-    option.addEventListener(
-        "click",
-        event => {
+        option.addEventListener(
+            "click",
+            event => {
 
-            event.stopPropagation();
-
-
-            currentStyle =
-                option.dataset.value;
+                event.stopPropagation();
 
 
-            selectedStyle.textContent =
-                currentStyle;
+                currentStyle =
+                    option.dataset.value;
 
 
-            styleSelector.classList.remove(
-                "open"
-            );
+                selectedStyle.textContent =
+                    currentStyle;
 
-        }
-    );
 
-});
+                styleSelector.classList.remove(
+                    "open"
+                );
+
+            }
+        );
+
+    }
+);
 
 
 document.addEventListener(
@@ -3168,7 +3877,9 @@ function saveFavorites() {
 
     localStorage.setItem(
         "brandGradeFavorites",
-        JSON.stringify(favorites)
+        JSON.stringify(
+            favorites
+        )
     );
 
 }
@@ -3185,7 +3896,9 @@ function saveFavorite(name) {
 
     favorites.push(name);
 
+
     saveFavorites();
+
 
     renderFavorites();
 
@@ -3199,7 +3912,9 @@ function removeFavorite(name) {
             item => item !== name
         );
 
+
     saveFavorites();
+
 
     renderFavorites();
 
@@ -3208,7 +3923,8 @@ function removeFavorite(name) {
 
 function renderFavorites() {
 
-    favoriteList.innerHTML = "";
+    favoriteList.innerHTML =
+        "";
 
 
     if (!favorites.length) {
@@ -3218,77 +3934,97 @@ function renderFavorites() {
                 "div"
             );
 
+
         empty.className =
             "empty-favorites";
 
+
         empty.textContent =
             "No saved names yet.";
+
 
         favoriteList.appendChild(
             empty
         );
 
+
         return;
     }
 
 
-    favorites.forEach(name => {
+    favorites.forEach(
+        name => {
 
-        const pill =
-            document.createElement(
-                "div"
+            const pill =
+                document.createElement(
+                    "div"
+                );
+
+
+            pill.className =
+                "favorite-pill";
+
+
+            const text =
+                document.createElement(
+                    "span"
+                );
+
+
+            text.textContent =
+                name;
+
+
+            const remove =
+                document.createElement(
+                    "button"
+                );
+
+
+            remove.className =
+                "remove-favorite";
+
+
+            remove.type =
+                "button";
+
+
+            remove.textContent =
+                "×";
+
+
+            remove.title =
+                "Remove";
+
+
+            remove.addEventListener(
+                "click",
+                () => {
+
+                    removeFavorite(
+                        name
+                    );
+
+                }
             );
 
-        pill.className =
-            "favorite-pill";
 
-
-        const text =
-            document.createElement(
-                "span"
+            pill.appendChild(
+                text
             );
 
-        text.textContent =
-            name;
 
-
-        const remove =
-            document.createElement(
-                "button"
+            pill.appendChild(
+                remove
             );
 
-        remove.className =
-            "remove-favorite";
 
-        remove.type =
-            "button";
+            favoriteList.appendChild(
+                pill
+            );
 
-        remove.textContent =
-            "×";
-
-        remove.setAttribute(
-            "aria-label",
-            `Remove ${name}`
-        );
-
-
-        remove.addEventListener(
-            "click",
-            () => {
-
-                removeFavorite(name);
-
-            }
-        );
-
-
-        pill.appendChild(text);
-
-        pill.appendChild(remove);
-
-        favoriteList.appendChild(pill);
-
-    });
+        }
+    );
 
 }
 
@@ -3337,7 +4073,8 @@ const businessInsights = [
 ];
 
 
-let insightIndex = 0;
+let insightIndex =
+    0;
 
 
 const insightWidget =
@@ -3361,92 +4098,73 @@ const insightText =
     );
 
 
-/*
-   OPEN / CLOSE
-*/
-
-function toggleInsight() {
-
-    const isOpen =
-        insightWidget.classList.toggle(
-            "open"
-        );
-
-
-    insightBulb.setAttribute(
-        "aria-expanded",
-        isOpen
-            ? "true"
-            : "false"
-    );
-
-}
-
-
-/*
-   NEXT TIP
-*/
-
-function nextInsight(event) {
-
-    if (event) {
-        event.preventDefault();
-        event.stopPropagation();
-    }
-
-
-    insightIndex++;
-
-
-    if (
-        insightIndex >=
-        businessInsights.length
-    ) {
-
-        insightIndex = 0;
-
-    }
-
-
-    insightText.classList.remove(
-        "change"
-    );
-
-
-    /*
-       Forces browser to restart animation.
-    */
-
-    void insightText.offsetWidth;
-
-
-    insightText.textContent =
-        businessInsights[
-            insightIndex
-        ];
-
-
-    insightText.classList.add(
-        "change"
-    );
-
-}
-
-
 insightBulb.addEventListener(
     "click",
-    toggleInsight
+    () => {
+
+        const isOpen =
+            insightWidget.classList.toggle(
+                "open"
+            );
+
+
+        insightBulb.setAttribute(
+            "aria-expanded",
+            isOpen
+                ? "true"
+                : "false"
+        );
+
+    }
 );
 
 
 insightNext.addEventListener(
     "click",
-    nextInsight
+    event => {
+
+        event.preventDefault();
+
+        event.stopPropagation();
+
+
+        insightIndex++;
+
+
+        if (
+            insightIndex >=
+            businessInsights.length
+        ) {
+
+            insightIndex = 0;
+
+        }
+
+
+        insightText.classList.remove(
+            "change"
+        );
+
+
+        void insightText.offsetWidth;
+
+
+        insightText.textContent =
+            businessInsights[
+                insightIndex
+            ];
+
+
+        insightText.classList.add(
+            "change"
+        );
+
+    }
 );
 
 
 /* =========================================================
-   LOGIN MODAL
+   LOGIN
 ========================================================= */
 
 const loginBtn =
@@ -3475,33 +4193,27 @@ const proButton =
     );
 
 
-function openLogin() {
-
-    loginModal.classList.add(
-        "show"
-    );
-
-}
-
-
-function closeLogin() {
-
-    loginModal.classList.remove(
-        "show"
-    );
-
-}
-
-
 loginBtn.addEventListener(
     "click",
-    openLogin
+    () => {
+
+        loginModal.classList.add(
+            "show"
+        );
+
+    }
 );
 
 
 modalCancel.addEventListener(
     "click",
-    closeLogin
+    () => {
+
+        loginModal.classList.remove(
+            "show"
+        );
+
+    }
 );
 
 
@@ -3513,7 +4225,10 @@ modalDemo.addEventListener(
             "Demo login successful!"
         );
 
-        closeLogin();
+
+        loginModal.classList.remove(
+            "show"
+        );
 
     }
 );
@@ -3527,13 +4242,31 @@ loginModal.addEventListener(
             event.target === loginModal
         ) {
 
-            closeLogin();
+            loginModal.classList.remove(
+                "show"
+            );
 
         }
 
     }
 );
 
+
+proButton.addEventListener(
+    "click",
+    () => {
+
+        alert(
+            "Brand//Grade PRO is coming soon."
+        );
+
+    }
+);
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
 
 document.addEventListener(
     "keydown",
@@ -3543,29 +4276,15 @@ document.addEventListener(
             event.key === "Escape"
         ) {
 
-            closeLogin();
+            loginModal.classList.remove(
+                "show"
+            );
 
             styleSelector.classList.remove(
                 "open"
             );
 
         }
-
-    }
-);
-
-
-/* =========================================================
-   PRO BUTTON
-========================================================= */
-
-proButton.addEventListener(
-    "click",
-    () => {
-
-        alert(
-            "Brand//Grade PRO is coming soon."
-        );
 
     }
 );
