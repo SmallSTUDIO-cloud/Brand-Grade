@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://smallstudio-cloud.github.io/Brand-Grade/sitemap.xml
