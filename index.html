@@ -1685,6 +1685,120 @@ header {
         transition-duration: .01ms !important;
     }
 }
+/* =========================
+   SEO CONTENT
+   ========================= */
+
+.seo-section{
+    max-width:900px;
+    margin:100px auto 40px;
+    padding:0 24px;
+    text-align:center;
+}
+
+.seo-eyebrow{
+    color:#777;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:16px;
+}
+
+.seo-section h2{
+    font-size:clamp(28px,5vw,42px);
+    line-height:1.15;
+    letter-spacing:-1.5px;
+    margin-bottom:18px;
+}
+
+.seo-intro{
+    max-width:680px;
+    margin:0 auto 45px;
+    color:#999;
+    font-size:16px;
+    line-height:1.8;
+}
+
+.seo-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    text-align:left;
+}
+
+.seo-card{
+    background:#0d0d0d;
+    border:1px solid #202020;
+    border-radius:18px;
+    padding:24px;
+    transition:.25s ease;
+}
+
+.seo-card:hover{
+    transform:translateY(-4px);
+    border-color:#333;
+}
+
+.seo-card h3{
+    font-size:16px;
+    margin-bottom:9px;
+}
+
+.seo-card p{
+    color:#888;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.seo-faq{
+    max-width:760px;
+    margin:70px auto 0;
+    text-align:left;
+}
+
+.seo-faq h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.seo-faq details{
+    border-top:1px solid #202020;
+    padding:20px 0;
+}
+
+.seo-faq details:last-child{
+    border-bottom:1px solid #202020;
+}
+
+.seo-faq summary{
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+}
+
+.seo-faq p{
+    color:#888;
+    font-size:14px;
+    line-height:1.7;
+    margin-top:12px;
+    max-width:680px;
+}
+
+@media(max-width:760px){
+    .seo-section{
+        margin-top:75px;
+        padding:0 18px;
+    }
+
+    .seo-grid{
+        grid-template-columns:1fr;
+    }
+
+    .seo-section h2{
+        letter-spacing:-1px;
+    }
+  }
 </style>
 </head>
 
